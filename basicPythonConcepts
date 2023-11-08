@@ -26,6 +26,20 @@ A variable’s name is used to identify where that information is stored. You ca
 budget = 200
 print(budget)
 
+budget = 20
+print(budget + 10)
+
+price = 5
+amount = 3
+total = price * amount
+
+You can update the value stored in a variable. The variable will forget the previously stored value.
+Updating the value of a variable is called reassigning a variable.
+
+price = 99
+price = 100
+print(price)
+
 STRINGS
 
 In Python, both single ' and double " quotes can be used to define strings. It doesn’t make a difference whether you choose double or single quotation marks, but they do need to match.
