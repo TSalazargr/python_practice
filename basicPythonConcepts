@@ -1,5 +1,50 @@
 The code in computer programs is made of statements. Statements are the instructions for the computer to follow. Real programs can contain thousands of statements.
 
+DATA TYPES
+
+- Strings: text
+- Integers: whole numbers without a decimal point. Negative, positive or zero.
+- Float: numbers with decimal places, they can be positive or negative.
+
+
+STRINGS
+
+In Python, both single ' and double " quotes can be used to define strings. 
+It doesn’t make a difference whether you choose double or single quotation marks, but they do need to match.
+
+Anything in quotation marks will be treated as a string, even numbers.
+
+movie = "Gladiator"
+book = "1984"
+
+CONCATENATION
+
+When you use the + addition operator with string values the two strings are joined together. 
+
+This is known as concatenation.
+
+#Displays IronMan
+print("Iron" + "Man")
+
+#Displays basketball
+a = "basket"
+b = "ball"
+print(a+b)
+
+NUMERICAL DATA
+
+Numerical data shouldn't be in quotation marks. The line of code below declares a numerical variable
+
+price = 10
+
+You can perform math operations with numbers. Each print() instruction will add a value to the screen in a new line.
+
+print(7 + 3)
+
+The computer reads and executes instructions line by line, from top to bottom. 
+The execution of the program will be interrupted at the first error encountered.
+
+
 PRINT
 
 The print() instruction is the easiest way to send a message to the screen or other display device.
@@ -46,26 +91,6 @@ price = 99
 price = 100
 print(price)
 
-STRINGS
-
-In Python, both single ' and double " quotes can be used to define strings. It doesn’t make a difference whether you choose double or single quotation marks, but they do need to match.
-
-movie = "Gladiator"
-book = "1984"
-
-NUMERICAL DATA
-
-Numerical data shouldn't be in quotation marks. The line of code below declares a numerical variable
-
-price = 10
-
-You can perform math operations with numbers. Each print() instruction will add a value to the screen in a new line.
-
-print(7 + 3)
-
-The computer reads and executes instructions line by line, from top to bottom. 
-The execution of the program will be interrupted at the first error encountered.
-
 COMMENTS
 
 Professional developers use comments to add descriptions and explanations to their programs.
@@ -93,4 +118,28 @@ Snake case uses underscores _ to separate words in a variable name.
 name_username = "John Doe"
 
 Snake case is the best practice for naming variables in Python.
+
+INPUT
+
+An input is any information that goes into a computer.
+
+The press of a key and the click of a button are examples of inputs.
+
+The input() instruction is the easiest way to allow a user to insert a value into your program.
+
+#Display a window that asks you to write an input
+#message's value will be whatever you write in that window
+message = input()
+print(message)
+
+#Ask user for their age
+age = input()
+
+OUTPUT
+
+An output is a way for the computer to communicate with the outside world. 
+A message displayed on the screen and the sound from a speaker are examples of outputs.
+
+The print() instruction, which you already know, is the easiest way to get your computer program to generate an output.
+
 
