@@ -6,6 +6,7 @@ DATA TYPES
 - Integers: whole numbers without a decimal point. Negative, positive or zero.
 - Float: numbers with decimal places, they can be positive or negative. 
  - The division of two integers always produces a float. 
+ - Math operations between integers and floats produce a float.
 
 a = 4
 b = 2
@@ -28,6 +29,8 @@ CONCATENATION
 When you use the + addition operator with string values the two strings are joined together. 
 
 This is known as concatenation.
+
+You can't concatenate a string with a integer or float.
 
 #Displays IronMan
 print("Iron" + "Man")
@@ -197,6 +200,12 @@ In a similar way, you can ensure that values are converted into strings with the
 a = 3
 b = str(a)
 print(type(b)) #print type str
+
+str() helps you concatenate two variables.
+
+name = "Tom"
+age = 33
+print(name + str(age))
 
 EXPLICIT AND IMPLICIT CONVERSION
 
