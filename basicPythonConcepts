@@ -7,6 +7,7 @@ DATA TYPES
 - Float: numbers with decimal places, they can be positive or negative. 
  - The division of two integers always produces a float. 
  - Math operations between integers and floats produce a float.
+- Boolean: two possible values: True or False
 
 a = 4
 b = 2
@@ -261,6 +262,13 @@ message = "Score: " + str(score)
 
 # Display the message
 print(message)
+
+COMPARISON OPERATIONS / BOOLEAN DATA TYPES
+
+A comparison operation always results in either one of these two outcomes: True or False
+
+#Compares 5 and 9 and returns true because 5 is smaller than 9
+print(5 < 9)
 
 
 
