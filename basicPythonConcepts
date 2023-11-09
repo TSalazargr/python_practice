@@ -4,8 +4,14 @@ DATA TYPES
 
 - Strings: text
 - Integers: whole numbers without a decimal point. Negative, positive or zero.
-- Float: numbers with decimal places, they can be positive or negative.
+- Float: numbers with decimal places, they can be positive or negative. 
+ - The division of two integers always produces a float. 
 
+a = 4
+b = 2
+c = 4/2
+print(c) #displays the result
+print(type(c)) #displays data type which will be float
 
 STRINGS
 
@@ -135,11 +141,119 @@ print(message)
 #Ask user for their age
 age = input()
 
+The input() instruction always turns the user input into a string, no matter what the user enters.
+
+birth_year=input() #takes an input
+print(type(birth_year)) #displays the data type which will be str
+
 OUTPUT
 
 An output is a way for the computer to communicate with the outside world. 
 A message displayed on the screen and the sound from a speaker are examples of outputs.
 
 The print() instruction, which you already know, is the easiest way to get your computer program to generate an output.
+
+TYPE
+
+Data can come to you in the incorrect format. You can use the type() instruction to check the data type stored in a variable.
+
+city = "Berlin" #stores a string
+age = 42 #stores an integer
+balance = 830.29 #stores a float
+print(type(city)) #outputs <class 'str'>
+print(type(age)) #outputs <class 'int'>
+print(type(balance)) #outputs <class 'float'>
+
+DATA CONVERSION
+
+INT()
+
+The int() instruction converts any type of value into an integer
+
+x = "55" # x is a string
+y = int(x) # y is an integer
+
+You can use the int() instruction to convert the user input into an integer
+
+# User input is converted into an integer
+height = int(input()) 
+print(type(height))
+# The line above is an effective way to combine 2 instructions into one
+
+FLOAT()
+
+There are situations when you need values to be treated as floats.
+
+The float() instruction converts values into floats.
+
+a = 3
+b = float(a)
+print(b) #Will display 3.0
+
+STR()
+
+In a similar way, you can ensure that values are converted into strings with the str() instruction.
+
+a = 3
+b = str(a)
+print(type(b)) #print type str
+
+EXPLICIT AND IMPLICIT CONVERSION
+
+The int(), str() and float() instructions are examples of explicit conversion, which means they are performed by an instruction given by a programmer (like you).
+
+On the other hand, run the code to see some examples of implicit (automatic) data type conversions
+
+# Examples of automatic data type conversion
+
+x = 5 # integer
+y = 2 # integer
+z = x/y # float (implicit conversion)
+print(z)
+
+a = 3 # integer
+b = 1.5 # float
+c = a + b # float
+print(c)
+
+EXERCISE
+
+# Asks the user to enter the savings
+savings = input()
+
+# Convert the user input into a float value and update the variable
+savings = float(savings)
+
+# Savings grow after 1 year at a 5% annual interest rate
+balance = savings * 1.05 
+
+# Convert the balance into a string and update the variable
+balance = str(balance)
+
+# Concatenate the 2 strings to produce a message
+message = "Amount in 1 year: " +  balance
+
+# Display the message
+print(message)
+
+--
+
+# Convert the values into numbers
+wins = int(input())
+ties = int(input())
+
+# 1 win = 3 points
+# 1 tie = 1 point 
+# Calculate the score
+score = wins * 3 + ties
+
+# Concatenate the 2 strings to produce a message
+message = "Score: " + str(score)
+
+# Display the message
+print(message)
+
+
+
 
 
