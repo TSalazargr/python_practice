@@ -16,8 +16,14 @@ Computer programs use variables to store important information, like items in a 
 
 The line of code below tells the computer to store information in a variable called item.
 
+This is called "declaring a variable".
+
+Spaces are not allowed in variable names in Python. Asterisks (*) aren't either.
+
 item = "bike"
-nameOfVariable = "value"
+name_of_variable = "value"
+
+A variable name can contain numbers but cannot start with a number.
 
 Variables have a name and a value. They are connected with the equal sign =.
 
@@ -57,6 +63,34 @@ You can perform math operations with numbers. Each print() instruction will add 
 
 print(7 + 3)
 
+The computer reads and executes instructions line by line, from top to bottom. 
+The execution of the program will be interrupted at the first error encountered.
 
+COMMENTS
 
+Professional developers use comments to add descriptions and explanations to their programs.
+
+You can add comments to your Python code with the hash symbol #
+
+#Displaying a message
+print("Insufficient funds")
+
+You can use comments to temporarily disable a statement. This way the computer will skip the instruction.
+
+CASE-SENSITIVE
+
+Python is a case-sensitive language, meaning "A" and "a" are treated as different.
+
+credit = 300
+Credit = 280
+CREDIT = 320
+
+SNAKE CASE
+
+Snake case is a popular way to create variable names in a consistent way. 
+Snake case uses underscores _ to separate words in a variable name.
+
+name_username = "John Doe"
+
+Snake case is the best practice for naming variables in Python.
 
