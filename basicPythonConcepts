@@ -278,6 +278,11 @@ a = 4
 b = 5
 print(a == b)
 
+#Tells you if variables a and b are not equal
+a = 4
+b = 5
+print(a != b)
+
 You can store booleans values in variables like you do with other data types.
 
 passed_exam = True
@@ -359,6 +364,10 @@ print("--")   #This is just a separator
 for something in range(3):
   print(something)
 
+#Displays 3 booleans
+for i in range(3):
+  print(i < 1)
+
 The code that gets repeated in the for loop must be indented. Indentation is the spaces at the beginning of lines.
 
 Python doesn't mind whether you use 2 spaces or 4 spaces (or any other number of spaces) or tabs as long as you use the same indentation with every loop.
@@ -392,4 +401,40 @@ while seats > 0:
   print("Sell ticket")
   #seats = seats - 1
 
+#Create a timer program that will take 
+#the number of seconds as input, and countdown to 0.
+# take the number as input
+number = int(input())
+#use a while loop for the countdown
+while number >= 0 :
+    print(number)
+    number = number - 1
 
+Exercise:
+
+Imagine you are a scientist looking at a new type of cell under the microscope. This type of cell divides itself into 2 daughter cells every 24 hours, meaning that the cell population duplicates every day.
+
+Complete the code to take the initial cell population and the number of days you are observing the cells to calculate the cell population at the end of each day in the following format
+
+# take the initial cell population as input
+cells = int(input())
+
+# take the number of days as input
+days = int(input())
+
+# initialize the day counter
+counter = 1
+
+#complete the while loop
+while counter <= days:
+  cells = cells * 2
+  # Daily message
+  print("Day " + str(counter) + ": " +str(cells))
+  counter = counter + 1
+
+#Ask user to input password guess until they get it right, then print "Access granted"
+password = "SecretWord"
+guess = input()
+while guess != password:  
+  guess = input() 
+print("Access Granted")
