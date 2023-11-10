@@ -315,3 +315,49 @@ You can put parentheses around the operations that should be done first. It make
 #variable value is True because 3 > 2
 a = (3 > 2) or False
 
+CONTROL FLOW
+
+In this lesson, you'll learn to control the flow of instructions a computer follows, using 3 techniques: sequencing, iteration and selection.
+
+- SEQUENCING: computer runs your code in order, from top to bottom.
+- ITERATION: is about executing an instruction repeatedly. Iteration is commonly represented as a loop.
+- SELECTION: specifies when to follow each path.
+
+An algorithm is a set of step-by-step instructions to complete a task, placed in a certain order.
+
+Flowcharts help to visualize algorithms.
+
+Another way to represent an algorithm is with pseudocode. 
+Pseudocode is a simplified language that is a bit closer to a programming language.
+
+ITERATION / FOR LOOPS
+
+Iteration is used to automate tasks that need to be done over and over again. 
+
+Iteration makes your programs simpler, faster and reduces errors.
+
+The for loop begins with the keyword "for".
+
+"range()" creates x numbers in a sequence, starting from 0. range() generates a series of integer numbers. 
+
+The initial loop statement must be followed by a colon : symbol. This signals the start of the iteration block.
+
+You need an internal variable for the loop, which can be "i", "potato", or anything else.
+
+#Define the number of iterations
+for i in range(3):
+  #Statement that gets repeated
+  print("Hello")
+
+# Loop using i as internal variable
+for i in range(3):
+  print(i)
+print("--")   #This is just a separator
+#Loop using "something" as internal variable
+for something in range(3):
+  print(something)
+
+The code that gets repeated in the for loop must be indented. Indentation is the spaces at the beginning of lines.
+
+Python doesn't mind whether you use 2 spaces or 4 spaces (or any other number of spaces) or tabs as long as you use the same indentation with every loop.
+
