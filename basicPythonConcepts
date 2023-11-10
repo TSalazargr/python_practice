@@ -438,3 +438,36 @@ guess = input()
 while guess != password:  
   guess = input() 
 print("Access Granted")
+
+SELECTION / CONDITIONAL STATEMENTS / IF ELSE
+
+Selection is like a fork in the road. It allows your programs to decide which path to take. 
+
+Conditional statements, or if-else statements, allow programs to perform different actions based on the conditions.
+
+The if conditional statements starts with the keyword if followed by the condition and a colon : symbol
+
+The else conditional statement starts with the keyword else followed by a colon : symbol
+
+The code  indented below the else line is executed when the condition is not met
+
+#Give discount if they're 18 or over
+#sets the value of age
+age = int(input())
+if age >= 18:
+  # executed only if customer is over-age
+  print("Regular price") 
+else:
+  #executed only if age is less than 18
+  print("Discount")
+print("Proceed to payment")
+
+#Applies a discount if the client is under 18 or a student.
+if age < 18 or is_student:
+  print("Discount")
+else: 
+  print("Regular price")
+
+
+
+
