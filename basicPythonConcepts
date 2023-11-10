@@ -439,7 +439,7 @@ while guess != password:
   guess = input() 
 print("Access Granted")
 
-SELECTION / CONDITIONAL STATEMENTS / IF ELSE
+SELECTION / CONDITIONAL STATEMENTS / IF ELSE ELIF
 
 Selection is like a fork in the road. It allows your programs to decide which path to take. 
 
@@ -468,6 +468,40 @@ if age < 18 or is_student:
 else: 
   print("Regular price")
 
+There will be situations where you don’t need the else statement. 
+
+if age < 18:
+  print("Apply Discount")
+print("Proceed to payment")
+
+When the else statement is not needed, you can simplify and have the code for the selection block in 1 line.
+
+age = 16
+if age < 18: print("Apply Discount")
+print("Proceed to Payment")
+
+You can use the elif statement (short for "else if") to check for more conditions if the first condition is not met.
+
+As with any other conditional statement, elif requires the colon : symbol and for the code that gets executed under it to be indented.
+
+if age < 18: 
+  print("Junior discount")
+elif age >= 75: 
+  print("Senior discount")
+else:
+  print("No discount")
+
+The if statement always goes first. Else is not always needed, but if it it is, it always goes last.
+
+You can nest if-else statements within each other.
+
+if age < 18:
+  if is_student:
+    print("20% discount")
+  else:
+    print("10% discount")
+else:
+    print("Regular price")
 
 
 
