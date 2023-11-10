@@ -503,5 +503,75 @@ if age < 18:
 else:
     print("Regular price")
 
+LISTS
+
+Lists allow you to store a collection of multiple values in a single variable.
+
+Add square brackets [ ] around the values to create a list and separate each value of the list with a comma.
+
+Lists can store any data type.
+
+shopping_list = ["eggs", "soy milk", "onions"]
+
+prices = [0.5, 0.95, 9.95]
+
+Lists can contain values of different data types.
+
+movie_info = ["Inception", 2010]
+
+You can place list items on separate lines to make the code easier to read.
+
+bands = [
+"Panic at the Disco",
+"Fall Out Boy",
+"My Chemical Romance"]
+
+
+# Displays ['laptop', 'smartphone', 'headphones', 'backpack']
+shopping_cart = [
+"laptop", 
+"smartphone", 
+"headphones", 
+"backpack"
+]
+print(shopping_cart)
+
+Indentation is not necessary for lists but does make your code easier to read.
+
+LISTS / INDEXING
+
+Lists are ordered collections of items. You can access an item in a list using its position or index number.
+Remember: Python starts counting at zero.
+
+bands = [
+ "Panic at the Disco",
+ "Fall Out Boy",
+ "My Chemical Romance"
+]
+#Refers to "Panic at the Disco"
+bands[0]
+#Displays "Fall Out Boy"
+print(bands[1]
+#Declares variable "emo_king" with value "My Chemical Romance"
+emo_king = bands[2]
+
+last_calls = ["Mom", "Dave", "Lawyer"]
+print(last_calls[0])
+print(last_calls[1])
+
+#Display sunrise
+words = ["rise", "sun", "glasses"]
+print(words[1] + words[0])
+
+Lists are mutable. This means you can change their values even after they've been created.
+
+bands = [
+ "Panic at the Disco",
+ "Fall Out Boy",
+ "My Chemical Romance"
+]
+#Change index 1 value from "Fall Out Boy" to "Green Day"
+bands[1] = "Green Day"
+
 
 
