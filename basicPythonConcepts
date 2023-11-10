@@ -540,7 +540,8 @@ Indentation is not necessary for lists but does make your code easier to read.
 
 LISTS / INDEXING
 
-Lists are ordered collections of items. You can access an item in a list using its position or index number.
+Lists are ordered collections of items. You can access an item in a list using its position or index number. 
+This is known as CALLING a part of the list.
 Remember: Python starts counting at zero.
 
 bands = [
@@ -572,6 +573,41 @@ bands = [
 ]
 #Change index 1 value from "Fall Out Boy" to "Green Day"
 bands[1] = "Green Day"
+
+#installed games
+games = [
+  'Soccer', 'Tic Tac Toe', 'Snake',
+  'Puzzle', 'Rally']
+#taking player's choice as a number input
+choice = int(input())
+#output the corresponding game
+print(games[choice])
+
+You can create a list with values that have been stored in variables.
+
+name = "Sarah"
+age = 34
+country = "Germany"
+info = [name, age, country]
+
+products = ["juice", "chocolate", "water"]
+user_choice = int(input())
+print(products[user_choice])
+
+Indexing also works with strings. You can use indexing to access individual characters in a string.
+The characters in a string can include spaces and punctuation marks. 
+
+#Display "D"
+animal = "Dog"
+print(animal[0])
+
+Strings are immutable, which means that you can’t change the characters in a string. 
+If you try to change a string you’ll get an error.
+
+#Error
+word = "car"
+word[2] = "t"
+
 
 
 
