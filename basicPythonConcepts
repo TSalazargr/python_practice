@@ -594,6 +594,15 @@ products = ["juice", "chocolate", "water"]
 user_choice = int(input())
 print(products[user_choice])
 
+Indexing a list with just one number produces a string
+
+cart = ['lamp', 'candles', 'chair', 'carpet']
+example = cart[0]
+#Displays lamp
+print(example)
+#Displays <class 'str'>
+print(type(example))
+
 Indexing also works with strings. You can use indexing to access individual characters in a string.
 The characters in a string can include spaces and punctuation marks. 
 
@@ -621,5 +630,85 @@ item = int(input())
 breakfasts[item] = "Pancakes"
 #display the updated list
 print(breakfasts)
+
+SLICING
+
+In this lesson you’ll learn to extract, modify and replace a specific range of elements from sequences with a new technique: slicing.
+
+Slicing allows you to extract a portion of a list. Starting and stopping indexes are separated by a colon : 
+
+animals = ["Dog", "Cat", "Bird", "Fish"]
+#extracts Cat and Bird
+animals[1:3]
+
+animals = ["Dog", "Cat", "Bird", "Fish"]
+#extracts Cat, Bird and Fish
+animals[1:4]
+#Displays ["Cat", "Bird", "Fish"]
+print(animals[1:4])
+
+The starting index is inclusive. The stopping index is exclusive.
+i.e. The last number is excluded, the first is included, and anything in between the two is included.
+
+Slicing also works with strings.
+
+You can use indexing and slicing on lists and strings, because they are ordered sequences.
+
+vehicle = "airplane"
+#prints air
+print(vehicle[0:3])
+
+Slicing a list produces another list.
+
+colors = ['red', 'green', 'blue', 'yellow']
+#prints ['blue']
+print(colors[2:3])
+
+Slicing a string produces another string
+
+fruit = "orange"
+#prints or
+print(fruit[0:2])
+
+When slicing, you can omit the starting index. This means that you'll be slicing from the very first element.
+
+cart = ['lamp', 'candles', 'chair', 'carpet']
+print(cart[:3])
+
+When slicing, you can omit the stopping index. This means that you'll be slicing until the very last element.
+
+cart = ['lamp', 'candles', 'chair', 'carpet']
+print(cart[1:])
+
+You can also omit all indexes to just take the whole list/string.
+
+vehicle = 'motorbike'
+print(vehicle[:])
+
+Python supports "indexing from the end", called negative indexing. This means the last value of a sequence has an index of -1.
+
+Cat Dog Fox Cow
+-4  -3  -2  -1
+
+animals =["cat", "dog", "bird", "cow"]
+print(animals[-1]) # Last element
+print(animals[-2]) # Second last element
+print(animals[-3:]) # Last 3 elements
+print(animals[-3:-1]) 
+
+In indexing from the end, you start with the smallest number.
+
+You can combine positive with negative indexing when slicing.
+
+c = ['A', 'B', 'C', 'D']
+#Displays ['B', 'C']
+print(c[1:-1])
+
+c = ['A', 'B', 'C', 'D']
+c[:2] = ['E', 'F']
+#Display ['E', 'F', 'C', 'D']
+print(c)
+
+
 
 
