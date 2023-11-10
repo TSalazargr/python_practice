@@ -330,13 +330,15 @@ Flowcharts help to visualize algorithms.
 Another way to represent an algorithm is with pseudocode. 
 Pseudocode is a simplified language that is a bit closer to a programming language.
 
-ITERATION / FOR LOOPS
+ITERATION / FOR
 
 Iteration is used to automate tasks that need to be done over and over again. 
 
 Iteration makes your programs simpler, faster and reduces errors.
 
 The for loop begins with the keyword "for".
+
+ITERATION / RANGE()
 
 "range()" creates x numbers in a sequence, starting from 0. range() generates a series of integer numbers. 
 
@@ -360,4 +362,34 @@ for something in range(3):
 The code that gets repeated in the for loop must be indented. Indentation is the spaces at the beginning of lines.
 
 Python doesn't mind whether you use 2 spaces or 4 spaces (or any other number of spaces) or tabs as long as you use the same indentation with every loop.
+
+ITERATION / WHILE
+
+While loops are powerful because they can be used even when you don’t know how many iterations will be needed.
+
+While loops repeat code whilst a condition holds true. 
+
+The while keyword is followed by the condition under which the code is repeated
+
+As with for loops, the initial while loop statement must be followed by a colon : symbol
+
+while seats > 0:
+  print("Sell ticket")
+  seats = seats - 1
+
+Loops usually include counters. A counter is a variable that keeps track of the number of iterations. 
+
+In the example above, the counter is the variable "seats".
+
+Counter variables are updated inside the loop, so they change with every iteration. 
+An initial value is set outside the loop, as the starting point.
+
+With while loops you can run into what is known as an infinite loop. 
+This is when the condition holds true forever, and the code never stops repeating.
+
+#Creates an infinite loop.
+while seats > 0:
+  print("Sell ticket")
+  #seats = seats - 1
+
 
