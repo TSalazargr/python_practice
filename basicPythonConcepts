@@ -685,6 +685,8 @@ You can also omit all indexes to just take the whole list/string.
 vehicle = 'motorbike'
 print(vehicle[:])
 
+NEGATIVE INDEXING
+
 Python supports "indexing from the end", called negative indexing. This means the last value of a sequence has an index of -1.
 
 Cat Dog Fox Cow
