@@ -345,7 +345,7 @@ The for loop begins with the keyword "for".
 
 ITERATION / RANGE()
 
-"range()" creates x numbers in a sequence, starting from 0. range() generates a series of integer numbers. 
+"range()" generates a sequence of numbers, starting from 0. range() generates a series of integer numbers. 
 
 The initial loop statement must be followed by a colon : symbol. This signals the start of the iteration block.
 
@@ -710,6 +710,48 @@ c = ['A', 'B', 'C', 'D']
 c[:2] = ['E', 'F']
 #Display ['E', 'F', 'C', 'D']
 print(c)
+
+FUNCTIONS
+
+Functions are reusable blocks of code for specific tasks. 
+They help keep your code as short and easy to work with as possible, saving you from repeating code.
+A function performs a task. 
+
+print(), input(), range(), and type() are functions.
+
+A function contains the code to perform a task. To use this code, you just need to CALL the function.
+
+Every function has a name. The code within a function is only executed when the function is called.
+
+The same function can be called multiple times.
+
+Functions require information to be passed in order for the task to be completed. 
+We pass information into functions as ARGUMENTS.
+
+Arguments go inside parenthesis ().
+
+For instance, when we add "New Message" to the print() function, we PASS THE ARGUMENT.
+
+print("New Message")
+
+In this example print() is the NAME of the function, and "New Message" the an ARGUMENT.
+
+Functions need their arguments to work. Missing arguments can result in errors.
+
+A function can take multiple arguments.
+
+For example, we can pass multiple arguments to the print() function to display multiple values in one line.
+
+print("Your seat:", 4)
+
+That example has two arguments.
+
+The print function can take arguments from different data types.
+
+Multiple arguments in a function are separated with a comma.
+
+print() and range() are examples of built-in functions. 
+Python has many built-in functions which you can re-use in your code by calling them.
 
 
 
