@@ -968,3 +968,27 @@ Functions must be defined before they can be called.
 def bmi(weight, height):
     index = weight / (height * height)
     print(index)
+
+When calling a function, you need to use the same number of arguments that have been defined, in the same order.
+
+The result of a function can be sent back with the return statement. 
+This is particularly helpful when you need to continue using the result value in your program.
+
+#Defining function
+def bmi(weight, height):
+  index = weight / (height * height)
+  return index  #sends the return value back
+
+#Calling function and using return value
+patient_5 = bmi(61, 1.83) #stores return value
+print("underweight:", patient_5 < 18.5)
+
+#Another call
+patient_7 = bmi(75, 1.74)
+print("underweight:", patient_7 < 18.5)
+
+The return statement terminates the function's execution and provides the specified value as the result of the function call.
+
+In Python, once a return statement is encountered, the function exits, and the subsequent code is not executed. 
+
+If you use a return statement, it must be at the end of the function.
