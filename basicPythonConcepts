@@ -912,3 +912,59 @@ items = ["book", "pen", "pencil"]
 items.pop(1) #Removes "pen" from the list
 print(items)
 print(items[1])
+
+CUSTOM FUNCTIONS / def
+
+Built-in functions can save you a lot of work, but you’ll also need to create your own custom functions to solve specific tasks.
+
+A function is a reusable block of code.
+
+To use your own functions, you need to DEFINE them first.  
+
+Once a function has been defined, you can CALL it as many times as you need.
+
+The greet() function below contains code to display a nice message when called
+
+#function definition
+def greet():
+  print("Hello from a function")
+  print("Have a great day")
+#function call
+greet()
+
+Use def followed by a name to define a new function
+
+The BODY of a function contains the reusable code that is executed when the function is called. 
+The code for the body of a function must be indented.
+
+When a function is defined, you need to make sure parentheses () are added after the name. 
+A colon : must be added at the end of the definition line.
+
+You can define functions that take any number of arguments (including zero).  
+Arguments are put inside the parentheses () following the function name.
+
+A function might require arguments to complete its tasks. 
+Arguments are put inside the parentheses () following the function name.
+
+#function definition
+def personal_greet(name): 
+  print("Hello", name)
+  print("Have a great day")
+
+#function calls
+personal_greet("Sarah") 
+personal_greet("Henry")
+personal_greet(input())
+
+#Define the function
+def double(number):
+    print(number*2)
+
+#Call the function
+double(6) #Displays 12
+
+Functions must be defined before they can be called. 
+
+def bmi(weight, height):
+    index = weight / (height * height)
+    print(index)
