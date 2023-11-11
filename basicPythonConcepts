@@ -753,6 +753,42 @@ Multiple arguments in a function are separated with a comma.
 print() and range() are examples of built-in functions. 
 Python has many built-in functions which you can re-use in your code by calling them.
 
+Built-in functions like print() and range() are blocks of code created by others to do specific things. 
+This simplifies the code a lot, as you don’t need to rewrite the code each time. All you need to do is to call them!
+
+Functions can take operations as arguments. 
+
+As an example, the print() function can accept math, logical and comparison operations.
+
+print(55 * 3) #math
+print(5 > 7) #comparison
+print(True and False) #logical
+print("motor" + "bike") #concatenation
+
+Different functions accept different types of arguments. For example, the range() function accepts only integers.
+
+You can use values stored in variables as arguments.
+
+balance = 304
+print("Money in account:", balance)
+
+A function can be an argument for another function.
+
+print(type("word"))
+print(range(3))
+
+int(), str(), and float() instructions are functions used for data conversion.
+
+Your code will result in errors if you pass the incorrect data type as an argument. 
+Some functions require specific data types as arguments.
+
+For example, the int() function won't be able to convert non-numeric characters (e.g. a–z) into numbers and it'll result in an error.
 
 
 
+CONCATENATION vs DISPLAYING SEVERAL ARGUMENTS
+
+element = "air"
+vehicle = "plane"
+print(element + vehicle) #Displays airplane
+print(element, vehicle) #Displays air plane
