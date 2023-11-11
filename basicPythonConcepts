@@ -792,3 +792,70 @@ element = "air"
 vehicle = "plane"
 print(element + vehicle) #Displays airplane
 print(element, vehicle) #Displays air plane
+
+STRING FUNCTIONS
+
+Correctly handling text data is a key skill all coders need to master. 
+String functions will enhance your productivity when working with text.
+
+STRING FUNCTIONS / UPPER (),  LOWER ()
+
+The functions upper() and lower() allow you to quickly change the case of a string to all in uppercase or lowercase, respectively.
+
+print('SmArTpHoNe'.lower()) #Displays smartphone
+print('SmArTpHoNe'.upper()) #Displays SMARTPHONE
+
+brand = ikea
+print(brand.upper()) #Displays IKEA
+
+upper() and lower() functions can only be used on strings. 
+
+Functions that only work on certain objects (strings, lists, etc.) are called using dot . notation.
+
+STRING FUNCTIONS / CAPITALIZE()
+
+The capitalize() function will save you time when you need to convert the first character of a string to uppercase, 
+while making the remaining characters lowercase.
+
+print("happy birthday".capitalize()) #Displays Happy birthday
+
+name = JAMES
+print(name.capitalize()) #Displays James
+
+Strings are immutable and functions won't change them. You'll need to store the modified string in a variable to keep it.
+
+item = "smartwatch"
+item2 = item.upper()
+
+#Error because strings are immutable
+item = upper(item)
+print(item)
+
+STRING FUNCTIONS / FIND()
+
+The find() function checks if a character (or a pattern of characters) is present in a string. 
+The function returns the index (position) of the given value. 
+If the given value is present multiple times, the function will return the first occurrence (the lowest index).
+
+print("Bee".find("e")) #Displays 1 because that's the index of the first e letter
+
+The find() function applies to a string so you call it using dot notation.
+
+find() will return an error if you don't include an argument between the parentheses. 
+With nothing to look for in the string, the function can't do its job.
+This won't happen with upper(), lower() and capitalize(). They don't need any more information to complete their task.
+
+'roBot'.find() # error
+'roBot'.upper() # no error
+
+find() will return -1 if the value can't be found in the string.
+
+print("robot".find("A")) #Displays -1 because there are no As in the string "robot"
+
+The argument inside find() is case-sensitive.
+
+print('roBot'.find("b")) #Displays -1 because there's no lowercase b in "roBot"
+print('roBot'.find("B")) #Displays 2 because that's the index of the uppercase B in "roBot"
+print('roBot'.lower().find("b")) #Displays 2 because lower() put everything in lowercase
+print('roBot'.find("B" or "b")) #Displays 2 because you can use the "or" logical operation inside a find()
+
