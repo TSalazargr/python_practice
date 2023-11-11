@@ -1,0 +1,15 @@
+#Create function that calculates bmi given a height and weight and prints the result
+def calculate_bmi(height, weight):
+    bmi = (weight / (height ** 2))
+    if bmi <= 18.5:
+        print("Your bmi is", bmi, ". You're underweight")
+    elif bmi > 18.5 and bmi <= 24.9:
+        print("Your bmi is", bmi, ". Your weight is normal")
+    else:
+        print("Your bmi is", bmi, ". You're overweight.")
+
+#Define height and weight
+height = float(input("What's your height in meters? "))
+weight = float(input("What's your weight in kg? "))
+
+calculate_bmi(height, weight)
