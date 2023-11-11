@@ -859,3 +859,56 @@ print('roBot'.find("B")) #Displays 2 because that's the index of the uppercase B
 print('roBot'.lower().find("b")) #Displays 2 because lower() put everything in lowercase
 print('roBot'.find("B" or "b")) #Displays 2 because you can use the "or" logical operation inside a find()
 
+LIST FUNCTIONS
+
+In this lesson you'll learn to use built-in list functions.
+
+LIST FUNCTIONS / LEN()
+
+len() is one of the most useful built-in functions.
+
+len() stands for length and, when used on lists, it returns the number of items in the list.
+
+movies = ["Avatar", "Titanic", "Avengers"]
+print(len(movies)) #Display 3
+
+The len() function is not only for lists. It accepts as an argument any sequence, including strings.
+
+movie = "Avatar"
+print(len(movie)) #Display 6
+
+len() is a very useful function that accepts a wide range of arguments. 
+It’s not specific to a any particular data type or object, so you don’t use dot notation to call it.
+
+LIST FUNCTIONS / APPEND()
+
+The append() function adds a new item to the end of a list. 
+append() is called using dot notation because it’s specific to lists.
+
+songs = ["Yesterday", "Hello", "Believer"]
+songs.append("Imagine")
+print(songs) #Display ['Yesterday', 'Hello', 'Believer', 'Imagine']
+
+The append() function is for lists. If you try to use append() on a string you’ll get an error. 
+This happens because strings are immutable.
+
+LIST FUNCTIONS / INSERT()
+
+The insert() function allows you to add an element to a list, at a specific position.
+
+items = ["book", "pen", "pencil"]
+items.insert(2,"marker")
+print(items) #Display ['book', 'pen', 'marker', 'pencil']
+print(items[2]) #Display marker
+
+insert() takes 2 arguments. The first is the index (where to insert) and the second is the item (what to insert).
+
+LIST FUNCTIONS / POP()
+
+The pop() function removes an element from a list.
+That position indicated by the index is the only argument that the pop() function accepts.
+
+items = ["book", "pen", "pencil"]
+items.pop(1) #Removes "pen" from the list
+print(items)
+print(items[1])
