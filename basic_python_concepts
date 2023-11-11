@@ -984,7 +984,11 @@ Local variables are not accessible outside the function.
 
 RESULT
 
-A return statement in a function is used to specify the value that the function should produce when it is called.
+A function can declare different variables, do different operations, and in general, do a lot of stuff.
+
+You have to decide which of those things will be the value that the function will return.
+
+A RETURN STATEMENT in a function is used to specify the value that the function should produce when it is called.
 
 The return statement does not set the value of the function itself; rather, it determines the output of the function. 
 
