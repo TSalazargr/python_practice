@@ -965,42 +965,65 @@ double(6) #Displays 12
 
 Functions must be defined before they can be called. 
 
-def bmi(weight, height):
-    index = weight / (height * height)
-    print(index)
+weight = 73
+height = 1.5
+
+#Defines function
+def bmi_calculator(weight, height):
+    bmi = weight / height **2
+    print(bmi)
+
+#Calls function
+bmi_calculator(weight, height)
 
 When calling a function, you need to use the same number of arguments that have been defined, in the same order.
 
-The result of a function can be sent back with the return statement. 
-This is particularly helpful when you need to continue using the result value in your program.
+When you have a variable inside a function, it's a LOCAL VARIABLE.
 
-#Defining function
+Local variables are not accessible outside the function.
+
+RESULT
+
+A return statement in a function is used to specify the value that the function should produce when it is called.
+
+The return statement does not set the value of the function itself; rather, it determines the output of the function. 
+
+Once a return statement is encountered, the function exits, and the specified value is returned to the caller. 
+
+This returned value can be directly used, assigned to a variable, or involved in further operations in the calling code.
+
+This code will print 32.444:
+
+weight = 73
+height = 1.5
+
 def bmi_calculator(weight, height):
-  bmi = weight / (height * height)
-  return bmi  #sends the return value back
+    bmi = weight / height ** 2
+    return bmi
+    
+print(bmi_calculator(weight, height))
 
-# Call the function and store the result in the 'bmi' variable
-bmi = bmi_calculator(73, 1.5)
+This code will print None:
 
-print(bmi)
+weight = 73
+height = 1.5
 
-The return statement terminates the function's execution and allows you to use a variable outside the function, 
-but you still have to define the variable outside the function.
-
-In Python, once a return statement is encountered, the function exits, and the subsequent code is not executed. 
-
-If you use a return statement, it must be at the end of the function.
-
-Without return statement:
-
-#Defining function
 def bmi_calculator(weight, height):
-  bmi = weight / (height * height)
-  return bmi  #sends the return value back
+    bmi = weight / height ** 2
+    
+result_bmi_calculator = bmi_calculator(weight, height)
 
-# Call the function and store the result in the 'bmi' variable
-bmi = bmi_calculator(73, 1.5)
+print(result_bmi_calculator)
 
-print(bmi)
+This is because without the return statement, the function returns no value.
 
-Print will print None because you can't access bmi outside the function.
+Another example: this will print the final grade because there's a return statement.
+
+exam_1 = 6.5
+exam_2 = 9
+
+def calculate_grade(exam_1, exam_2):
+    final_grade = (exam_1 +exam_2)/2
+    return final_grade
+    
+print(calculate_grade(exam_1, exam_2))
