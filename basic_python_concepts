@@ -49,7 +49,7 @@ print("Iron" + "Man")
 #Displays basketball
 a = "basket"
 b = "ball"
-print(a+b)
+print(a + b)
 
 NUMERICAL DATA
 
@@ -65,7 +65,7 @@ The computer reads and executes instructions line by line, from top to bottom.
 The execution of the program will be interrupted at the first error encountered.
 
 
-PRINT
+PRINT()
 
 The print() instruction is the easiest way to send a message to the screen or other display device.
 
@@ -87,6 +87,8 @@ Once a variable has been declared, you can aka CALL it as many times as you want
 
 Spaces are not allowed in variable names in Python. Asterisks (*) aren't either.
 
+A variable name can contain numbers but cannot start with a number.
+
 item = "bike"
 name_of_variable = "value"
 
@@ -94,7 +96,8 @@ A variable name can contain numbers but cannot start with a number.
 
 Variables have a name and a value. They are connected with the equal sign =.
 
-A variable’s name is used to identify where that information is stored. You can access the value that a variable is storing by calling its name.
+A variable’s name is used to identify where that information is stored. 
+You can access the value that a variable is storing by calling its name.
 
 budget = 200
 print(budget)
@@ -141,7 +144,7 @@ name_username = "John Doe"
 
 Snake case is the best practice for naming variables in Python.
 
-INPUT
+INPUT()
 
 An input is any information that goes into a computer.
 
@@ -169,7 +172,7 @@ A message displayed on the screen and the sound from a speaker are examples of o
 
 The print() instruction, which you already know, is the easiest way to get your computer program to generate an output.
 
-TYPE
+TYPE()
 
 Data can come to you in the incorrect format. You can use the type() instruction to check the data type stored in a variable.
 
@@ -182,7 +185,7 @@ print(type(balance)) #outputs <class 'float'>
 
 DATA CONVERSION
 
-INT()
+DATA CONVERSION / INT()
 
 The int() instruction converts any type of value into an integer
 
@@ -196,7 +199,7 @@ height = int(input())
 print(type(height))
 # The line above is an effective way to combine 2 instructions into one
 
-FLOAT()
+DATA CONVERSION / FLOAT()
 
 There are situations when you need values to be treated as floats.
 
@@ -206,7 +209,7 @@ a = 3
 b = float(a)
 print(b) #Will display 3.0
 
-STR()
+DATA CONVERSION / STR()
 
 In a similar way, you can ensure that values are converted into strings with the str() instruction.
 
@@ -733,7 +736,7 @@ print(), input(), range(), and type() are functions.
 
 A function contains the code to perform a task. To use this code, you just need to CALL the function.
 
-Every function has a name. The code within a function is only executed when the function is called.
+Every function has a name. The code within a function is only executed when the function is aka CALLED.
 
 The same function can be called multiple times.
 
