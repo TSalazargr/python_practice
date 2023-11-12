@@ -728,6 +728,8 @@ The same function can be called multiple times.
 Functions require information to be passed in order for the task to be completed. 
 We pass information into functions as ARGUMENTS.
 
+A function argument is a value passed when calling a function.
+
 Arguments go inside parenthesis ().
 
 For instance, when we add "New Message" to the print() function, we PASS THE ARGUMENT.
@@ -1043,3 +1045,4 @@ def shipping_cost(weight):
 
 #function call
 print(shipping_cost(weight), "€")
+
