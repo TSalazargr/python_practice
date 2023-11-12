@@ -1,3 +1,5 @@
+import sys
+
 #Gives user a discount if they're a student or under 18
 
 #Gets price
@@ -9,6 +11,11 @@ age = int(input("What's your age? "))
 #Asks whether they're a student
 student = input("Are you a student? y/n ".lower())
 
+#Checks if value of student is valid
+if student != "y" or "n":
+    print("Error.")
+    exit()
+    
 #Creates boolean variable with student value
 student_boolean = student == "y"
 
