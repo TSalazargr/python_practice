@@ -282,6 +282,10 @@ COMPARISON OPERATIONS / BOOLEAN DATA TYPES
 
 A comparison operation always results in either one of these two outcomes: True or False
 
+The result of a comparison is always a boolean.
+
+print(type(5 < 9)) #Displays <class 'bool'>
+
 #Compares 5 and 9 and returns true because 5 is smaller than 9
 print(5 < 9)
 
