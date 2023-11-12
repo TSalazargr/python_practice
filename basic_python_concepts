@@ -362,11 +362,10 @@ Iteration makes your programs simpler, faster and reduces errors.
 
 The for loop begins with the keyword "for".
 
-ITERATION / RANGE()
-
-"range()" generates a sequence of numbers, starting from 0. range() generates a series of integer numbers. 
-
 The initial loop statement must be followed by a colon : symbol. This signals the start of the iteration block.
+
+for i in range(3):
+  print("Hello")
 
 You need an internal variable for the loop, which can be "i", "potato", or anything else.
 
@@ -389,27 +388,42 @@ for i in range(3):
 
 The code that gets repeated in the for loop must be indented. Indentation is the spaces at the beginning of lines.
 
-Python doesn't mind whether you use 2 spaces or 4 spaces (or any other number of spaces) or tabs as long as you use the same indentation with every loop.
+Python doesn't mind whether you use 2 spaces or 4 spaces (or any other number of spaces) or tabs as long as 
+you use the same indentation with every loop.
+
+ITERATION / RANGE()
+
+"range()" generates a sequence of x numbers, starting from 0. 
+
+range() generates a series of integer numbers. 
 
 ITERATION / WHILE
 
-While loops are powerful because they can be used even when you don’t know how many iterations will be needed.
+WHILE loops are powerful because they can be used even when you don’t know how many iterations will be needed.
 
-While loops repeat code whilst a condition holds true. 
+'While loops' repeat code whilst a condition holds true. 
 
 The while keyword is followed by the condition under which the code is repeated
 
-As with for loops, the initial while loop statement must be followed by a colon : symbol
+As with 'for loops', the initial 'while loop' statement must be followed by a colon : symbol
+
+password = "SecretWord"
+guess = input()
+while guess != password:  
+  guess = input() 
+print("Access Granted")
+
+ITERATION / WHILE / COUNTERS
+
+Loops usually include counters. A counter is a variable that keeps track of the number of iterations. 
 
 while seats > 0:
   print("Sell ticket")
   seats = seats - 1
 
-Loops usually include counters. A counter is a variable that keeps track of the number of iterations. 
-
 In the example above, the counter is the variable "seats".
 
-Counter variables are updated inside the loop, so they change with every iteration. 
+'Counter' variables are updated inside the loop, so they change with every iteration. 
 An initial value is set outside the loop, as the starting point.
 
 With while loops you can run into what is known as an infinite loop. 
@@ -420,10 +434,13 @@ while seats > 0:
   print("Sell ticket")
   #seats = seats - 1
 
-#Create a timer program that will take 
-#the number of seconds as input, and countdown to 0.
+Exercise:
+
+#Create a timer program that will take the number of seconds as input, and countdown to 0.
+
 # take the number as input
 number = int(input())
+
 #use a while loop for the countdown
 while number >= 0 :
     print(number)
@@ -464,11 +481,11 @@ Selection is like a fork in the road. It allows your programs to decide which pa
 
 Conditional statements, or if-else statements, allow programs to perform different actions based on the conditions.
 
-The if conditional statements starts with the keyword if followed by the condition and a colon : symbol
+The if conditional statements starts with the keyword 'if' followed by the condition and a colon : symbol
 
-The else conditional statement starts with the keyword else followed by a colon : symbol
+The else conditional statement starts with the keyword 'else' followed by a colon : symbol
 
-The code  indented below the else line is executed when the condition is not met
+The code indented below the else line is executed when the condition is met.
 
 #Give discount if they're 18 or over
 #sets the value of age
