@@ -1,4 +1,14 @@
-The code in computer programs is made of statements. Statements are the instructions for the computer to follow. Real programs can contain thousands of statements.
+The code in computer programs is made of aka STATEMENTS. 
+Statements are the instructions for the computer to follow. 
+Real programs can contain thousands of statements.
+
+DECLARING VARIABLES
+
+Variables have a name and a value.
+To aka DECLARE a variable be use an equal sign.
+
+movie_name = "The Rocky Horror Picture Show"
+movie_year = 1975
 
 DATA TYPES
 
@@ -31,7 +41,7 @@ When you use the + addition operator with string values the two strings are join
 
 This is known as concatenation.
 
-You can't concatenate a string with a integer or float.
+You can't concatenate a string with an integer or float.
 
 #Displays IronMan
 print("Iron" + "Man")
@@ -73,6 +83,8 @@ The line of code below tells the computer to store information in a variable cal
 
 This is called "declaring a variable".
 
+Once a variable has been declared, you can aka CALL it as many times as you want.
+
 Spaces are not allowed in variable names in Python. Asterisks (*) aren't either.
 
 item = "bike"
@@ -95,7 +107,7 @@ amount = 3
 total = price * amount
 
 You can update the value stored in a variable. The variable will forget the previously stored value.
-Updating the value of a variable is called reassigning a variable.
+Updating the value of a variable is called REASSIGING A VARIABLE (aka).
 
 price = 99
 price = 100
