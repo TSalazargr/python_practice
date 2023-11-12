@@ -1115,7 +1115,3 @@ def call_phone(phone = 555):
 call_phone()
 call_phone(1234)
 
-
-
- 
-
