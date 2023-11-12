@@ -223,6 +223,15 @@ name = "Tom"
 age = 33
 print(name + str(age))
 
+DATA CONVERSION / BOOL()
+
+The function 'bool()' will turn a string into a "True" value unless it's empty.
+
+To get around that, you can do the following:
+
+student = input("Are you a student? y/n")
+student_boolean = student == "y"
+
 EXPLICIT AND IMPLICIT CONVERSION
 
 The int(), str() and float() instructions are examples of explicit conversion, which means they are performed by an instruction given by a programmer (like you).
