@@ -13,15 +13,17 @@ def calculate_bmi(height, weight):
         print("Your bmi is", bmi, ". You're overweight.")
     return bmi #sends the return value back
 
-#Define height and weight
+#Define height
 height = float(input("What's your height in meters? "))
 if height <= 0:
     print("Height must be a value higher than 0.")
     exit()
+
+#Define weight
 weight = float(input("What's your weight in kg? "))
 if weight <= 0:
     print("Weight must be a value higher than 0.")
     exit()
 
-#Display bmi value
+#Call calculate_bmi function and display bmi value
 print(calculate_bmi(height, weight))
