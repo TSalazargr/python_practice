@@ -7,13 +7,13 @@ price = int(input("What's the price of the item? "))
 age = int(input("What's your age? "))
   
 #Asks whether they're a student
-student = input("Are you a student? True/False ".capitalize())
+student = input("Are you a student? y/n ".lower())
 
-#Turns student variable into a boolean
-student = bool(student)
+#Creates boolean variable with student value
+student_boolean = student == "y"
 
 #Gives a 20% discount if user is <18 or a student
-if age < 18 or student == True:
+if age < 18 or student_boolean:
   print("20% discount")
   price = str(price * 0.8)
 
