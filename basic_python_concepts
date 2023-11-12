@@ -984,7 +984,7 @@ When you have a variable inside a function, it's a LOCAL VARIABLE.
 
 Local variables are not accessible outside the function.
 
-RESULT
+RETURN
 
 A function can declare different variables, do different operations, and in general, do a lot of stuff.
 
@@ -995,6 +995,9 @@ A RETURN STATEMENT in a function is used to specify the value that the function 
 The return statement does not set the value of the function itself; rather, it determines the output of the function. 
 
 Once a return statement is encountered, the function exits, and the specified value is returned to the caller. 
+
+The execution of the code inside a function ends when a value is returned. 
+Any additional lines of code after the return line will be ignored.
 
 This returned value can be directly used, assigned to a variable, or involved in further operations in the calling code.
 
@@ -1045,4 +1048,74 @@ def shipping_cost(weight):
 
 #function call
 print(shipping_cost(weight), "€")
+
+RETURNING MULTIPLE VALUES
+
+A function can return multiple values.
+
+Multiple return values need to be separated by commas.
+
+When a function returns multiple values, they can be stored in multiple variables (on 1 line).
+
+To create multiple variables in 1 statement, separate them with commas.
+
+height, weight = 150, 72.9
+
+Example:
+
+The function rect() helps a real estate agency calculate the area and perimeter of a rectangular parcel of land. 
+It takes the two dimensions of the parcel as arguments
+
+def rect(length, width):
+  area = length * width
+  perimeter = 2 * length + 2 * width
+  return area, perimeter #2 values
+
+#x is the first variable so it will be the first value returned (area)
+#y is the second variable so it will be the second value returned (perimeter)
+x, y = rect(50, 100) #2 variables
+#prints are and perimeter
+print(x, y)
+
+--
+
+Pay attention to data types when creating a function.
+
+The same function can handle more than one type of data.
+
+#Returns whether buying a parcel of land is profitable as a boolean
+def profitable(d1, d2):
+  area = d1 * d2
+  invest = area > 700
+  return invest
+
+buy = profitable(90, 120)
+print(buy)
+
+FUNCTION ARGUMENTS / DEFAULT VALUES
+
+Python allows function arguments to have default values. 
+If the function is called without the argument, the argument gets its default value.
+
+Add the default value with the equal = sign to make the argument optional.
+
+The default value is used only if no other value has been passed as an argument when the function is called.
+
+def greet(name="Guest"):
+  print("Welcome", name)
+
+greet() # Welcome Guest
+greet("John") # Welcome John
+
+-
+
+def call_phone(phone = 555):
+  print("Call", phone)
+
+call_phone()
+call_phone(1234)
+
+
+
+ 
 
