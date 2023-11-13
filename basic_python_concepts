@@ -756,20 +756,33 @@ fruit = "orange"
 print(fruit[0:2]) #Displays or
 print(type(fruit[0:2])) #Displays <class 'str'>
 
+--
+
 When slicing, you can omit the starting index. This means that you'll be slicing from the very first element.
 
 cart = ['lamp', 'candles', 'chair', 'carpet']
 print(cart[:3])
+
+This also works with strings:
+
+vehicle = "motorbike"
+print(vehicle[:5]) #Displays motor
+
+--
 
 When slicing, you can omit the stopping index. This means that you'll be slicing until the very last element.
 
 cart = ['lamp', 'candles', 'chair', 'carpet']
 print(cart[1:])
 
+This also works with strings.
+
+--
+
 You can also omit all indexes to just take the whole list/string.
 
 vehicle = 'motorbike'
-print(vehicle[:])
+print(vehicle[:]) #Display motorbike
 
 NEGATIVE INDEXING
 
