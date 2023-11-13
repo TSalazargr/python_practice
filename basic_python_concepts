@@ -1013,6 +1013,18 @@ print('roBot'.find("B")) #Displays 2 because that's the index of the uppercase B
 print('roBot'.lower().find("b")) #Displays 2 because lower() put everything in lowercase
 print('roBot'.find("B" or "b")) #Displays 2 because you can use the "or" logical operation inside a find()
 
+STRING FUNCTION / LEN()
+
+len() stands for length and, when used on strings, it aka RETURNS the number of characters in the string.
+
+The len() function accepts as an argument any sequence, including strings. 
+It doesn't accept integers, floats or booleans, however.
+
+movie = "Avatar"
+print(len(movie)) #Display 6
+
+len() can also be used on lists. We'll learn about that later.
+
 LIST FUNCTIONS
 
 In this lesson you'll learn to use built-in list functions.
@@ -1034,6 +1046,8 @@ print(len(movie)) #Display 6
 len() is a very useful function that accepts a wide range of arguments. 
 It’s not specific to a any particular data type or object, so you don’t use dot notation to call it.
 
+It cannot be used with integers, floats or booleans, however.
+
 LIST FUNCTIONS / APPEND()
 
 The append() function adds a new item to the end of a list. 
@@ -1051,7 +1065,7 @@ LIST FUNCTIONS / INSERT()
 The insert() function allows you to add an element to a list, at a specific position.
 
 items = ["book", "pen", "pencil"]
-items.insert(2,"marker")
+items.insert(2, "marker")
 print(items) #Display ['book', 'pen', 'marker', 'pencil']
 print(items[2]) #Display marker
 
@@ -1060,7 +1074,7 @@ insert() takes 2 arguments. The first is the index (where to insert) and the sec
 LIST FUNCTIONS / POP()
 
 The pop() function removes an element from a list.
-That position indicated by the index is the only argument that the pop() function accepts.
+The position indicated by the index is the only argument that the pop() function accepts.
 
 items = ["book", "pen", "pencil"]
 items.pop(1) #Removes "pen" from the list
