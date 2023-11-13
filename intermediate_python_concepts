@@ -1,0 +1,40 @@
+DICTIONARIES
+
+Python provides a number of built-in collection types, to store multiple values.
+
+Lists are one of these collection types, and they allow you to store indexed values.
+
+Dictionaries are another collection type and allow you to map arbitrary keys to values.
+Dictionaries can be indexed in the same way as lists, using square brackets containing aka KEYS and their VALUES.
+
+Each element in a dictionary is represented by a key:value pair.
+
+Examples:
+
+ages = {
+   "Dave": 24,
+   "Mary": 42,
+   "John": 58
+}
+
+print(ages["Dave"]) #Displays 24
+print(ages["Mary"]) #Displays 42
+
+--
+cars = {
+  "BMV" : "Blue", 
+  "Volvo" : "Red" 
+  }
+
+  --
+
+Only immutable objects can be used as keys to dictionaries. Immutable objects are those that can't be changed.
+So far, the only mutable objects you've come across are lists and dictionaries.
+
+Therefore lists and dictionaries can't be used as keys.
+
+bad_dict = { [1, 2, 3]: "one two three" } #Error
+
+Strings, booleans, integers and floats can be used as keys.
+
+--
