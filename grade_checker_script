@@ -1,0 +1,14 @@
+#Script to check a student's grades
+#Dictionary with every student's grades
+grades = {
+    "James" : 8,
+    "Mark" : 4,
+    "Emily" : 7,
+    "Sarah" : 9,
+}
+
+#Gets the name of the student
+name = str(input("What's your name? "))
+
+#Prints student's grade or "Student not found" if name is not in dictionary
+print(grades.get(name, "Student not found"))
