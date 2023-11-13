@@ -1260,7 +1260,12 @@ print(x, y)
 
 --
 
+It's up to you as a coder to define what operations happen inside your function. 
+This then controls which data types can be handled and returned.
+
 Pay attention to data types when creating a function.
+
+--
 
 The same function can handle more than one type of data.
 
