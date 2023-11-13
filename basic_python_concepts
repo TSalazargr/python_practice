@@ -732,7 +732,7 @@ breakfasts[item] = "Pancakes"
 #display the updated list
 print(breakfasts)
 
-SLICING
+LISTS / SLICING
 
 In this lesson you’ll learn to extract, modify and replace a specific range of elements from sequences with a new technique: slicing.
 
@@ -799,7 +799,17 @@ You can also omit all indexes to just take the whole list/string.
 vehicle = 'motorbike'
 print(vehicle[:]) #Display motorbike
 
-NEGATIVE INDEXING
+--
+
+You can also use slicing to change a list.
+
+letters = ["A", "B", "C", "D"]
+letters[-2:] = ["E", "F"]
+print(letters) #Displays ["A", "B", "E", "F"]
+
+This doesn't work with strings because they're immutable.
+
+LISTS / NEGATIVE INDEXING
 
 Python supports "indexing from the end", called negative indexing. This means the last value of a sequence has an index of -1.
 
@@ -826,15 +836,16 @@ c[:2] = ['E', 'F']
 #Display ['E', 'F', 'C', 'D']
 print(c)
 
---
+LIST / IN vs NOT IN
 
-You can also use slicing to change a list.
+To determine whether a value is in a list, you can use in and not in.
 
-letters = ["A", "B", "C", "D"]
-letters[-2:] = ["E", "F"]
-print(letters) #Displays ["A", "B", "E", "F"]
+Example:
 
-This doesn't work with strings because they're immutable.
+nums = [ 1, 2, 3]
+print(1 in nums) #Display True
+print("three" in nums) #Display False
+print(4 not in nums) #Display True
 
 FUNCTIONS
 
@@ -1339,5 +1350,77 @@ Therefore lists and dictionaries can't be used as keys.
 bad_dict = { [1, 2, 3]: "one two three" } #Error
 
 Strings, booleans, integers and floats can be used as keys.
+
+--
+
+DICTIONARIES / FUNCTIONS
+
+DICTIONARIES / FUNCTIONS / IN vs NOT IN
+
+To determine whether a key is in a dictionary, you can use in and not in, just as you can for a list.
+
+Example:
+
+nums = {
+    1: "one",
+    2: "two",
+    3: "three",
+}
+print(1 in nums) #Display True
+print("three" in nums) #Display False
+print(4 not in nums) #Display True
+
+DICTIONARIES / FUNCTIONS / GET
+
+A useful dictionary function is get. It does the same thing as indexing, but if 
+the key is not found in the dictionary it returns another specified value instead.
+
+The syntax of get is: dictionary_name.get(key) and dictionary_name.get(key, "value to otherwise return")
+
+This function only works with dictionaries so it uses dot . notation.
+
+pairs = {
+   1: "apple",
+   "orange": [2, 3, 4], 
+   True: False, 
+   12: "True",
+}
+
+print(pairs.get("orange")) #Displays [2, 3, 4]
+print(pairs.get(12345, "not found")) #Displays "not found"
+
+--
+#Script to check a student's grades
+#Dictionary with every student's grades
+grades = {
+    "James" : 8,
+    "Mark" : 4,
+    "Emily" : 7,
+    "Sarah" : 9,
+}
+
+#Gets the name of the student
+name = str(input("What's your name? "))
+
+#Prints student's grade or "Student not found" if name is not in dictionary
+print(grades.get(name, "Student not found"))
+
+--
+
+fib = {1: 1, 2: 1, 3: 2, 4: 3}
+print(fib.get(4, 0) + fib.get(7, 5)) #Displays 8 because the valor of 4 is 3 and there's no 7 key so you add 5
+
+--
+
+car = {
+    'brand':'BMW',
+    'year': 2018,
+    'color': 'red',
+    'mileage': 15000
+}
+
+question = input("What information would you like to recover?")
+
+print(car.get(question, "Not found"))
 
 --
