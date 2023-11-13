@@ -594,22 +594,42 @@ bands = [
  "Fall Out Boy",
  "My Chemical Romance"
 ]
+
 #Refers to "Panic at the Disco"
 bands[0]
 #Displays "Fall Out Boy"
-print(bands[1]
+print(bands[1])
 #Declares variable "emo_king" with value "My Chemical Romance"
 emo_king = bands[2]
+
+--
+
+Printing items in a list using indexing:
 
 last_calls = ["Mom", "Dave", "Lawyer"]
 print(last_calls[0])
 print(last_calls[1])
 
+--
+
+Concatinating with lists:
+
 #Display sunrise
 words = ["rise", "sun", "glasses"]
 print(words[1] + words[0])
 
+--
+
+Declaring a variable where the value is an item from a list:
+
+animals = ["Dog", "Cat", "Bird"]
+my_pet = animals[0] 
+
+--
+
 Lists are mutable. This means you can change their values even after they've been created.
+
+This will replace the value of an item, rather than add an item to the list.
 
 bands = [
  "Panic at the Disco",
@@ -618,6 +638,8 @@ bands = [
 ]
 #Change index 1 value from "Fall Out Boy" to "Green Day"
 bands[1] = "Green Day"
+
+-
 
 #installed games
 games = [
