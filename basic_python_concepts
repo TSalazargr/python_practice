@@ -946,12 +946,14 @@ The functions upper() and lower() allow you to quickly change the case of a stri
 print('SmArTpHoNe'.lower()) #Displays smartphone
 print('SmArTpHoNe'.upper()) #Displays SMARTPHONE
 
-brand = ikea
+brand = "ikea"
 print(brand.upper()) #Displays IKEA
 
 upper() and lower() functions can only be used on strings. 
 
 Functions that only work on certain objects (strings, lists, etc.) are called using dot . notation.
+
+Strings are immutable and functions won't change them. You'll need to store the modified string in a variable to keep it.
 
 STRING FUNCTIONS / CAPITALIZE()
 
@@ -960,38 +962,49 @@ while making the remaining characters lowercase.
 
 print("happy birthday".capitalize()) #Displays Happy birthday
 
-name = JAMES
+name = "JAMES"
 print(name.capitalize()) #Displays James
 
+--
+
 Strings are immutable and functions won't change them. You'll need to store the modified string in a variable to keep it.
+
 
 item = "smartwatch"
 item2 = item.upper()
 
-#Error because strings are immutable
-item = upper(item)
-print(item)
+You can get around that declaring the variable again.
+
+name = "james"
+name = name.capitalize()
+
 
 STRING FUNCTIONS / FIND()
 
 The find() function checks if a character (or a pattern of characters) is present in a string. 
 The function returns the index (position) of the given value. 
+
 If the given value is present multiple times, the function will return the first occurrence (the lowest index).
 
 print("Bee".find("e")) #Displays 1 because that's the index of the first e letter
 
-The find() function applies to a string so you call it using dot notation.
+The find() function can only be used with strings so you call it using dot notation.
 
 find() will return an error if you don't include an argument between the parentheses. 
 With nothing to look for in the string, the function can't do its job.
+
 This won't happen with upper(), lower() and capitalize(). They don't need any more information to complete their task.
 
 'roBot'.find() # error
 'roBot'.upper() # no error
 
+--
+
 find() will return -1 if the value can't be found in the string.
 
 print("robot".find("A")) #Displays -1 because there are no As in the string "robot"
+
+--
 
 The argument inside find() is case-sensitive.
 
