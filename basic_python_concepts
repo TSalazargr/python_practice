@@ -797,18 +797,29 @@ print(animals[-2]) # Second last element
 print(animals[-3:]) # Last 3 elements
 print(animals[-3:-1]) 
 
-In indexing from the end, you start with the smallest number.
+In indexing from the end, you start with the smallest number (Remember they're negative numbers!!! -3 < -2)
 
 You can combine positive with negative indexing when slicing.
 
 c = ['A', 'B', 'C', 'D']
-#Displays ['B', 'C']
-print(c[1:-1])
+print(c[1:-1]) #Displays ['B', 'C']
+
+--
 
 c = ['A', 'B', 'C', 'D']
 c[:2] = ['E', 'F']
 #Display ['E', 'F', 'C', 'D']
 print(c)
+
+--
+
+You can also use slicing to change a list.
+
+letters = ["A", "B", "C", "D"]
+letters[-2:] = ["E", "F"]
+print(letters) #Displays ["A", "B", "E", "F"]
+
+This doesn't work with strings because they're immutable.
 
 FUNCTIONS
 
