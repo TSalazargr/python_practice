@@ -4,15 +4,23 @@ import sys
 
 #Gets price
 price = int(input("What's the price of the item? "))
+#Checks if value of price is valid
+if price <= 0:
+    print("Error.")
+    exit()
 
 #Gets age
 age = int(input("What's your age? "))
+#Checks if value of age is valid
+if age <= 0:
+    print("Error.")
+    exit()
   
 #Asks whether they're a student
 student = input("Are you a student? y/n ".lower())
 
 #Checks if value of student is valid
-if student != "y" or "n":
+if student != "y" and student != "n":
     print("Error.")
     exit()
     
@@ -20,9 +28,12 @@ if student != "y" or "n":
 student_boolean = student == "y"
 
 #Gives a 20% discount if user is <18 or a student
-if age < 18 or student_boolean:
-  print("20% discount")
-  price = str(price * 0.8)
+def final_price(age, student_boolean):
+  new_price = price
+  if age < 18 or student_boolean:
+    print("20% discount")
+    new_price = str(price * 0.8)
+  return new_price
 
 #Displays final price
-print("The price is ", price , "€")
+print("The price is ", final_price(age, student_boolean) , "€")
