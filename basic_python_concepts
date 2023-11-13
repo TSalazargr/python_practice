@@ -1083,13 +1083,14 @@ print(items[1])
 
 CUSTOM FUNCTIONS / def
 
-Built-in functions can save you a lot of work, but you’ll also need to create your own custom functions to solve specific tasks.
+Built-in functions can save you a lot of work, but you’ll also need to create your 
+own aka CUSTOM FUNCTIONS to solve specific tasks.
 
 A function is a reusable block of code.
 
-To use your own functions, you need to DEFINE them first.  
+To use your own functions, you need to aka DEFINE them first.  
 
-Once a function has been defined, you can CALL it as many times as you need.
+Once a function has been defined, you can aka CALL it as many times as you need.
 
 The greet() function below contains code to display a nice message when called
 
@@ -1101,17 +1102,18 @@ def greet():
 greet()
 
 Use def followed by a name to define a new function
+When a function is defined, you need to make sure parentheses () are added after the name. 
+A colon : must be added at the end of the definition line.
+
+---
 
 The BODY of a function contains the reusable code that is executed when the function is called. 
 The code for the body of a function must be indented.
 
-When a function is defined, you need to make sure parentheses () are added after the name. 
-A colon : must be added at the end of the definition line.
-
-You can define functions that take any number of arguments (including zero).  
-Arguments are put inside the parentheses () following the function name.
+---
 
 A function might require arguments to complete its tasks. 
+You can define functions that take any number of arguments (including zero).  
 Arguments are put inside the parentheses () following the function name.
 
 #function definition
@@ -1124,6 +1126,8 @@ personal_greet("Sarah")
 personal_greet("Henry")
 personal_greet(input())
 
+--
+
 #Define the function
 def double(number):
     print(number*2)
@@ -1131,7 +1135,13 @@ def double(number):
 #Call the function
 double(6) #Displays 12
 
+--
+
 Functions must be defined before they can be called. 
+
+---
+
+Exercise:
 
 weight = 73
 height = 1.5
@@ -1144,11 +1154,16 @@ def bmi_calculator(weight, height):
 #Calls function
 bmi_calculator(weight, height)
 
+--
+
 When calling a function, you need to use the same number of arguments that have been defined, in the same order.
 
-When you have a variable inside a function, it's a LOCAL VARIABLE.
+--
 
-Local variables are not accessible outside the function.
+When you have a variable inside a function, it's a aka LOCAL VARIABLE.
+
+Local variables are not accessible outside the function unless you use RETURN to turn them 
+into the value that the function returns.
 
 RETURN
 
@@ -1156,7 +1171,7 @@ A function can declare different variables, do different operations, and in gene
 
 You have to decide which of those things will be the value that the function will return.
 
-A RETURN STATEMENT in a function is used to specify the value that the function should produce when it is called.
+A aka RETURN STATEMENT in a function is used to specify the value that the function should produce when it is called.
 
 The return statement does not set the value of the function itself; rather, it determines the output of the function. 
 
