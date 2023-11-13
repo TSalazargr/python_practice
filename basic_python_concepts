@@ -75,6 +75,17 @@ Numbers don't require quotation marks.
 
 print(42)
 
+The print() function accepts arguments of any data type.
+
+Arguments must be sepparated by commas.
+
+print("James", 36, 3.8, True) #Displays James 36 3.8 True
+
+print() can also be used with lists.
+
+shopping_list = ["Milk", "Tea", "Onions"]
+print(shopping_list) #Display ['Milk', 'Tea', 'Onions']
+
 VARIABLE
 
 Computer programs use variables to store important information, like items in a shopping cart, prices and discounts.
@@ -403,6 +414,8 @@ you use the same indentation with every loop.
 ITERATION / RANGE()
 
 "range()" generates a sequence of x numbers, starting from 0. 
+
+The range() function accepts only integers.
 
 range() generates a series of integer numbers. 
 
@@ -829,26 +842,26 @@ A function performs a task.
 
 print(), input(), range(), and type() are functions.
 
-A function contains the code to perform a task. To use this code, you just need to CALL the function.
+A function contains the code to perform a task. To use this code, you just need to aka CALL the function.
 
 Every function has a name. The code within a function is only executed when the function is aka CALLED.
 
 The same function can be called multiple times.
 
 Functions require information to be passed in order for the task to be completed. 
-We pass information into functions as ARGUMENTS.
+We pass information into functions as aka ARGUMENTS.
 
 A function argument is a value passed when calling a function.
 
 Arguments go inside parenthesis ().
 
-For instance, when we add "New Message" to the print() function, we PASS THE ARGUMENT.
+For instance, when we add "New Message" to the print() function, we aka PASS THE ARGUMENT "New Message".
 
 print("New Message")
 
-In this example print() is the NAME of the function, and "New Message" the an ARGUMENT.
+In this example print() is the NAME of the function, and "New Message" the ARGUMENT.
 
-Functions need their arguments to work. Missing arguments can result in errors.
+Most functions need their arguments to work. Missing arguments can result in errors.
 
 A function can take multiple arguments.
 
@@ -858,11 +871,15 @@ print("Your seat:", 4)
 
 That example has two arguments.
 
+--
+
 The print function can take arguments from different data types.
+
+--
 
 Multiple arguments in a function are separated with a comma.
 
-print() and range() are examples of built-in functions. 
+print(), type () and range() are examples of aka BUILT-IN FUNCTIONS. 
 Python has many built-in functions which you can re-use in your code by calling them.
 
 Built-in functions like print() and range() are blocks of code created by others to do specific things. 
@@ -872,7 +889,7 @@ Functions can take operations as arguments.
 
 As an example, the print() function can accept math, logical and comparison operations.
 
-print(55 * 3) #math
+print(50 * 3) #Math: Display 150
 print(5 > 7) #comparison
 print(True and False) #logical
 print("motor" + "bike") #concatenation
@@ -899,6 +916,9 @@ For example, the int() function won't be able to convert non-numeric characters 
 
 
 CONCATENATION vs DISPLAYING SEVERAL ARGUMENTS
+
+Concatenation displays arguments one after another without spaces
+Displaying several arguments displays them with spaces
 
 element = "air"
 vehicle = "plane"
