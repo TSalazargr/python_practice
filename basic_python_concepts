@@ -672,6 +672,12 @@ print(games[choice])
 
 --
 
+Lists can be nested inside each other.
+
+Color = [ ["Red", "Blue", "Yellow"], ["Green", "Purple", "Orange"] ]
+
+--
+
 You can create a list with values that have been stored in variables.
 
 name = "Sarah"
@@ -1340,8 +1346,11 @@ cars = {
   "Volvo" : "Red" 
   }
 
-  --
+--
 
+Dictionaries can be nested inside each other.
+
+--
 Only immutable objects can be used as keys to dictionaries. Immutable objects are those that can't be changed.
 So far, the only mutable objects you've come across are lists and dictionaries.
 
@@ -1352,6 +1361,10 @@ bad_dict = { [1, 2, 3]: "one two three" } #Error
 Strings, booleans, integers and floats can be used as keys.
 
 --
+
+Dictionaries can be nested inside each other:
+
+Color = { primary_colors : {"Red", "Blue", "Yellow"}, secondary_colors : {"Green", "Purple", "Orange"} }
 
 DICTIONARIES / FUNCTIONS
 
@@ -1424,3 +1437,50 @@ question = input("What information would you like to recover?")
 print(car.get(question, "Not found"))
 
 --
+
+TUPLES
+
+Tuples are very similar to lists, except that they are immutable (they cannot be changed).
+Also, they are created using parentheses, rather than square brackets.
+
+words = ("spam", "eggs", "sausages")
+
+--
+
+You can access the values in the tuple with their index, just as you did with lists:
+
+print(words[0]) #Display spam
+
+--
+
+Since Tuples are immutable, they can be used as keys in Dictionaries
+
+# Creating a dictionary with a tuple as a key
+my_dict = {('John', 25): 'Engineer', ('Alice', 30): 'Doctor', ('Bob', 28): 'Teacher'}
+
+# Accessing values using tuple keys
+print(my_dict[('John', 25)])  # Output: Engineer
+print(my_dict[('Alice', 30)])  # Output: Doctor
+
+--
+
+Trying to reassign a value in a tuple causes an error because they're immutable.
+
+--
+
+Like lists and dictionaries, tuples can be nested within each other.
+
+nested_tuple = ((1, 2, 3), ('a', 'b', 'c'), ('apple', 'banana', 'cherry'))
+
+--
+
+Tuples can also be created without the parentheses by just separating the values with commas.
+
+my_tuple = "one", "two", "three"
+
+INDEXING WITH NESTED TUPLES
+
+tuple = (1, (1, 2, 3))
+print(tuple[1]) #Displays (1, 2, 3)
+
+
