@@ -1,0 +1,59 @@
+from random import randrange
+
+# Generates a random integer between 0-20
+correct_number = randrange(21) 
+
+# Asks user to guess a number
+def guessing_number():
+  guess = int(input("Guess a number between 0 and 20: "))
+  # Checks whether the number is between 0 and 20
+  if guess < 0 or guess > 20:
+    print("The number must be between 0 and 20.")
+    sys.exit() # Added an exit statement to end the program if the input is out of range
+  return guess
+
+# Initial value for the number of attempts done
+attempt = 0 
+
+#Initial value for whether the user has won or not
+win = False 
+
+#Function to manage the number guessing game
+def number_guesser():
+
+  # Use global to modify the variables from the outer scope
+  global attempt, win  
+
+  # Gives user 5 attempts to guess the number
+  while attempt < 5: 
+
+    # Get the guess from the guessing_number function
+    guess = guessing_number()  
+
+    # Check if the guess is greater than the correct number
+    if guess > correct_number:
+      print("The correct number is smaller.") #Gives hint
+
+    # Check if the guess is smaller than the correct number
+    elif guess < correct_number:
+      print("The correct number is bigger.") #Gives hint
+
+    # Congratulates user for guessing the right number
+    else:
+      print("Congratulations, that's the right number!")
+      win = True
+      break #Ends the loop
+      
+    #Counter
+    attempt = attempt + 1 
+
+    #Checks whether the user has any attempts left
+    if attempt != 5: 
+            print("Try again")
+
+#Call the function to start the game
+number_guesser()
+
+#Check if the user used all attempts and did not win
+if attempt == 5 and not win:
+  print("Game over")
