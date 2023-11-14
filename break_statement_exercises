@@ -64,11 +64,11 @@ Use a loop to allow the user to guess until they correctly identify the random n
 Introduce a limit of 5 attempts. 
 If the user doesn't guess the correct number within the limit, end the loop and display a message indicating the correct answer.
 
+import sys
+
 from random import randrange
 
 correct_number = randrange(21) #Generates a random integer between 0-20
-
-print(correct_number)
 
 def guessing_number():
   guess = int(input("Guess a number between 0 and 20: "))
@@ -77,7 +77,7 @@ def guessing_number():
     exit() # Added an exit statement to end the program if the input is out of range
   return guess
 
-attempts = 1
+attempts = 0
 win = False
 
 def number_guesser():
@@ -85,15 +85,16 @@ def number_guesser():
     while attempts < 5:
         guess = guessing_number()  # Get the guess from the guessing_number function
         if guess > correct_number:
-            print("The correct number is smaller. Try again")
+            print("The correct number is smaller.")
         elif guess < correct_number:
-            print("The correct number is bigger. Try again")
+            print("The correct number is bigger.")
         else:
             print("Congratulations, that's the right number!")
             attempts = 5
             win = True
-            break
+            break #Ends the loop
         attempts = attempts + 1
+        print("Try again")
         
 number_guesser()
   
