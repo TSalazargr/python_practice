@@ -64,8 +64,27 @@ Use a loop to allow the user to guess until they correctly identify the random n
 Introduce a limit of 5 attempts. 
 If the user doesn't guess the correct number within the limit, end the loop and display a message indicating the correct answer.
 
-correct_number = randint() #Generates a random integer
+from random import randrange
 
-guess = int(input("What number do you think it is? "))
+correct_number = randrange(20) #Generates a random integer between 0-20
 
-    
+guess = int(input("Guess a number between 0 and 20: "))
+
+if guess < 0:
+  print("The number must be bigger or equal to zero")
+  exit()
+elif guess > 20:
+  print("The number must be smaller than zero")
+
+attemps = 1
+
+for attempts < 5:
+  if guess > correct_number:
+    print("The correct number is bigger. Try again")
+  elif guess < correct_number:
+    print("The correct number is smaller. Try again")
+  else:
+    print("Congratulations, that's the right number!"
+      break
+  attempts = attempts + 1
+  print("Game over")
