@@ -1392,6 +1392,13 @@ def profitable(d1, d2):
 buy = profitable(90, 120)
 print(buy)
 
+NONLOCAL
+
+The nonlocal keyword is used to work with variables inside nested functions, where the variable should 
+not belong to the inner function. Use the keyword nonlocal to declare that the variable is not local.
+
+
+
 FUNCTION ARGUMENTS / DEFAULT VALUES
 
 Python allows function arguments to have default values. 
