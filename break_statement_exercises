@@ -66,25 +66,36 @@ If the user doesn't guess the correct number within the limit, end the loop and 
 
 from random import randrange
 
-correct_number = randrange(20) #Generates a random integer between 0-20
+correct_number = randrange(21) #Generates a random integer between 0-20
 
-guess = int(input("Guess a number between 0 and 20: "))
+print(correct_number)
 
-if guess < 0:
-  print("The number must be bigger or equal to zero")
-  exit()
-elif guess > 20:
-  print("The number must be smaller than zero")
+def guessing_number():
+  guess = int(input("Guess a number between 0 and 20: "))
+  if guess < 0 or guess > 20:
+    print("The number must be between 0 and 20.")
+    exit() # Added an exit statement to end the program if the input is out of range
+  return guess
 
-attemps = 1
+attempts = 1
+win = False
 
-for attempts < 5:
-  if guess > correct_number:
-    print("The correct number is bigger. Try again")
-  elif guess < correct_number:
-    print("The correct number is smaller. Try again")
-  else:
-    print("Congratulations, that's the right number!"
-      break
-  attempts = attempts + 1
+def number_guesser():
+    global attempts, win  # Use global to modify the variables from the outer scope
+    while attempts < 5:
+        guess = guessing_number()  # Get the guess from the guessing_number function
+        if guess > correct_number:
+            print("The correct number is smaller. Try again")
+        elif guess < correct_number:
+            print("The correct number is bigger. Try again")
+        else:
+            print("Congratulations, that's the right number!")
+            attempts = 5
+            win = True
+            break
+        attempts = attempts + 1
+        
+number_guesser()
+  
+if attempts == 5 and not win:
   print("Game over")
