@@ -635,7 +635,30 @@ print('Out of loop')
 
 ITERATION / PASS
 
+When an external condition is triggered, the aka PASS STATEMENT allows you to handle the condition without the loop 
+being impacted in any way; all of the code will continue to be read unless a break or other statement occurs.
 
+As with the other statements, the pass statement will be within the block of code under the loop statement, 
+typically after a conditional if statement.
+
+number = 0
+
+for number in range(10):
+    if number == 5:
+        pass    # do nothing
+
+    print(number)
+
+print('Out of loop')
+
+--
+
+if condition:
+    pass  # do nothing
+else:
+    # code to execute if the condition is not true
+--
+Pass allows you to have a syntactically correct block with no action and it doesn't affect the flow of the program. 
 
 LISTS
 
