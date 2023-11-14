@@ -499,6 +499,46 @@ while guess != password:
   guess = input() 
 print("Access Granted")
 
+ITERATION / BREAK
+
+In Python, the break statement provides you with the opportunity to exit out of a loop when an external condition is triggered. You’ll put the break statement within the block of code under your loop statement, usually after a conditional if statement.
+
+Examples:
+
+number = 0
+
+for number in range(10):
+    if number == 5:
+        break    # break here, will print numbers 0 to 4
+
+    print(number)
+
+print('Out of loop')
+
+--
+
+contacts = [
+    ('James', 42),
+    ('Amy', 24),
+    ('John', 31),
+    ('Amanda', 63),
+    ('Bob', 18)
+]
+
+name = input()
+
+for x in contacts:
+    if name in x:
+        age = str(x[1])
+        break #Stops the loop once it finds name in x
+    else:
+        age = "no name"
+
+if age != "no name":
+    print(name, "is", age)
+else:
+    print("Not Found")
+
 SELECTION / CONDITIONAL STATEMENTS / IF ELSE ELIF
 
 Selection is like a fork in the road. It allows your programs to decide which path to take. 
