@@ -74,7 +74,7 @@ def guessing_number():
   guess = int(input("Guess a number between 0 and 20: "))
   if guess < 0 or guess > 20:
     print("The number must be between 0 and 20.")
-    exit() # Added an exit statement to end the program if the input is out of range
+    sys.exit() # Added an exit statement to end the program if the input is out of range
   return guess
 
 attempts = 0
