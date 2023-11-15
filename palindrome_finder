@@ -1,0 +1,49 @@
+word = input("Write a word: ")
+
+# Checks if user inputted something
+while word == "":
+    print("The word must contain have at least two characters.")
+    word = input("Write a word: ")
+
+# Checks if there are spaces in the input
+while " " in word:
+    print("The word must contain no spaces.")
+    word = input("Write a word: ")
+
+# Checks if input has at least two characters
+while len(word) == 1:
+  print("The word must contain at least contain two characters.")
+  word = input("Write a word: ")
+
+def find_palindrome(word):
+  global word_length, first_letter, last_letter
+  word_length = len(word)
+  first_letter = 0
+  last_letter = word_length - 1
+  
+  #if word_length even
+  if word_length % 2 == 0:
+    while word_length > word_length / 2:
+      if word[first_letter] != word[last_letter]:
+        print("This is not a palindrome.")
+        break
+      else:
+        first_letter = first_letter + 1
+        last_letter = last_letter - 1
+        word_length = word_length - 2
+      print("This is a palindrome")
+  #if word_length odd
+  else:
+      print("This word has an odd number of letters")
+      while (word_length - 1) > 2:
+        print("It got this far")
+        if word[first_letter] != word[last_letter]:
+          print("This is not a palindrome.")
+          break
+        else:
+          print("Letters match so far")
+          first_letter = first_letter + 1
+          last_letter = last_letter - 1
+
+    
+find_palindrome(word)
