@@ -960,6 +960,49 @@ print(a) # Displays 1
 print(b) # Displays 2
 print(c) # Displays 3
 
+LIST COMPREHENSION
+
+List comprehensions are a way to create lists based on a specific rule or pattern. 
+It's like using a formula in math to create a set of numbers. 
+This concept is inspired by a notation used in math called set-builder notation.
+
+# a list comprehension
+squares = [i**2 for i in range(5)] # Makes a list of squares of number from 0 to 4
+
+print(squares) # Displays [0, 1, 4, 9, 16]
+
+--
+
+nums = [i*2 for i in range(10)] # A list of even numbers between 0 and 18
+
+--
+
+A list comprehension can also contain an if statement to enforce a condition on values in the list.
+
+# A list of cubes of number where those numbers are even
+# % the % symbol is used for finding the remainder when one number is divided by another
+# Since the condition is i**3 % 2 == 0, the list will only include numbers ^3 that are even (divisible between 2 without a remainder)
+cubed_evens=[i**3 for i in range(10) if i**3 % 2 == 0] 
+
+print(cubed_evens) # Displays [0, 8, 64, 216, 512]
+
+--
+
+# Create a list of multiples of 3 from 0 to 20.
+
+multiples3 = [i for i in range(21) if i % 3 == 0]
+
+--
+
+
+word = str(input())
+
+# Removes vowels from word
+not_vowels = [i for i in word if i != "a" and i != "e" and i != "i" and i != "o" and i != "u"]
+
+print(not_vowels)
+
+
 FUNCTIONS
 
 Functions are reusable blocks of code for specific tasks. 
@@ -1717,13 +1760,6 @@ print(first & second) # Displays {4}
 print(first - second) # Displays {1, 2, 3}
 print(second - first) # Displays {5, 6}
 print(first ^ second) # Displays {1, 2, 3, 5, 6}
-
-LIST COMPREHENSION
-
-List comprehensions are a way to create lists based on a specific rule or pattern. 
-It's like using a formula in math to create a set of numbers. 
-This concept is inspired by a notation used in math called set-builder notation.
-
 
 
 
