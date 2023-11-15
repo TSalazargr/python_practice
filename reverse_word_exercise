@@ -1,0 +1,47 @@
+Exercise: String Reversal
+
+Write a Python script that takes a user input as a string, checks whether the input is a valid string (not empty), 
+defines a function to reverse the string, and calls this function to print the reversed string.
+
+Requirements:
+
+Prompt the user to enter a string.
+Check that the entered string is not empty. If it is, ask the user to input a valid string until a non-empty string is provided.
+Define a function named reverse_string that takes a string as an argument and returns its reverse.
+Call the reverse_string function with the user input and print the reversed string.
+
+----
+
+string = input("Write a word or phrase: ")
+
+while string == "":
+  print("You must write a word or phrase.")
+  string = input("Invalid value. Write a word or phrase: ")
+
+def reverse_string(string):
+    global length_string
+    length_string = len(string)
+    for i in range(length_string):
+        print(string[length_string - 1])
+        length_string = length_string - 1
+
+reverse_string(string)
+
+---
+
+word = input("Write a word or phrase: ")
+
+while word == "":
+  print("You must write a word or phrase.")
+  word = input("Invalid value. Write a word or phrase: ")
+
+def reverse_word(word):
+    global length_word, reverse_characters
+    length_word = len(word)
+    reverse_characters = str("")
+    for i in range(length_word):
+        reverse_characters = reverse_characters + word[length_word - 1]
+        length_word = length_word - 1
+    print(reverse_characters)
+
+reverse_word(word)
