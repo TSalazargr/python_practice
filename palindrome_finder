@@ -15,6 +15,7 @@ while len(word) == 1:
   print("The word must contain at least contain two characters.")
   word = input("Write a word: ")
 
+# Define function that checks if word is a palindrome
 def find_palindrome(word):
   global word_length, first_letter, last_letter
   word_length = len(word)
@@ -31,7 +32,7 @@ def find_palindrome(word):
         first_letter = first_letter + 1
         last_letter = last_letter - 1
         word_length = word_length - 2
-      print("This is a palindrome")
+    print("This is a palindrome")
   #if word_length odd
   else:
     while (word_length - 1) > word_length / 2:
@@ -41,7 +42,7 @@ def find_palindrome(word):
       else:
         first_letter = first_letter + 1
         last_letter = last_letter - 1
-        word_length = word_length - 1
-      print("This is a palindrome")
+        word_length = word_length - 2 # Counter
+    print("This is a palindrome")
     
 find_palindrome(word)
