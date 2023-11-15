@@ -32,18 +32,3 @@ def find_palindrome(word):
         last_letter = last_letter - 1
         word_length = word_length - 2
       print("This is a palindrome")
-  #if word_length odd
-  else:
-      print("This word has an odd number of letters")
-      while (word_length - 1) > 2:
-        print("It got this far")
-        if word[first_letter] != word[last_letter]:
-          print("This is not a palindrome.")
-          break
-        else:
-          print("Letters match so far")
-          first_letter = first_letter + 1
-          last_letter = last_letter - 1
-
-    
-find_palindrome(word)
