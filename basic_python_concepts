@@ -1718,6 +1718,13 @@ print(first - second) # Displays {1, 2, 3}
 print(second - first) # Displays {5, 6}
 print(first ^ second) # Displays {1, 2, 3, 5, 6}
 
+LIST COMPREHENSION
+
+List comprehensions are a way to create lists based on a specific rule or pattern. 
+It's like using a formula in math to create a set of numbers. 
+This concept is inspired by a notation used in math called set-builder notation.
+
+
 
 
 
