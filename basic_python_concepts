@@ -1780,6 +1780,7 @@ When to use the other types:
 - Use tuples when your data cannot/should not change.
   - Immutable
   - Can be indexed
+  - Can be sliced
 
 Many times, a tuple is used in combination with a dictionary, for example, 
 a tuple might represent a key, because it's immutable.
