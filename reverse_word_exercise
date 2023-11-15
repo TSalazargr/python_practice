@@ -15,7 +15,6 @@ Call the reverse_string function with the user input and print the reversed stri
 string = input("Write a word or phrase: ")
 
 while string == "":
-  print("You must write a word or phrase.")
   string = input("Invalid value. Write a word or phrase: ")
 
 def reverse_string(string):
@@ -32,7 +31,6 @@ reverse_string(string)
 word = input("Write a word or phrase: ")
 
 while word == "":
-  print("You must write a word or phrase.")
   word = input("Invalid value. Write a word or phrase: ")
 
 def reverse_word(word):
