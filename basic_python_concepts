@@ -950,6 +950,16 @@ print(1 in nums) #Display True
 print("three" in nums) #Display False
 print(4 not in nums) #Display True
 
+LIST / UNPACKIN LISTS
+
+List unpacking allows you to assign each item in a collection to a variable.
+
+numbers = [1, 2, 3]
+a, b, c = numbers # Declares three variables, each with a value equal to one of the items of the list
+print(a) # Displays 1
+print(b) # Displays 2
+print(c) # Displays 3
+
 FUNCTIONS
 
 Functions are reusable blocks of code for specific tasks. 
@@ -1586,9 +1596,61 @@ Tuples can also be created without the parentheses by just separating the values
 
 my_tuple = "one", "two", "three"
 
-INDEXING WITH NESTED TUPLES
+INDEXING IN NESTED TUPLES
 
 tuple = (1, (1, 2, 3))
 print(tuple[1]) #Displays (1, 2, 3)
+
+INDEXING A VALUE IN NESTED LISTS / TUPLES / DICTIONARIES
+
+contacts = [
+    ('James', 42),
+    ('John', 18)
+]
+
+# Reference the second value of the first tuple
+second_value_of_first_tuple = contacts[0][1]
+
+print(second_value_of_first_tuple) #Displays 42
+
+The first index (contacts[0]) selects the first tuple, and the second index ([1]) selects the second element within that tuple.
+
+TUPLE / UNPACKING
+
+Tuple unpacking allows you to assign each item in a collection to a variable.
+
+numbers = (1, 2, 3)
+a, b, c = numbers # Declares three variables, each with a value equal to one of the items of the tuple
+print(a) # Displays 1
+print(b) # Displays 2
+print(c) # Displays 3
+
+You can also use tuple unpacking to swap variables.
+
+a, b = b, a 
+
+is equivalent to:
+
+temp = a
+a = b
+b = temp
+
+Example:
+
+x, y = [1, 2]
+x, y = y, x
+
+print(y) # Displays 1
+
+A variable that is prefaced with an asterisk (*) takes all values from the collection that are left over from the other variables.
+
+a, b, *c, d = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(a) # Displays 1
+print(b) # Displays 2
+print(c) # Displays [3, 4, 5, 6, 7, 8]
+print(d) # Displays 9
+
+
+
 
 
