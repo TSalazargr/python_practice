@@ -1,0 +1,18 @@
+word = input("Write a word: ")
+
+# Checks if user inputted something
+while word == "":
+    print("The word must contain have at least two characters.")
+    word = input("Write a word: ")
+
+# Checks if there are spaces in the input
+while " " in word:
+    print("The word must contain no spaces.")
+    word = input("Write a word: ")
+
+# Checks if input has at least two characters
+while len(word) == 1:
+  print("The word must contain at least contain two characters.")
+  word = input("Write a word: ")
+
+print(word == word [::-1])
