@@ -35,4 +35,17 @@ def factorial_creator(number):
   return total
 
 print(str(number) + "'s factorial is " + str(factorial_creator(number)))
-    
+
+---
+
+import math
+
+number = int(input("Write a positive integer: "))
+
+while number <= 0:
+  number = input("The integer must be larger than 0:")
+
+def factorial_creator(number):
+  return math.factorial(number)
+
+print(str(number) + "'s factorial is " + str(factorial_creator(number)))
