@@ -1785,3 +1785,26 @@ When to use the other types:
 Many times, a tuple is used in combination with a dictionary, for example, 
 a tuple might represent a key, because it's immutable.
 
+LIST, STRINGS AND TUPLES / COUNT ()
+
+Can be used with lists, strings and tuples.
+
+Use dot notation and is given the element to be searched for as its first parameter. 
+
+This can be a single number or character, as well as entire Python strings.
+
+fruits = ['apple', 'banana', 'cherry']
+
+x = fruits.count("cherry")
+
+--
+
+fruits = ['apple', 'banana', 'cherry']
+
+print(fruits.count("a")) # Displays 0
+
+--
+
+food = "potatoes"
+
+print(food.count("t")) # Displays 2
