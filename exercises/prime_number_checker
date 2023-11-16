@@ -22,11 +22,11 @@ while number <= 2:
     number = int(input("The number must be larger than 2. Try again: "))
 
 def prime_checker(number):
-    prime_status = "This is a prime number."
+    prime_status = True
     divider = 2
     while divider <= (number / 2):
         if number % divider == 0:
-            prime_status = "This is not a prime number."
+            prime_status = False
             break
         else:
             divider = divider + 1
