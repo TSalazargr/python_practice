@@ -21,10 +21,18 @@ Note: The Factorial of a whole number 'n' is defined as the product of that numb
 
 ---
 
-number = input("Write a positive integer: ")
+number = int(input("Write a positive integer: "))
 
 while number <= 0:
   number = input("The integer must be larger than 0:")
 
 def factorial_creator(number):
-  
+  multiple = 1
+  total = 1
+  while multiple <= number:
+    total = total * multiple
+    multiple = multiple + 1
+  return total
+
+print(str(number) + "'s factorial is " + str(factorial_creator(number)))
+    
