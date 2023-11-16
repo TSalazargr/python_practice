@@ -1,0 +1,30 @@
+Exercise: Factorial Calculator
+
+Develop a Python program that computes the factorial of a given number entered by the user.
+
+Requirements:
+
+Ask the user to input a non-negative integer.
+Check if the entered number is a non-negative integer. If not, prompt the user again until a valid input is provided.
+Create a function named calculate_factorial that takes the entered number as an argument and computes its factorial.
+Display the factorial of the entered number.
+Remember: The factorial of a non-negative integer n is the product of all positive integers less than or equal to n.
+
+Example Output:
+
+mathematica
+Copy code
+Enter a non-negative integer: 5
+Factorial of 5 is 120
+
+Note: The Factorial of a whole number 'n' is defined as the product of that number with every whole number less than or equal to 'n' till 1.
+
+---
+
+number = input("Write a positive integer: ")
+
+while number <= 0:
+  number = input("The integer must be larger than 0:")
+
+def factorial_creator(number):
+  
