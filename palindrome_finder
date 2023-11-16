@@ -26,23 +26,26 @@ def find_palindrome(word):
   if word_length % 2 == 0:
     while word_length > word_length / 2:
       if word[first_letter] != word[last_letter]:
-        print("This is not a palindrome.")
+        palindrome = "is not a palindrome."
         break
+
       else:
         first_letter = first_letter + 1
         last_letter = last_letter - 1
         word_length = word_length - 2
-    print("This is a palindrome")
+        palindrome = "is a palindrome."
   #if word_length odd
   else:
     while (word_length - 1) > word_length / 2:
       if word[first_letter] != word[last_letter]:
-        print("This is not a palindrome.")
+        palindrome = "is not a palindrome."
         break
       else:
         first_letter = first_letter + 1
         last_letter = last_letter - 1
         word_length = word_length - 2 # Counter
-    print("This is a palindrome")
+        palindrome = "is a palindrome."
     
+  print("This word", palindrome)
+
 find_palindrome(word)
