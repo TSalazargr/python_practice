@@ -110,6 +110,44 @@ print(polynomial(-4))
 #lambda
 print((lambda x: x**2 + 5*x + 4) (-4))
 
+MAP AND FILTER 
 
+The built-in functions map and filter are very useful higher-order functions that operate on 
+lists (or similar objects called aka ITERABLES).
 
+MAP
+
+The function map takes a function and an iterable as arguments, 
+and returns a new iterable with the function applied to each argument.
+IMPORTANT: The result has to be explicitly converted to a list if you want to print it.
+
+def add_five(x):
+  return x + 5
+
+nums = [11, 22, 33, 44, 55]
+result = list(map(add_five, nums))
+print(result)
+
+We could have achieved the same result more easily by using lambda syntax.
+
+nums = [11, 22, 33, 44, 55]
+
+result = list(map(lambda x: x+5, nums))
+print(result)
+
+or even integrating the print function with the lambda:
+
+nums = [11, 22, 33, 44, 55]
+
+print(list(map(lambda x: x+5, nums)))
+
+FILTER
+
+The function filter filters an iterable by leaving only the items that match a condition (also called a aka PREDICATE).
+
+nums = [11, 22, 33, 44, 55]
+res = list(filter(lambda x: x%2==0, nums))
+print(res) # Displays only items in the list that are even
+
+Like map, the result has to be explicitly converted to a list if you want to print it.
 
