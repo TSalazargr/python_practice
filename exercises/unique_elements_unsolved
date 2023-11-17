@@ -1,0 +1,14 @@
+
+Exercise: Lambda Sorter
+
+Create a Python program that sorts a list of strings based on the length of each string using a lambda function.
+
+Requirements:
+
+Ask the user to input a list of strings separated by spaces.
+Split the input into a list of strings.
+Use a lambda function to sort the list based on the length of each string.
+Display the sorted list of strings.
+
+---
+
