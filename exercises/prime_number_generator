@@ -21,3 +21,30 @@ def prime(number):
     number += 1
 
 print(list(prime(number)))  
+
+
+---
+
+primes_to_generate = int(input("How many primes would you like to generate?: "))
+number = 1
+
+def prime_checker(number):
+  divider = 2
+  prime_status = True
+  while divider <= number / 2:
+    if number % divider == 0:
+      prime_status = False
+      break
+    else:
+      divider += 1
+  return prime_status
+
+def prime_generator(primes_to_generate, number):
+  primes_generated = 0
+  while primes_generated < primes_to_generate:
+    if prime_checker(number):
+      yield number
+      primes_generated += 1
+    number += 1
+
+print(list(prime_generator(primes_to_generate,number)))  
