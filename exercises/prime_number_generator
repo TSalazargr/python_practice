@@ -17,7 +17,7 @@ def prime(number):
   while counter <= number_of_primes:
     if prime_checker(number):
       yield number
-    counter += 1  
+      counter += 1  
     number += 1
 
 print(list(prime(number)))  
