@@ -1808,3 +1808,23 @@ print(fruits.count("a")) # Displays 0
 food = "potatoes"
 
 print(food.count("t")) # Displays 2
+
+SPLIT()
+
+The split() method splits a string into a list.
+
+You can specify the separator. The default separator is any whitespace.
+
+The syntax is:
+
+string.split(separator, maxsplit)
+
+separator:	Optional. Specifies the separator to use when splitting the string. By default any whitespace is a separator
+maxsplit:	Optional. Specifies how many splits to do. Default value is -1, which is "all occurrences"
+
+sentence = "En un lugar de la Mancha"
+print(sentence.split(" ", 2)) # Displays ['En', 'un', 'lugar de la Mancha']
+
+sentence = "En un lugar de la Mancha"
+print(sentence.split(" ", 2)) # Displays ['En', 'un', 'lugar', 'de', 'la', 'Mancha']
+
