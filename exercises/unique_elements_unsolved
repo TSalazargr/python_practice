@@ -1,14 +1,25 @@
 
-Exercise: Lambda Sorter
+Exercise: Unique Elements
 
-Create a Python program that sorts a list of strings based on the length of each string using a lambda function.
+Build a Python script that takes a list of numbers as input from the user and returns a new list containing only the unique elements from the original list.
 
 Requirements:
 
-Ask the user to input a list of strings separated by spaces.
-Split the input into a list of strings.
-Use a lambda function to sort the list based on the length of each string.
-Display the sorted list of strings.
+Prompt the user to input a list of numbers separated by spaces.
+Create a function named find_unique_elements that takes the user input list and returns a new list containing only the unique elements.
+Display the list of unique elements.
+Example Output:
+
+less
+Copy code
+Enter a list of numbers separated by spaces: 3 5 2 5 8 3 9
+Unique elements: [3, 5, 2, 8, 9]
 
 ---
+
+numbers = input("Write a list of numbers separated by spaces: ")
+
+def find_unique_elements:
+  
+  return list_unique_elements
 
