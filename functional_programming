@@ -1,6 +1,10 @@
+FUNCTIONAL PROGRAMMING
+
 Functional programming is a style of programming that (as the name suggests) is based around functions.
 
-A key part of functional programming is higher-order functions. Higher-order functions take other functions as arguments, or return them as results.
+A key part of functional programming is aka HIGHER-ORDER FUNCTIONS. Higher-order functions take other functions as arguments, or return them as results.
+
+---
 
 def apply_twice(func, number):
     return func(func(number))
@@ -9,6 +13,8 @@ def add_five(x):
     return x + 5
 
 print(apply_twice(add_five, 10))
+
+The function apply_twice takes another function as its argument, and calls it twice inside its body.
 
 This code defines a function apply_twice that takes two arguments:  func and number.  func is expected to be a function that takes one argument, and number is expected to be any value that can be passed to func. 
 
@@ -19,3 +25,91 @@ This is achieved by calling the func function twice by putting the function as o
 The code also defines a function add_five that takes one argument and returns the argument plus 5. 
 
 Finally, the code calls apply_twice with add_five as the func argument and 10 as the number argument. This means that the add_five function will be called twice with 10 as its argument, and the final result will be printed. In this case, the final result is 20.
+
+---
+
+def test(func, arg):
+return func(func(arg))
+
+def mult(x):
+return x * x
+
+print(test(mult, 2)) # Display 16
+
+PURE FUNCTIONS
+
+Functional programming seeks to use aka PURE FUNCTIONS. Pure functions have no side effects, and return a value that depends only on their arguments.
+This is how functions in math work: for example, the cos(x) will, for the same value of x, always return the same result.
+
+Below are examples of pure and impure functions.
+
+# This is a pure function:
+def pure_function(x, y):
+  temp = x + 2*y
+  return temp / (2*x + y)
+
+# This is an impure function:
+some_list = []
+
+def impure(arg):
+  some_list.append(arg)
+
+The function above is not pure, because it changed the state of some_list.
+
+---
+
+Characteristics of pure functions:
+
+- Deterministic: The function should produce the same output for the same set of inputs, regardless of any external state or factors. 
+- No Side Effects: A pure function doesn't modify anything outside its scope. It doesn't change the value of any variable outside the function.
+
+
+---
+
+Using pure functions has both advantages and disadvantages.
+
+Pure functions are:
+- Easier to reason about and test.
+- More efficient. Once the function has been evaluated for an input, the result can be stored and referred to the next time the function of that input is needed, reducing the number of times the function is called. This is called memoization.
+- Easier to run in parallel.
+
+Memoization: recording a value to look upon the function later. Memoization is an efficient software optimization technique used to speed up programs. It allows you to optimize a python function by catching its output based on the supplied input parameters. Memoization ensures that a method runs for the same input only once. Moreover, it keeps the output records for the given set of inputs in a hash map. That means, when you memorize a function, it will only compute the output once for every set of parameters called-with. 
+
+Pure functions are harder to write, though :(
+
+LAMBDAS
+
+Creating a function normally (using def) assigns it to a variable with its name automatically.
+Python allows us to create functions on-the-fly, provided that they are created using lambda syntax.
+
+
+In Python, we can create functions quickly and easily using the lambda syntax. 
+This is useful when we need a simple function to pass as an argument to another function. 
+To create a lambda function, we use the keyword "lambda" followed by a list of arguments, a colon, and the expression we want to evaluate and return. 
+These functions are called aka "ANONYMOUS" because they don't have a name assigned to them like regular functions created with "def".
+
+def my_func(f, arg):
+  return f(arg)
+
+print(my_func(lambda x: 2*x*x, 5)) # Displays 50
+
+Some of the uses of lambdas are:
+
+- Filtering and sorting data in data analysis
+- Creating short, simple functions for use in higher-order functions or callbacks
+- Creating quick one-liner functions for mathematical calculations
+
+Lambda functions aren't as powerful as named functions.
+They can only do things that require a single expression -- usually equivalent to a single line of code.
+
+#named function
+def polynomial(x):
+    return x**2 + 5*x + 4
+print(polynomial(-4))
+
+#lambda
+print((lambda x: x**2 + 5*x + 4) (-4))
+
+
+
+
