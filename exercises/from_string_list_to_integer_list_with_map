@@ -1,0 +1,12 @@
+list_numbers = input("Write a list of numbers separated by spaces")
+
+list_numbers = list_numbers.split()
+
+print(list_numbers)
+
+def turn_into_int(x):
+  return int(x)
+
+list_int = list(map(turn_into_int, list_numbers))
+
+print(list_int)
