@@ -1,0 +1,11 @@
+1. Ask the user to input a string of words separated by spaces
+2. Turn that string into a list where each word is a value of the list and spaces are not values. 
+3. Print it.
+
+---
+
+list_words = input("Write a list of words separated by spaces: ")
+
+list_words.split()
+
+
