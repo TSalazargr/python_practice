@@ -151,3 +151,48 @@ print(res) # Displays only items in the list that are even
 
 Like map, the result has to be explicitly converted to a list if you want to print it.
 
+GENERATORS
+
+Generators are a type of iterable, like lists or tuples.
+Unlike lists, they don't allow indexing with arbitrary indices, but they can still be iterated through with for loops.
+They can be created using functions and the yield statement.
+
+The yield statement is used to define a generator, 
+replacing the return of a function to provide a result to its caller without destroying local variables.
+
+The 'yield' statement allows the function to provide a result to the caller without losing any of its local variables.
+
+def countdown():
+  i=5
+  while i > 0:
+    yield i # the yield keyword is used to return the current value of i
+    i = i - 1
+    
+for i in countdown():
+  print(i)
+
+A generator is a special type of iterable in Python that generates values on the fly, allowing you to 
+iterate over them without storing the entire sequence in memory.
+
+When you use yield in a function, it turns that function into a generator. Instead of return, which would terminate the 
+function and return a single result, yield allows the function to produce a series of values over multiple calls. 
+
+Each time the yield statement is encountered, the function's state is frozen, and the value is sent to the caller. 
+
+Then, when the generator is iterated over, it resumes execution from where it was frozen.
+
+This capability is powerful because it enables the generation of values dynamically and lazily, conserving memory and 
+computational resources, especially when dealing with large datasets or infinite sequences.
+
+Due to the fact that generators yield one item at a time, generators don't have the memory restrictions of lists.
+In fact, they can be infinite!
+
+def infinite_sevens():
+  while True:
+    yield 7
+        
+for i in infinite_sevens():
+  print(i)
+
+In short, generators allow you to declare a function that behaves like an iterator, i.e. it can be used in a for loop.
+
