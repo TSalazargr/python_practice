@@ -1,0 +1,6 @@
+list_words = input("Write a list of words separated by spaces: ")
+
+list_words = list_words.split()
+
+print(list(filter(lambda x: len(x) % 2 == 0, list_words)))
+
