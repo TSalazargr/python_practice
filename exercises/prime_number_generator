@@ -1,0 +1,23 @@
+number = 1
+
+def prime_checker(number):
+  prime_status = True
+  divider = 2
+  while divider <= number / 2:
+    if number % divider == 0: # If it's a prime number
+      prime_status = False
+      break
+    else:
+      divider = divider + 1
+  return prime_status
+
+def prime(number):
+  number_of_primes = int(input("How many primes would you like to generate?: "))
+  counter = 1
+  while counter <= number_of_primes:
+    if prime_checker(number):
+      yield number
+    counter += 1  
+    number += 1
+
+print(list(prime(number)))  
