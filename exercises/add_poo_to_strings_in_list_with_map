@@ -1,0 +1,25 @@
+list_words = input("Write a list of words separated by spaces: ")
+
+# Turn string into list
+
+list_words = list_words.split(" ")
+
+def add_poo(x):
+ return x + "poo"
+
+words_poo = list(map(add_poo, list_words))
+
+print(words_poo)
+
+---
+
+list_words = input("Write a list of words separated by spaces: ")
+
+# Turn string into list
+
+list_words = list_words.split(" ")
+
+words_poo = list(map(lambda x: x + "poo", list_words))
+
+print(words_poo)
+  
