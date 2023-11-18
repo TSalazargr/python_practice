@@ -1,0 +1,8 @@
+def word_speller():
+  element = ""
+  word = input("What word would you like to spell?: ")
+  for i in word:
+    element +=i
+    yield element
+
+print(list(word_speller()))
