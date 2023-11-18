@@ -1,0 +1,37 @@
+
+Absolutely, let's simplify it!
+
+Exercise: Verbose Decorator
+
+Create a Python program that uses a decorator to make a function print "Starting..." before executing the function and "Finished." after executing the function.
+
+Requirements:
+
+Define a decorator named verbose_decorator that prints "Starting..." before executing the function and "Finished." after executing the function.
+Apply the verbose_decorator to a sample function.
+The sample function could perform a simple task like printing a message or performing basic arithmetic operations.
+
+Example Output:
+
+Starting...
+Function's output or action
+Finished.
+
+---
+
+def verbose_decorator(func):
+  def starting_finished():
+    print("Starting. . .")
+    func()
+    print("Finished.")
+  return starting_finished
+
+@verbose_decorator
+def odd_number_checker():
+  number = int(input("Write a number: "))
+  if number % 2 != 0:
+    print("This number is odd.")
+  else:
+    print("This number is even.")
+
+odd_number_checker()
