@@ -1,0 +1,10 @@
+def tableflip(func):
+  def tableflip_sequence():
+    print("(╯°□°)╯︵ ┻━┻")
+    func()
+    print("┬─┬ノ( º _ ºノ)")
+  return tableflip_sequence
+
+input_text = tableflip(lambda: input())
+
+input_text()
