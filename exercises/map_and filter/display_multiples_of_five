@@ -1,0 +1,7 @@
+list_numbers = input("Write a list of numbers separated by spaces: ").split()
+
+list_numbers = list(map(lambda x: int(x), list_numbers))
+
+list_multiples_five = list(filter(lambda x: x % 5 == 0, list_numbers))
+
+print(list_multiples_five)
