@@ -10,3 +10,19 @@ Sample Output
 INVOICE #42
 ***
 END OF PAGE
+
+----
+
+#your code goes here
+
+def decorator(func):
+  print("***")
+  func()
+  print("***")
+  print("END OF PAGE")
+    
+@ decorator
+def invoice():
+    print("INVOICE #" + str(input()))
+
+invoice()
