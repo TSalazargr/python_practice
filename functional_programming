@@ -299,7 +299,86 @@ achieves the same result as
 
 my_func = my_dec(my_func)
 
+RECURSION
+
+Recursion is a very important concept in functional programming.
+The fundamental part of recursion is self-reference -- functions calling themselves. 
+It is used to solve problems that can be broken up into easier sub-problems of the same type.
+
+A classic example of a function that is implemented recursively is the factorial function, 
+which finds the product of all positive integers below a specified number.
+For example, 5! (5 factorial) is 5 * 4 * 3 * 2 * 1 (120). 
+To implement this recursively, notice that 5! = 5 * 4!, 4! = 4 * 3!, 3! = 3 * 2!, and so on. Generally, n! = n * (n-1)!.
+Furthermore, 1! = 1. This is known as the aka BASE CASE, as it can be calculated without performing any more factorials.
+Below is a recursive implementation of the factorial function.
+
+def factorial(x):
+    if x == 1:
+        return 1
+    else: 
+        return x * factorial(x-1) # # Calls factorial() function
+
+print(factorial(5))
+
+The BASE CASE acts as the exit condition of the recursion.
+Not adding a base case results in infinite function calls, crashing the program.
+
+A BASE CASE is a case that doesn't involve any further calls to that function.
+
 ---
 
+INDIRECT RECURSION
 
+Recursion can also be indirect. One function can call a second, which calls the first, which calls 
+the second, and so on. This can occur with any number of functions.
+
+def is_even(x):
+    if x == 0:
+        return True
+    else:
+        return is_odd(x-1) # Checks if the number of times it substracted one before reaching zero is odd
+
+def is_odd(x):
+    return not is_even(x) 
+
+
+print(is_odd(17))
+
+
+Let's dissect how the return is_odd(x-1) line within the is_even function checks whether a number is odd.
+
+In the is_even function:
+
+python
+Copy code
+def is_even(x):
+    if x == 0:
+        return True
+    else:
+        return is_odd(x-1)
+This function serves to determine if a number is even. It starts by checking if the number x is equal to 0, in which case it returns True (as 0 is an even number).
+
+However, if the number is not 0, the function takes an alternate route by calling the is_odd function with the argument x - 1.
+
+Let's consider a specific example: is_odd(5)
+
+When is_even(5) is called, it doesn't hit the x == 0 condition, so it goes to the else part and calls is_odd(4) (since 5 - 1 = 4).
+Now, the is_odd function:
+
+python
+Copy code
+def is_odd(x):
+    return not is_even(x)
+This function determines if a number is odd by checking if it's not even. So, when is_odd(4) is called, it calls is_even(4) and negates the result.
+
+is_even(4) proceeds to check if x is equal to 0, but as it's not 0, it goes to the else part and calls is_odd(3) (since 4 - 1 = 3).
+This process continues, decrementing the value by 1 each time until it reaches 0, effectively counting down:
+
+is_odd(3) calls is_even(3 - 1 = 2)
+is_even(2) calls is_odd(2 - 1 = 1)
+is_odd(1) calls is_even(1 - 1 = 0)
+is_even(0) returns True because 0 is even.
+Ultimately, is_odd(5) evaluates is_even(4), which in turn evaluates is_odd(3), and so on until it hits is_even(0), concluding that the number is not even, and therefore, it's odd.
+
+This recursive process indirectly checks for oddness by repeatedly subtracting 1 and toggling between the is_even and is_odd functions until it determines the number's oddness by reaching the base case (0 being even).
 
