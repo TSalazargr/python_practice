@@ -382,3 +382,13 @@ Ultimately, is_odd(5) evaluates is_even(4), which in turn evaluates is_odd(3), a
 
 This recursive process indirectly checks for oddness by repeatedly subtracting 1 and toggling between the is_even and is_odd functions until it determines the number's oddness by reaching the base case (0 being even).
 
+A more straightforward example:
+
+def fib(x):
+    if x == 0 or x == 1:
+        return 1
+    else:
+        return fib(x-1) + fib(x-2)
+
+print(fib(4)) # Displays 5
+
