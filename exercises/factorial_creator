@@ -49,3 +49,13 @@ def factorial_creator(number):
   return math.factorial(number)
 
 print(str(number) + "'s factorial is " + str(factorial_creator(number)))
+
+---
+
+# With recursivity:
+
+def factorial(x):
+    if x == 1:
+        return 1
+    else: 
+        return x * factorial(x-1)
