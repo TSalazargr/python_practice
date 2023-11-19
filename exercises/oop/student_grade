@@ -1,0 +1,16 @@
+class student:
+  def __init__(self, name, grade1, grade2):
+    self.name = name
+    self.grade1 = grade1
+    self.grade2 = grade2
+
+  def grade_report(self):
+    print(self.name + "'s grade is " + str((self.grade1 + self.grade2)/2))
+
+name = input("What's the student's name?: ")
+grade1 = int(input("What was the student's grade in the first exam?: "))
+grade2 = int(input("What was the student's grade in the second exam?: "))
+
+example_student = student(name, grade1, grade2)
+
+example_student.grade_report()
