@@ -1,0 +1,43 @@
+Exercise: Recursive Fibonacci Sequence
+
+Create a Python program that generates the Fibonacci sequence up to a specified number using recursion.
+
+Requirements:
+
+Define a function named fibonacci_recursive that uses recursion to generate the Fibonacci sequence up to a given limit.
+Ask the user to input a positive integer that represents the maximum limit of the Fibonacci sequence.
+Check if the entered number is a positive integer. If not, prompt the user again until a valid input is provided.
+Use the fibonacci_recursive function to generate the Fibonacci sequence up to the entered limit.
+Display the Fibonacci sequence.
+Remember: The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1.
+
+Example Output:
+
+vbnet
+Copy code
+Enter a positive integer as the limit: 10
+Fibonacci sequence up to 10:
+0 1 1 2 3 5 8
+
+---
+
+# Get user input for the length of the sequence
+length = int(input("Enter the length of the Fibonacci sequence: "))
+
+while length <= 0:
+    print(input("Length should be a positive integer. Try again: "))
+
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+def generate_fibonacci_sequence(length):
+    sequence = []
+    for i in range(length):
+        sequence.append(fibonacci(i))
+    return sequence
+
+print("Fibonacci sequence of length", length, ":", generate_fibonacci_sequence(length))
+
