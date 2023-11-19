@@ -1,0 +1,12 @@
+class Student:
+  def __init__(self, name, grade):
+    self.name = name
+    self.grade = grade
+
+  def __gt__(self, other):
+    return print("Is " + self.name + "'s grade better than " + other.name + "'s?: " + str(self.grade > other.grade))
+
+joe = Student("Joe", 10)
+matt = Student("Matt", 7)
+
+joe > matt
