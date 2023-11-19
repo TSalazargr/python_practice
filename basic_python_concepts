@@ -1828,3 +1828,9 @@ print(sentence.split(" ", 2)) # Displays ['En', 'un', 'lugar de la Mancha']
 sentence = "En un lugar de la Mancha"
 print(sentence.split(" ", 2)) # Displays ['En', 'un', 'lugar', 'de', 'la', 'Mancha']
 
+
+\N \T AND \
+
+print("\nThis will print on the next line")
+print("\tThis is tabbed in")
+print("\"This line will appear in quotes\"")
