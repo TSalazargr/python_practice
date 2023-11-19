@@ -45,6 +45,8 @@ print(felix.color) # Displays ginger
 In the example above, the __init__ method takes two arguments and assigns them to the object's attributes. 
 The __init__ method is called the aka CLASS CONSTRUCTOR.
 
+__init__ is a MAGIC METHOD that is used for creating instances.
+
 CALLING A METHOD IN A CLASS WITHOUT AN INSTANCE
 
 To call a method without an instance, we use this format:
@@ -164,4 +166,141 @@ B().spam()
 Super() has to be used inside the method of a subclass. 
 Otherwise it won't work, because what it does is check the method from the subclass' superclass. 
 
+MAGIC METHODS / DUNDERS
+
+MAGIC METHODS are special methods which have double underscores at the beginning and end of their names.
+They are also known as aka DUNDERS.
+
+So far, the only one we have encountered is __init__, but there are several others.
+They are used to create functionality that can't be represented as a normal method.
+
+One common use of them is operator overloading.
+This means defining operators for custom classes that allow operators such as + and * to be used on them.
+An example magic method is __add__ for +.
+It allows us to define custom behaviour for the + operator in our class.
+
+class Vector2D:
+  def __init__(self, x, y):
+    self.x = x
+    self.y = y
+  def __add__(self, other):
+    return Vector2D(self.x + other.x, self.y + other.y)
+
+first = Vector2D(5, 7)
+second = Vector2D(3, 9)
+result = first + second 
+print(result.x) # Display 8
+print(result.y) # Display 16
+
+The __add__ method allows for the definition of a custom behavior for the + operator in our class.
+As you can see, it adds the corresponding attributes of the objects and returns a new object, containing the result.
+Once it's defined, we can add two objects of the class together.
+
+__sub__ for -
+__mul__ for *
+__truediv__ for /
+__floordiv__ for // # divide with integral result (discard remainder)
+__mod__ for %
+__pow__ for ** # Returns a number ^n
+__and__ for &
+__xor__ for ^ # a binary xor. a ^ b will return a value with only the bits set in a or in b but not both. This one is simple!
+__or__ for | 
+
+The expression x + y is translated into x.__add__(y).
+However, if x hasn't implemented __add__, and x and y are of different types, then y.__radd__(x) is called.
+There are equivalent r methods for all magic methods just mentioned.
+
+class SpecialString:
+    def __init__(self, cont):
+        self.cont = cont
+
+    def __truediv__(self, other):
+        line = "=" * len(other.cont)
+        return "\n".join([self.cont, line, other.cont]) # \n so that each line is displayed in a different line, join so they're joined together as the same string
+
+spam = SpecialString("spam") 
+hello = SpecialString("Hello world!")
+print(spam / hello)
+
+# Displays:
+spam
+============
+Hello world!
+
+
+The join function is used to concatenate three strings: self.cont (the content of the first SpecialString instance), line, and other.cont. 
+These strings are joined together using the newline character "\n" as the separator.
+
+class SpecialString:
+    def __init__(self, content):
+        self.content = content
+
+    def __truediv__(self, other):
+        return ",".join([self.content, other.content])
+
+name = SpecialString("John")
+surname = SpecialString("Smith")
+print(name / surname)
+
+Python also provides magic methods for comparisons.
+__lt__ for <
+__le__ for <=
+__eq__ for ==
+__ne__ for !=
+__gt__ for >
+__ge__ for >=
+
+If __ne__ is not implemented, it returns the opposite of __eq__.
+There are no other relationships between the other operators.
+
+class SpecialString:
+    def __init__(self, content):
+        self.content = content
+
+    def __gt__(self, other):
+        for index in range(len(other.content)+1):
+            result = other.content[:index] + ">" + self.content
+            result += ">" + other.content[index:]
+            print(result)
+
+divider = SpecialString("divider")
+eggs = SpecialString("eggs")
+divider > eggs
+
+Output:
+
+>divider>eggs
+e>divider>ggs
+eg>divider>gs
+egg>divider>s
+eggs>divider>
+
+
+There are several magic methods for making classes act like containers.
+__len__ for len()
+__getitem__ for indexing
+__setitem__ for assigning to indexed values
+__delitem__ for deleting indexed values
+__iter__ for iteration over objects (e.g., in for loops)
+__contains__ for in
+
+There are many other magic methods that we won't cover here, 
+such as __call__ for calling objects as functions, 
+and __int__, __str__, and the like, for converting objects to built-in types.
+
+import random
+
+class VagueList:
+  def __init__(self, cont):
+    self.cont = cont
+
+  def __getitem__(self, index):
+    return self.cont[index + random.randint(-1, 1)]
+
+  def __len__(self):
+    return random.randint(0, len(self.cont)*2)
+
+vague_list = VagueList(["A", "B", "C", "D", "E"])
+print(len(vague_list)) # Displays a number at random
+print(vague_list[2]) # Displays a random value of the list
 
