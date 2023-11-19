@@ -65,4 +65,19 @@ fido.bark() # Display Woof!
 
 Class attributes are shared by all instances of the class.
 
+Another example:
 
+class Player:
+    def __init__(self, name, level):
+        self.name = name
+        self.level = level
+
+    def intro(self):
+        print(self.name + " (Level " + self.level + ")")
+
+#your code goes here
+name = input()
+level = input()
+example_player = Player(name, level)
+
+example_player.intro()
