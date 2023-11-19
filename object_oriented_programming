@@ -45,6 +45,16 @@ print(felix.color) # Displays ginger
 In the example above, the __init__ method takes two arguments and assigns them to the object's attributes. 
 The __init__ method is called the aka CLASS CONSTRUCTOR.
 
+CALLING A METHOD IN A CLASS WITHOUT AN INSTANCE
+
+To call a method without an instance, we use this format:
+
+class func:
+    def method(self):
+        print(1)
+
+func().method()
+
 METHODS
 
 Classes can have other methods defined to add functionality to them.
@@ -81,3 +91,77 @@ level = input()
 example_player = Player(name, level)
 
 example_player.intro()
+
+INHERITANCE
+
+Inheritance provides a way to share functionality between classes.
+
+Imagine several classes, Cat, Dog, Rabbit and so on. Although they may differ in some ways (only Dog might have 
+the method bark), they are likely to be similar in others (all having the attributes color and name).
+This similarity can be expressed by making them all inherit from a aka SUPERCLASS Animal, which contains the shared functionality.
+To inherit a class from another class, put the superclass name in parentheses after the class name.
+
+class Animal: 
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+
+class Cat(Animal):
+    def purr(self):
+        print("Purr...")
+        
+class Dog(Animal):
+    def bark(self):
+        print("Woof!")
+
+fido = Dog("Fido", "brown")
+print(fido.color)
+fido.bark()
+
+arigato = Cat("Arigato", "calico")
+
+print(arigato.color)
+arigato.purr()
+
+A class that inherits from another class is called aka SUBCLASS.
+A class that is inherited from is called a aka SUPERCLASS.
+If a class inherits from another with the same attributes or methods, the subclass' attributes or methods overrides the superclass'.
+
+class Wolf: # Superclass
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+
+    def bark(self):
+        print("Grr...")
+
+class Dog(Wolf): # Subclass
+    def bark(self): # Overrides wolf's bark
+        print("Woof")
+
+husky = Dog("Max", "grey")
+husky.bark() # Display Woof
+
+SUPER()
+
+The function 'super() is a helpful tool in inheritance that allows the child class to refer to its parent class. 
+If a method has the same name in both the child and parent class, 'super()' can be used to 
+specifically call the method from the parent class. 
+
+For example, 'super().spam()' would call the 'spam' method from the parent class.
+
+class A:
+  def spam(self):
+    print(1)
+
+class B(A):
+  def spam(self):
+    print(2)
+    super().spam() # Display 1 by calling the spam method of the superclass.
+            
+B().spam()
+
+Super() has to be used inside the method of a subclass. 
+Otherwise it won't work, because what it does is check the method from the subclass' superclass. 
+
+
