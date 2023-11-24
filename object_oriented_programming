@@ -175,7 +175,7 @@ class B(A):
     print(2)
     super().spam() # Display 1 by calling the spam method of the superclass.
             
-B().spam()
+B().spam() # Displays 2 and in the next line 1
 
 Super() has to be used inside the method of a subclass. 
 Otherwise it won't work, because what it does is check the method from the subclass' superclass. 
@@ -188,9 +188,12 @@ They are also known as aka DUNDERS.
 So far, the only one we have encountered is __init__, but there are several others.
 They are used to create functionality that can't be represented as a normal method.
 
-One common use of them is operator overloading.
+One common use of them is aka OPERATOR OVERLOADING.
 This means defining operators for custom classes that allow operators such as + and * to be used on them.
-An example magic method is __add__ for +.
+
+__ADD__
+
+An example of a magic method is __add__ for +.
 It allows us to define custom behaviour for the + operator in our class.
 
 class Vector2D:
@@ -210,6 +213,8 @@ The __add__ method allows for the definition of a custom behavior for the + oper
 As you can see, it adds the corresponding attributes of the objects and returns a new object, containing the result.
 Once it's defined, we can add two objects of the class together.
 
+OTHER OPERATOR OVERLOADINGS
+
 __sub__ for -
 __mul__ for *
 __truediv__ for /
@@ -217,7 +222,7 @@ __floordiv__ for // # divide with integral result (discard remainder)
 __mod__ for %
 __pow__ for ** # Returns a number ^n
 __and__ for &
-__xor__ for ^ # a binary xor. a ^ b will return a value with only the bits set in a or in b but not both. This one is simple!
+__xor__ for ^ # a binary xor. a ^ b will return a value with only the bits set in a or in b but not both. 
 __or__ for | 
 
 The expression x + y is translated into x.__add__(y).
@@ -242,7 +247,8 @@ spam
 Hello world!
 
 
-The join function is used to concatenate three strings: self.cont (the content of the first SpecialString instance), line, and other.cont. 
+The join function is used to concatenate three strings: 
+self.cont (the content of the first SpecialString instance), line, and other.cont. 
 These strings are joined together using the newline character "\n" as the separator.
 
 class SpecialString:
@@ -254,7 +260,7 @@ class SpecialString:
 
 name = SpecialString("John")
 surname = SpecialString("Smith")
-print(name / surname)
+print(name / surname) # Display John,Smith
 
 Python also provides magic methods for comparisons.
 __lt__ for <
