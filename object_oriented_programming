@@ -357,6 +357,8 @@ print(queue._hiddenlist) # Displays [0, 1, 2]
 In the code above, the attribute _hiddenlist is marked as private, but it can still be accessed in the outside code.
 The __repr__ magic method is used for string representation of the instance.
 
+---
+
 aka STRONGLY PRIVATE METHODS AND ATRIBUTES
 
 Strongly private methods and attributes have a double underscore at the beginning of their names. 
@@ -378,6 +380,8 @@ s.print_egg() # Calling the method print_egg for the s instance
 print(s._Spam__egg) # Prints the value of __egg by the modified name
 print(s.__egg) # # Error because __egg is mangled
 
+Basically, Python protects those members by internally changing the name to include the class name.
 
+---
 
 
