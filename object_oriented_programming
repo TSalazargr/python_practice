@@ -108,8 +108,10 @@ INHERITANCE
 Inheritance provides a way to share functionality between classes.
 
 Imagine several classes, Cat, Dog, Rabbit and so on. Although they may differ in some ways (only Dog might have 
-the method bark), they are likely to be similar in others (all having the attributes color and name).
-This similarity can be expressed by making them all inherit from a aka SUPERCLASS Animal, which contains the shared functionality.
+the method bark), they are likely to be similar in others (e.g. all having the attributes "color" and "name").
+
+This similarity can be expressed by making them all inherit from a aka SUPERCLASS "Animal", which contains the shared functionality.
+
 To inherit a class from another class, put the superclass name in parentheses after the class name.
 
 class Animal: 
@@ -135,8 +137,11 @@ print(arigato.color)
 arigato.purr()
 
 A class that inherits from another class is called aka SUBCLASS.
+
 A class that is inherited from is called a aka SUPERCLASS.
-If a class inherits from another with the same attributes or methods, the subclass' attributes or methods overrides the superclass'.
+
+If a class inherits from another with the same attributes or methods, 
+the subclass' attributes or methods overrides the superclass' i.e. subclass has preference over superclass.
 
 class Wolf: # Superclass
     def __init__(self, name, color):
