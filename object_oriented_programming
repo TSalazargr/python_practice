@@ -64,12 +64,12 @@ class func:
     def method(self):
         print(1)
 
-func().method()
+func().method() # Displays 1
 
 METHODS
 
 Classes can have other methods defined to add functionality to them.
-Remember, that all methods must have self as their first parameter.
+Remember that all methods must have "self" as their first parameter.
 These methods are accessed using the same dot syntax as attributes.
 
 class Dog:
@@ -94,14 +94,14 @@ class Player:
         self.level = level
 
     def intro(self):
-        print(self.name + " (Level " + self.level + ")")
+        print(self.name + " Level " + self.level)
 
 #your code goes here
 name = input()
-level = input()
+level = str(input())
 example_player = Player(name, level)
 
-example_player.intro()
+example_player.intro() # Display self.name Level self.level
 
 INHERITANCE
 
