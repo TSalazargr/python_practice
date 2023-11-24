@@ -308,4 +308,51 @@ There are many other magic methods that we won't cover here,
 such as __call__ for calling objects as functions, 
 and __int__, __str__, and the like, for converting objects to built-in types.
 
+DATA HIDING
+
+A key part of object-oriented programming is aka ENCAPSULATION, which involves 
+packaging of related variables and functions into a single easy-to-use object -- an instance of a class.
+
+A related concept is aka DATA HIDING, which states that implementation details of a class should be hidden, 
+and a clean standard interface be presented for those who want to use the class.
+In other programming languages, this is usually done with private methods and attributes, 
+which block external access to certain methods and attributes in a class.
+
+The Python philosophy is slightly different. It is often stated as "we are all consenting adults here", 
+meaning that you shouldn't put arbitrary restrictions on accessing parts of a class. 
+Hence there are no ways of enforcing that a method or attribute be strictly private.
+
+However, there are ways to discourage people from accessing parts of a class, 
+such as by denoting that it is an implementation detail, and should be used at their own risk.
+
+aka PRIVATE METHOD: a method that is discouraged from using.
+
+aka WEAKLY PRIVATE METHODS AND ATTRIBUTES attributes have a single underscore at the beginning.
+This signals that they are private, and shouldn't be used by external code. 
+However, it is mostly only a convention, and does not stop external code from accessing them.
+
+class Queue:
+  def __init__(self, contents):
+    self._hiddenlist = list(contents)
+
+  def push(self, value):
+    self._hiddenlist.insert(0, value) # Methods that inserts a value with the index 0
+   
+  def pop(self):
+    return self._hiddenlist.pop(-1) # Method that deletes a value with the index -1
+
+  def __repr__(self): # The __repr__ magic method is used for string representation of the instance.
+    return "Queue{}".format(self._hiddenlist) # The value that queue returns
+
+queue = Queue([1, 2, 3])
+print(queue) # Displays Queue [1, 2, 3]
+queue.push(0) 
+print(queue) # Displays Queue [0, 1, 2, 3]
+queue.pop()
+print(queue) # Displays Queue [0, 1, 2]
+print(queue._hiddenlist) # Displays [0, 1, 2]
+
+In the code above, the attribute _hiddenlist is marked as private, but it can still be accessed in the outside code.
+The __repr__ magic method is used for string representation of the instance.
+
 
