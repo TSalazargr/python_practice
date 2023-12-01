@@ -1,0 +1,6 @@
+file = open("filename.txt", "r")
+for i in range(21):
+  print(file.read(2))
+file.close()
+
+# Assuming each character is one byte, it will print 21 lines with 2 characters each
