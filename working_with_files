@@ -65,3 +65,45 @@ print(file.read()) # Rest of the file
 file.close()
 
 Calling the read() method without an argument will return the rest of the file content.
+
+---
+
+To retrieve each line in a file, you can use the 
+readlines() method to return a list in which each element is a line in the file.
+
+file = open("/usercode/files/books.txt")
+
+for line in file.readlines():
+    print(line)
+    
+file.close()
+
+---
+
+file.readlines() generates a list where each elements is a list
+
+print(file.readlines()) # Displays ['Harry Potter\n', 'The Hunger Games\n', 'Pride and Prejudice\n', 'Gone with the Wind']
+
+---
+
+If you do not need to save for each line as an element in a list, you can simply iterate over the file variable:
+
+file = open("/usercode/files/books.txt")
+
+for line in file:
+    print(line)
+    
+file.close()
+
+In the output, the lines are separated by blank lines, 
+as the print function automatically adds a new line at the end of its output.
+
+---
+
+Open a file, read its content and print its 2nd line.
+
+file = open("filename.txt", "r")
+cont = file.readlines()
+print(cont[1]) # Because the index of the second element of the list is 1
+file.close()
+
