@@ -1,0 +1,10 @@
+number = input("Type a positive number: ")
+
+try:
+  number = int(number)
+except:
+  raise ValueError("Number must be an integer!")
+
+if number <= 0:
+  raise ValueError("Number must be larger than zero!")
+  
