@@ -8,3 +8,20 @@ finally:
   print(4)
 
 # Prints everything but 2
+
+---
+
+x = 0
+try:
+  x+=1
+    raise ValueError
+except NameError:
+  x+=1
+except ValueError:
+  x+=1
+else:
+  x+=1
+finally:
+  x+=1
+
+# Displays 3
