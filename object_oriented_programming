@@ -450,14 +450,26 @@ class Pizza:
     def __init__(self, toppings):
         self.toppings = toppings
 
+    @property # provides a way to access the method as if it were an attribute of the object
+    def pineapple_allowed(self):
+        return False
+
+pizza = Pizza(["cheese", "tomato"])
+print(pizza.pineapple_allowed) # Print False
+pizza.pineapple_allowed = True # Since pineapple_allowed is a read-only attribute (due to the  decorator), this will raise an AtributeError.
+
+vs.
+
+class Pizza:
+    def __init__(self, toppings):
+        self.toppings = toppings
+
     @property
     def pineapple_allowed(self):
         return False
 
 pizza = Pizza(["cheese", "tomato"])
-print(pizza.pineapple_allowed)
-pizza.pineapple_allowed = True
-
+print(pizza.toppings) # Displays ['cheese', 'tomato']
 
 
 
