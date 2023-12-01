@@ -118,4 +118,39 @@ else:
 
 RAISING EXCEPTIONS
 
+You can throw (or raise) exceptions when some condition occurs.
+For example, when you take user input that needs to be in a specific format, 
+you can throw an exception when it does not meet the requirements.
+This is done using the raise statement.
+
+num = 102
+if num > 100:
+  raise ValueError
+
+You need to specify the type of the exception raised. In the code above, we raise a ValueError.
+
+try:
+    print(1 / 0)
+except ZeroDivisionError:
+    raise ValueError
+
+The above code will result in two exceptions.
+
+Exceptions can be raised with arguments that give details about them.
+This makes it easier for other developers to understand why you raised the exception.
+
+name = "123"
+raise NameError("Invalid name!")
+
+# Displays: 
+
+ERROR!
+Traceback (most recent call last):
+  File "<string>", line 2, in <module>
+NameError: Invalid name!
+
+num = input(":")
+if float(num) < 0:
+    raise ValueError("Negative!")
+
 
