@@ -1,3 +1,5 @@
+EXERCISE 1
+
 In a relay race competition, there are 6 participants listed as follows:
 
 players = ["Alice", "Bob", "Charlie", "David", "Eve", "Frank"]
@@ -43,3 +45,32 @@ print(g2)
 print("Group 3:")
 #display the 3rd group
 print(g3)
+
+-----------------------
+
+EXERCISE 2
+
+Adam uses an app that records how many steps he takes each day. Here are his step counts for the past week:
+
+steps = [1513, 5035, 7891, 1212, 2534, 4648, 3785]
+
+Adam wants to review his activity over the past 3 days.
+
+Task
+
+Write the code to make a slice and output Adam’s step counts for the last 3 days (the last 3 items in the list).
+
+Expected Output
+
+[2534, 4648, 3785]
+
+#step counts for the past week
+steps = [1513, 5035, 7891, 1212, 2534, 4648, 3785]
+
+#make a slice for the last 3 days
+last_3 = steps[-3:]
+
+#display the slice
+print(last_3)
+
+--------------------------------------------------------
