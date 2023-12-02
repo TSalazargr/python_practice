@@ -1,0 +1,10 @@
+try:
+  start_number = int(input("What's your starting number?: "))
+except:
+  raise TypeError("Invalid value.")
+
+try:
+  if start_number < 0:
+    raise exception
+except:
+    print("Number must be bigger than zero.")
