@@ -1,11 +1,11 @@
 # Input starting number and check it's a valid value
 try:
-  start_number = float(input("What's your starting number?: "))
+  money = float(input("What's your starting number?: "))
 except:
   raise TypeError("Invalid value.")
 
 try:
-  if start_number < 0:
+  if money < 0:
     raise exception
 except:
     print("Number must be positive.")
@@ -27,7 +27,7 @@ interest_multiplier = 1 + (interest_rate/100)
 
 # Input number of years the money will appreciate for anc check if it's a valid value
 try:
-  years = float(input("How many years will your money appreciate for?: "))
+  years = int(input("How many years will your money appreciate for?: "))
 except:
   raise TypeError("Invalid value.")
 
@@ -37,4 +37,11 @@ try:
 except:
     print("Number must be positive.")
 
+# Compound interest calculator
+
+while years > 0:
+  money = money * interest_multiplier
+  years -= 1
+
+print("Your final total will be", str(money))
 
