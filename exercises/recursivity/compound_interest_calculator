@@ -1,3 +1,4 @@
+# Input starting number and check it's a valid value
 try:
   start_number = float(input("What's your starting number?: "))
 except:
@@ -9,8 +10,9 @@ try:
 except:
     print("Number must be positive.")
 
+# Input interest rate and check it's a valid value
 try:
-  interest_rate = float(input("What's your interest percentage?: "))
+  interest_rate = float(input("What's your annual interest rate?: "))
 except:
   raise TypeError("Invalid value.")
 
@@ -20,5 +22,19 @@ try:
 except:
     print("Number must be positive.")
 
+# Calculate interest multiplier
 interest_multiplier = 1 + (interest_rate/100)
+
+# Input number of years the money will appreciate for anc check if it's a valid value
+try:
+  years = float(input("How many years will your money appreciate for?: "))
+except:
+  raise TypeError("Invalid value.")
+
+try:
+  if years < 0:
+    raise exception
+except:
+    print("Number must be positive.")
+
 
