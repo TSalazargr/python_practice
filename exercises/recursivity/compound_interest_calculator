@@ -1,5 +1,5 @@
 try:
-  start_number = int(input("What's your starting number?: "))
+  start_number = float(input("What's your starting number?: "))
 except:
   raise TypeError("Invalid value.")
 
@@ -7,4 +7,18 @@ try:
   if start_number < 0:
     raise exception
 except:
-    print("Number must be bigger than zero.")
+    print("Number must be positive.")
+
+try:
+  interest_rate = float(input("What's your interest percentage?: "))
+except:
+  raise TypeError("Invalid value.")
+
+try:
+  if interest_rate < 0:
+    raise exception
+except:
+    print("Number must be positive.")
+
+interest_multiplier = 1 + (interest_rate/100)
+
