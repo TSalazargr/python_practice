@@ -5,3 +5,15 @@ def convert(num):
       return (num % 2 + 10 * convert(num // 2)) 
 
 print(convert(int(input())))
+
+---
+
+This code defines a Python function called convert that takes in one argument, num. 
+The function checks whether the value of num is equal to 1 or 0. 
+If it is, the function returns num. 
+Otherwise, the function recursively calls itself with num divided by 2 (using the integer floor division operator // ) 
+and adds the remainder of num divided by 2 multiplied by 10. 
+This is done until num  is equal to 1 or 0. 
+Finally, the function prints out the result of calling convert on the input value converted to an integer. 
+Essentially, this code converts a decimal (base 10) number to its binary (base 2) representation. 
+It does this by repeatedly dividing the decimal number by 2 and concatenating the remainders in reverse order
