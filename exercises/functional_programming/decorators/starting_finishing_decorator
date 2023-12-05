@@ -3,11 +3,13 @@ Absolutely, let's simplify it!
 
 Exercise: Verbose Decorator
 
-Create a Python program that uses a decorator to make a function print "Starting..." before executing the function and "Finished." after executing the function.
+Create a Python program that uses a decorator to make a function print "Starting..." before executing the function and "Finished." 
+after executing the function.
 
 Requirements:
 
-Define a decorator named verbose_decorator that prints "Starting..." before executing the function and "Finished." after executing the function.
+Define a decorator named verbose_decorator that prints "Starting..." before executing the function and "Finished." 
+after executing the function.
 Apply the verbose_decorator to a sample function.
 The sample function could perform a simple task like printing a message or performing basic arithmetic operations.
 
