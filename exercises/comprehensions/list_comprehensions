@@ -1,0 +1,18 @@
+Given a word as input, output a list, containing only the letters of the word that are not vowels.
+The vowels are a, e, i, o, u.
+
+Sample Input
+awesome
+
+Sample Output
+['w', 's', 'm']
+
+Use a list comprehension to create the required list of letters and output it.
+
+---
+
+word = str(input())
+
+not_vowels = [i for i in word if i != "a" and i != "e" and i != "i" and i != "o" and i != "u"]
+
+print(not_vowels)
