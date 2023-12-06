@@ -1,0 +1,4 @@
+file = open("filename.txt", "r")
+cont = file.readlines()
+print(cont[1]) # Because the index of the second element of the list is 1
+file.close()
