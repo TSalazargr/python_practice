@@ -3,7 +3,8 @@ to output the area of the shape, which is equal to the height multiplied by the 
 To make the code work, you need to define the Shape class, and the static area() method, 
 which should return the multiplication of its two arguments.
 
-#your code goes here
+---
+
 class Shape:
     def __init__(self, height, width):
         self.width = width
