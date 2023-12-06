@@ -1,0 +1,8 @@
+file = open("/usercode/files/books.txt", "a")
+
+file.write("\nThe Da Vinci Code")
+file.close()
+
+file = open("/usercode/files/books.txt", "r")
+print(file.read())
+file.close()
