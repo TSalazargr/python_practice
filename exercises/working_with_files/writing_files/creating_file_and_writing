@@ -1,0 +1,7 @@
+file = open("newfile.txt", "w") # Creates new file or opens file if it already exists in write mode
+file.write("This has been written to a file") # Writes file or replaces text if file already existed
+file.close() # Closes file
+
+file = open("newfile.txt", "r")
+print(file.read())
+file.close()
