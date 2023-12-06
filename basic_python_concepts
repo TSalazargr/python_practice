@@ -81,12 +81,22 @@ print("James", 36, 3.8, True) #Displays James 36 3.8 True
 
 Arguments must be sepparated by commas.
 
---
+---
 
 print() can also be used with lists.
 
 shopping_list = ["Milk", "Tea", "Onions"]
 print(shopping_list) #Display ['Milk', 'Tea', 'Onions']
+
+---
+
+Print() can also be used to print several lines of text by using three sets of double quotes to start and end.
+
+print("""
+This is line 1
+This line 2
+This is line 3
+""")
 
 VARIABLE
 
