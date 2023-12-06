@@ -19,7 +19,11 @@ Unique elements: [3, 5, 2, 8, 9]
 
 numbers = input("Write a list of numbers separated by spaces: ")
 
-def find_unique_elements:
-  
+list_numbers = numbers.split(" ")
+
+def find_unique_elements():
+  list_unique_elements = set(list_numbers)
   return list_unique_elements
+
+print(find_unique_elements())
 
