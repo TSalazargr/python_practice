@@ -1,0 +1,21 @@
+Take a number N as input and write the numbers 1 to N, each number on a separate line.
+
+Sample Input
+4
+
+Sample Output
+1
+2
+3
+4
+
+The given code reads the content of the file and outputs it.
+
+You can use \n to make line breaks.
+
+---
+
+n = int(input("What number would you like to count to?: "))
+
+for i in range (1, n+1):
+	print(str(i) + "\n")
