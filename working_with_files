@@ -45,7 +45,7 @@ file = open("filename.txt", "w")
 # do stuff to the file
 file.close()
 
-READING FILES
+READING FILES / READ()
 
 The contents of a file that has been opened in text mode can be read using the read method.
 We have created a books.txt file on the server which includes titles of books. Let's read the file and output the content:
@@ -66,7 +66,7 @@ file.close()
 
 Calling the read() method without an argument will return the rest of the file content.
 
----
+READLINES()
 
 To retrieve each line in a file, you can use the 
 readlines() method to return a list in which each element is a line in the file.
@@ -106,4 +106,39 @@ file = open("filename.txt", "r")
 cont = file.readlines()
 print(cont[1]) # Because the index of the second element of the list is 1
 file.close()
+
+WRITING FILES / WRITE()
+
+To write to files you use the write method.
+
+file = open("newfile.txt", "w")
+file.write("This has been written to a file")
+file.close()
+
+This will create a new file called "newfile.txt" and write the content to it.
+
+In case the file already exists, its entire content will be replaced when you open it in write mode using "w".
+
+---
+
+If you want to add content to an existing file, you can open it using the "a" mode, which stand for "append":
+
+file = open("/usercode/files/books.txt", "a")
+file.write("\nThe Da Vinci Code")
+file.close()
+
+To write something other than a string, it needs to be converted to a string first.
+
+The write method returns the number of bytes written to a file, if successful.
+
+msg = "Hello world!"
+file = open("newfile.txt", "w")
+amount_written = file.write(msg)
+print(amount_written) # Display 12
+file.close()
+
+file.write(msg) == len(msg)
+
+---
+
 
