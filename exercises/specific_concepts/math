@@ -1,0 +1,9 @@
++ == addition
+- == substraction
+* == multiplication
+/ == division
+% == modulo (remainder)
+// == divisor (whole number divisor)
+**n == raised to the n power (e.g. **2 == squared)
+round(n) == rounding numbers (e.g. round(3.5) == 4)
+  round(variable, how many decimals) == e.g. round(3.14159, 3) == 3.142
