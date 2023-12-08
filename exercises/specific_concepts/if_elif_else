@@ -1,6 +1,6 @@
-name = input("What's your name?: ")
+name = input("What's your name?: ").upper()
 
-if name == "Teresa":
+if name == "TERESA":
   print("Hello, Teresa!")
 else:
   print("Who the hell are you?")
@@ -20,3 +20,4 @@ else:
   print("You got the top grade!")
 
 ---
+
