@@ -1,0 +1,8 @@
+# Casting = when we assign a type to a variable
+
+number = int(input("Input a number: "))
+print(number >= 5)
+
+rank = str(3)
+
+grade = float("7.5")
