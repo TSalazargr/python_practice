@@ -1,0 +1,22 @@
+name = input("What's your name?: ")
+
+if name == "Teresa":
+  print("Hello, Teresa!")
+else:
+  print("Who the hell are you?")
+
+---
+
+grade = int(input("What's your numerical grade?: "))
+
+while grade > 10 or grade < 0:
+  grade = int(input("Grade must be between 0 and 10. Try again: "))
+
+if grade < 5:
+  print("You've failed the exam.")
+elif 5 <= grade < 10:
+  print("You passed the exam.")
+else:
+  print("You got the top grade!")
+
+---
