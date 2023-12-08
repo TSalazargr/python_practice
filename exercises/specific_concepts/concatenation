@@ -1,0 +1,25 @@
+Can be used with strings, numbers, lists, tuples, sets, dictionaries, indexes
+Concatenated items are sepparated by spaces.
+
+name = "Teresa"
+age = 33
+
+print(name, "is", age, "years old.")
+
+shopping_list = ["eggs", "bacon", "cereal"]
+print(name, "is going to buy", shopping_list)
+
+print("the second item in the shopping list is", shopping_list[1])
+
+tuple = (1, 2, 3)
+print(name, tuple)
+
+set = {4, 5, 6}
+print(name, set)
+
+dictionary = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(name, dictionary)
