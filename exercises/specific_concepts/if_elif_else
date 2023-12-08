@@ -1,3 +1,7 @@
+Else must always be the last statement. You can use as many elif statements as you want.
+
+---
+
 name = input("What's your name?: ").upper()
 
 if name == "TERESA":
@@ -21,3 +25,27 @@ else:
 
 ---
 
+username = input("What's your username?: ")
+password = input("What's your password?: ")
+
+if username == "john" and password == "rosebud":
+  print("Logged in")
+else:
+  print("Wrong username/password combination")
+
+---
+
+drink = input("What would you like to drink?: ").lower()
+
+if drink == "coffee":
+    milk_status = input("Would you like it with milk? y/n: ").lower()
+    if milk_status == "y":
+        print("Here's your coffee with milk.")
+    elif milk_status == "n":
+        print("Here's your coffee without milk.")
+    else:
+        print("Wrong input.")
+elif drink == "tea":
+    print("Here's your tea.")
+else:
+    print("I'm sorry, we don't have that drink.")
