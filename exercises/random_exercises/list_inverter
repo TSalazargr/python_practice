@@ -1,0 +1,13 @@
+list = input("Write a list of item sepparated by spaces: ")
+
+list = list.split(" ")
+
+length_list = len(list) - 1
+
+new_list = []
+
+while length_list >= 0:
+    new_list.append(list[length_list])
+    length_list -= 1
+
+print(new_list)
