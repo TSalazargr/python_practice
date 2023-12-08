@@ -49,3 +49,13 @@ elif drink == "tea":
     print("Here's your tea.")
 else:
     print("I'm sorry, we don't have that drink.")
+
+---
+
+name = input("What's your name?")
+
+if name == "Teresa" or name == "teresa": # Must include the variable after the 'or'
+  print("Hello, Teresa!")
+
+if name == "Teresa" or "teresa": # "teresa" is always True. All inputs will be accepted
+  print("Hello, Teresa!")
