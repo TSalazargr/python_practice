@@ -1,0 +1,16 @@
+import random
+
+def character():
+  name = input("What's the character's name?: ")
+  hp = (random.randint(1, 6) * random.randint(1, 12))//2 + 10
+  mp = (random.randint(1, 6) * random.randint(1, 12))//2 + 10
+  print("Your character's name is", name, ". It has", hp, "HP and", mp, "MP.")
+  return name, hp, mp
+
+name1, hp1, mp1 = character()
+
+name2, hp2, mp2 = character()
+
+print(name1, hp1, mp1)
+
+
