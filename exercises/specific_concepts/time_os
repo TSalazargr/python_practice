@@ -1,0 +1,42 @@
+import os
+
+for i in range(100):
+  print(i)
+  os.system("clear") # Clears numbers immediately after they appear on screen
+
+---
+
+import time, os
+
+for i in range(100):
+  print(i)
+  time.sleep(1) # Pauses the script for 1 second
+  os.system("clear") # Clears numbers immediately after they appear on screen
+
+
+---
+
+from replit import audio
+import os, time
+
+def play():
+  source = audio.play_file('audio.wav')
+  source.paused = False # unpause the playback
+  while True:
+    # Start taking user input and doing something with it
+    pause = input("Would you like to pause? y/n: ").lower()
+    if pause == "y":
+      source.paused = True
+      break
+
+while True:
+  print("Press 1 to play the song.")
+  print("Press 2 to exit")
+  print("Press any other key to see the menu again")
+  
+  user_choice = input("What's your choice?: ") # take user's input
+  if user_choice == "1":
+    play()
+    continue
+  elif user_choice == "2": 
+    exit()
