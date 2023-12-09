@@ -45,5 +45,23 @@ number = int(input("What's the maximum number you want your dice to roll?: "))
 roll_dice(number)
 
 ---
-    
+
+def pin_picker(n):
+	import random
+	pin = ""
+	for i in range(n):
+		pin += str(random.randint(0,9)) # Generates 'n' numbers and concatenates them to form a string.
+	return pin
+
+print(pin_picker(4))
+
+---
+
+def rectangle_area(height, width):
+  area = height * width
+  return area
+
+rectangle_area(2,4)
+
+---
   
