@@ -1,0 +1,49 @@
+def roll_d20():
+  import random
+  dice = random.randint(1, 20)
+  print("You rolled a", dice)
+
+roll_d20()
+
+---
+
+def cake(ingredient, base, coating):
+  if ingredient == "chocolate":
+    print("Delicious! A chocolate cake!")
+  elif ingredient == "carrot":
+    print("My favorite!")
+  else:
+    print("Sounds good!")
+  print("A", ingredient, "cake with a", base, "base and a", coating, "coating coming up!")
+  
+cake("carrot", "sponge", "lotus")
+
+user_ingredient = input("What ingredient do you want to have?: ")
+user_base = input("What kind of base do you want to have?: ")
+user_coating = input("What kind of coating do you want to have?: ")
+
+cake(user_ingredient, user_base, user_coating)
+
+---
+
+def biggerNumber(number1, number2):
+  if(number1 > number2):
+    print(number1, "is bigger")
+  else:
+    print(number2, "is bigger")
+biggerNumber (18,332)
+
+---
+
+import random
+
+def roll_dice(number):
+    print(random.randint(1, number))
+
+number = int(input("What's the maximum number you want your dice to roll?: "))
+
+roll_dice(number)
+
+---
+    
+  
