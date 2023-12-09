@@ -3,14 +3,14 @@ from getpass import getpass as input
 player_1 = input("What's player's 1 name?: ")
 player_2 = input("What's player's 2 name?: ")
 
-pl1_choice = input("Player 1, do you pick Paper (P), Rock (R) or Scissors (S)?: ").upper
+pl1_choice = input("Player 1, do you pick Paper (P), Rock (R) or Scissors (S)?: ").upper()
 
-while pl1_choice != "P" or pl1_choice != "R" or pl1_choice != "S":
+while pl1_choice != "P" and pl1_choice != "R" and pl1_choice != "S":
   pl1_choice = input("Invalid choice. Pick P, R or S, please: ")
   
-pl2_choice = input("Player 2, do you pick Paper (P), Rock (R) or Scissors (S)?: ").upper
+pl2_choice = input("Player 2, do you pick Paper (P), Rock (R) or Scissors (S)?: ").upper()
 
-while pl2_choice != "P" or pl1_choice != "R" or pl1_choice != "S":
+while pl2_choice != "P" and pl2_choice != "R" and pl2_choice != "S":
   pl2_choice = input("Invalid choice. Pick P, R or S, please: ")
 
 if pl1_choice == "P":
