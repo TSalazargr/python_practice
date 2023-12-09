@@ -1,0 +1,28 @@
+# range creates a list of number between either the first number (or the default (0) if there's only one number) and the second number
+
+for counter in range(10):
+  print(counter) # Displays numbers 0 to 9 each in one line
+
+print(counter) # Displays 9
+---
+
+for counter in range (5,10):
+    print(counter) # Displays numbers 5 to 9 each in one line
+
+---
+
+# Usually programmers name the counter variable i, j or k in for loops, like this:
+
+for i in range(5):
+  print(i)
+
+# However it's a good practice to name it something more obvious
+
+---
+
+total = 0
+
+for number in range(100):
+  total += number
+  print(total)
+
