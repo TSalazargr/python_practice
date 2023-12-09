@@ -1,0 +1,11 @@
+Collections of code written by others. 
+To import a library, we use the keyword 'import' followed by the name of the library. 
+You should do this at the beginning of your file.
+
+import random
+
+To access a method inside a library, we put the name of the library and the dot before the function.
+
+number = random.randint(1, 100)
+
+
