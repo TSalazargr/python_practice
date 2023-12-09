@@ -6,3 +6,5 @@ print(number >= 5)
 rank = str(3)
 
 grade = float("7.5")
+
+status = bool("True or False?: ")
