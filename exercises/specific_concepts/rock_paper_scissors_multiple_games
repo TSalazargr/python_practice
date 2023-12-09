@@ -1,0 +1,44 @@
+from getpass import getpass as input
+
+player_1 = input("What's player's 1 name?: ")
+player_2 = input("What's player's 2 name?: ")
+
+def rock_paper_scissors():
+
+  pl1_choice = input("Player 1, do you pick Paper (P), Rock (R) or Scissors (S)?: ").upper()
+
+  while pl1_choice != "P" and pl1_choice != "R" and pl1_choice != "S":
+    pl1_choice = input("Invalid choice. Pick P, R or S, please: ")
+  
+  pl2_choice = input("Player 2, do you pick Paper (P), Rock (R) or Scissors (S)?: ").upper()
+
+  while pl2_choice != "P" and pl2_choice != "R" and pl2_choice != "S":
+    pl2_choice = input("Invalid choice. Pick P, R or S, please: ")
+
+  if pl1_choice == "P":
+    if pl2_choice == "P":
+      print("It's a tie!")
+    elif pl2_choice == "R":
+      print(player_1, "wins!")
+    else:
+      print(player_2, "wins!")
+  elif pl1_choice == "R":
+    if pl2_choice == "P":
+      print(player_2, "wins!")
+    elif pl2_choice == "R":
+      print("It's a tie!")
+    else:
+      print(player_1, "wins!")
+  else: # Player_1 chooses Scissors
+    if pl2_choice == "P":
+      print(player_1, "wins!")
+    elif pl2_choice == "R":
+      print(player_2, "wins!")
+    else:
+      print("It's a tie!")
+
+play_again = "Y"
+
+while play_again == "Y":
+  def rock_paper_scissor()
+  play_again = input("Would you like to play again? Y/N :").upper()
