@@ -31,9 +31,14 @@ def play():
 
 while True:
   print("Press 1 to play the song.")
+  time.sleep(2)
+  os.system("clear")
   print("Press 2 to exit")
+  time.sleep(2)
+  os.system("clear")
   print("Press any other key to see the menu again")
-  
+  time.sleep(2)
+  os.system("clear")
   user_choice = input("What's your choice?: ") # take user's input
   if user_choice == "1":
     play()
