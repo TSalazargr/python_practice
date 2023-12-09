@@ -1,0 +1,20 @@
+import random
+
+number = random.randint(1, 100)
+
+---
+
+import random
+
+for i in range(10):
+  print(random.randint(1, 100))
+
+alternatively,
+
+import random
+
+for i in range(10):
+  number = random.randint(1, 100)
+  print(number)
+
+---
