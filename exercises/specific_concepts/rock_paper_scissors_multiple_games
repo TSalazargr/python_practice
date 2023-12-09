@@ -40,5 +40,5 @@ def rock_paper_scissors():
 play_again = "Y"
 
 while play_again == "Y":
-  rock_paper_scissor()
+  rock_paper_scissors()
   play_again = input("Would you like to play again? Y/N :").upper()
