@@ -18,3 +18,11 @@ for i in range(10):
   print(number)
 
 ---
+
+def roll_d20():
+  import random
+  dice = random.randint(1, 20)
+  print("You rolled a", dice)
+
+roll_d20()
+
