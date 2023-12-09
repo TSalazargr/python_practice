@@ -26,3 +26,16 @@ for number in range(100):
   total += number
   print(total)
 
+---
+
+# Compound interest calculator
+
+initial_amount = float(input("What's the initial amount?: "))
+interest_rate = float(input("What's the interest rate?: "))
+years = int(input("How many years will the money appreciate for?: "))
+total = initial_amount
+
+for years in range(years):
+  total = total * (1 + (interest_rate/100))
+
+print(total)
