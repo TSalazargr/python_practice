@@ -1,0 +1,11 @@
+while True:
+  direction = input("You are in a corridor, do you go left or right?: ")
+  if direction == "left":
+    print("You have fallen to your death")
+    break # Ends loop and goes to code outside the loop
+  elif direction == "right":
+    continue # Re-starts the loop from the first line
+  else:
+    print("Ahh! You're a genius, you've won")
+    exit() # Finishes the program
+print("The game is over, you've failed!")
