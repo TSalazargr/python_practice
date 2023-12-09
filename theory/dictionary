@@ -1,3 +1,5 @@
 Method == function
 Subroutine == function
 Call a function
+Scope == when a variable is created, how long is the variable is it available for? e.g. a variable created in a function will only be available inside the function
+
