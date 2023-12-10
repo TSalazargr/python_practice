@@ -4,7 +4,7 @@ def character():
     name = input("What's the character's name?: ")
     hp = (random.randint(1, 6) * random.randint(1, 12))//2 + 10
     mp = (random.randint(1, 4) * random.randint(1, 8))//2
-    print("Your character's name is", name, ". It has", hp, "HP and", mp, "MP.")
+    print("Your character's name is {}. They have {} HP and {} MP.format(name, hp, mp))
     return name, hp, mp
 
 def battle():
@@ -21,22 +21,21 @@ def battle():
             print("It's " + name1 + "'s turn!")
             time.sleep(2)
             hp2 -= mp1
-            print(name1 + " did " + str(mp1) + " damage to " + name2 + ". " + name2 + "'s hp is now " + str(hp2) + "!")
-            time.sleep(2)
+            print("{} did {} damage to {}. {}'s hp is now {}!".format(name1, str(mp1), name2, name2, str(hp2)))
             turn = name2
         else:
             time.sleep(2)
             print("It's " + name2 + "'s turn!")
             hp1 -=mp2
-            print(name2 + " did " + str(mp2) + " damage to " + name1 + ". "+ name1 + "'s hp is now " + str(hp1) + "!")
+            print("{} did {} damage to {}. {}'s hp is now {}!".format(name2, str(mp2), name1, name1, str(hp1)))
             time.sleep(2)
             turn = name1
     if hp1 > hp2:
         time.sleep(2)
-        print(name1, "wins!")
+        print("{} wins!".format(name1))
     else:
         time.sleep(2)
-        print(name2, "wins!")
+        print("{} wins!".format(name2))
 
 battle()    
   
