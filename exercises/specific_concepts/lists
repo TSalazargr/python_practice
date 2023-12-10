@@ -45,21 +45,38 @@ shopping_list[0:2] # Display first two values
 
 shopping_list[-1] # Display Tea
 
----
-
 len(shopping_list)
-
----
 
 shopping_list.append("Honey")
 
----
-
 shopping_list.insert(1, "Cereal")
 
+shopping_list.pop(1) # Removes value with index 1
+
+shopping_list.remove("Eggs")
+
 ---
 
-shopping_list.pop(1) # Removes value with index 1
+blank_list = [] # Creates empty list
+
+---
+
+agenda = []
+
+while True:
+  menu = input("Add or remove?: ").lower()
+  if menu == "add":
+    item = input("What's next on the agenda?: ")
+    agenda.append(item) 
+  elif menu == "remove":
+    item = input("What would you like to remove?: ")
+    if item in agenda:
+        agenda.remove(item)
+    else:
+        print(f"{item} was not in the list")
+  else:
+    print("Invalid value. Try again.")
+  print(agenda)
 
 ---
 
