@@ -1,16 +1,37 @@
 import random
 
 def character():
-  name = input("What's the character's name?: ")
-  hp = (random.randint(1, 6) * random.randint(1, 12))//2 + 10
-  mp = (random.randint(1, 6) * random.randint(1, 12))//2 + 10
-  print("Your character's name is", name, ". It has", hp, "HP and", mp, "MP.")
-  return name, hp, mp
+    name = input("What's the character's name?: ")
+    hp = (random.randint(1, 6) * random.randint(1, 12))//2 + 10
+    mp = (random.randint(1, 4) * random.randint(1, 8))//2
+    print("Your character's name is", name, ". It has", hp, "HP and", mp, "MP.")
+    return name, hp, mp
 
-name1, hp1, mp1 = character()
+def battle():
+    name1, hp1, mp1 = character()
+    name2, hp2, mp2 = character()
+    initiative = random.randint(1, 2)
+    if initiative == 1:
+        turn = name1
+        print("It's " + name1 + "'s turn!" )
+    else:
+        turn = name2
+    while hp1 > 0 and hp2 > 0:
+        if turn == name1:
+            hp2 -= mp1
+            print(name1 + " did " + str(mp1) + " damage to " + name2 + ". " + name2 + "'s hp is now " + str(hp2) + "!")
+            turn = name2
+            print("It's " + name2 + "'s turn!")
+        else:
+            hp1 -=mp2
+            print(name2 + " did " + str(mp2) + " damage to " + name1 + ". "+ name1 + "'s hp is now " + str(hp1) + "!")
+            turn = name1
+            print("It's " + name1 + "'s turn!" )
+    if hp1 > hp2:
+        print(name1, "wins!")
+    else:
+        print(name2, "wins!")
 
-name2, hp2, mp2 = character()
-
-print(name1, hp1, mp1)
-
+battle()    
+  
 
