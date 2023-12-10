@@ -1,0 +1,29 @@
+list = ["Item 1", 1, True]
+
+list[0] # Indexing
+
+print(list[2])
+
+list[0] = "Item 2" # Changes value with the index 0 for "Item 2"
+
+---
+
+for i in range (0, 3):
+  print(list[i])
+
+Alternatively,
+
+for item in list:
+  print(item)
+
+---
+
+colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Violet"]
+print(f"The first color is {colors[0]}")
+
+---
+
+import random
+
+greeting = ["Hola", "Hello", "Konichiwa", "Salut", "Nihao"]
+print(f"{greeting[random.randint(0, 4)]}!")
