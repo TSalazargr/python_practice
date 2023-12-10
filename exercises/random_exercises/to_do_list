@@ -6,7 +6,11 @@ def write_to_do():
       for i in range(len(to_do)):
         print(f"{i+1}: {to_do[i]}")
     elif option == "A" or option == "(A)":
-      to_do.append(input("What would you like to add?: "))
+      item = input("What would you like to add?: "))
+      if item not in to_do:
+        to_do.append(item)
+      else:
+        print(f"{item} is already on the list.")
     elif option == "R" or option == "(R)":
       item = input("What would you like to remove?: ")
       if item in to_do:
