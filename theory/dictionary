@@ -1,5 +1,10 @@
 Method == function
+
 Subroutine == function
+
 Call a function
+
 Scope == when a variable is created, how long is the variable is it available for? e.g. a variable created in a function will only be available inside the function
 
+List = collection of values stored under one variable. Indexable, mutable. It has the following syntax:
+  list = ["Item 1", 1, True]
