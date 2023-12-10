@@ -960,7 +960,7 @@ print(1 in nums) #Display True
 print("three" in nums) #Display False
 print(4 not in nums) #Display True
 
-LIST / UNPACKIN LISTS
+LIST / UNPACKING LISTS
 
 List unpacking allows you to assign each item in a collection to a variable.
 
