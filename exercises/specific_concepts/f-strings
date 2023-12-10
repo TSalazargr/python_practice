@@ -1,0 +1,31 @@
+# f-strings or format strings
+
+name = "Teresa"
+age = 33
+pronouns = "she/her"
+print("This is {}, using {} pronouns, and is {} years old.".format(name, pronouns, str(age)))
+
+LOCAL VARIABLES
+
+# Local variables allow you to reuse variables and to put them in any order.
+# There's no need to turn integers and floats into strings
+
+name = "Teresa"
+age = 33
+pronouns = "she/her"
+print("This is {name}, using {pronouns} pronouns, and is {age} years old. Hello {name}!".format(name=name, pronouns=pronouns, age=age))
+
+Alternatively,
+
+message = "This is {name}, using {pronouns} pronouns, and is {age} years old. Hello {name}!".format(name=name, pronouns=pronouns, age=age)
+
+print(message)
+
+---
+#You can achieve the same result by starting the string with an "f"
+
+name = "Teresa"
+age = 33
+pronouns = "she/her"
+print(f"This is {name}, using {pronouns} pronouns, and is {age} years old.")
+
