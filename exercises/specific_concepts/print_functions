@@ -31,3 +31,25 @@ print("\033[ m")
 print("This text is", "\033[31m", "red", "\033[0m", ". This text is", "\033[35m", "purple", "\033[0m", ".")   
 
 Note: this doesn't work in some compilers
+
+---
+
+for i in range(0, 100):
+  print(i, end=" ") # Each next value is sepparated by a space rather than by a new line
+
+for i in range(0, 100):
+  print(i, end=", ") # Puts a ", " string between values rather than a new line
+
+for i in range(0, 100):
+  print(i, end="\n") # Puts a new line between values
+
+for i in range(0, 100):
+  print(i, end="\n - ") # Puts a new line between values, and starts each value after zero with a "- " string
+
+for i in range(0, 100):
+  print(i, end="\t") # Tab indent between values
+
+for i in range(0, 100):
+  print(i, end="\v") # Vertical tab between values (New line + tab)
+
+
