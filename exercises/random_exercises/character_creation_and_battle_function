@@ -13,21 +13,20 @@ def battle():
     initiative = random.randint(1, 2)
     if initiative == 1:
         turn = name1
-        print("It's " + name1 + "'s turn!" )
     else:
         turn = name2
     while hp1 > 0 and hp2 > 0:
         if turn == name1:
-            print("It's " + name1 + "'s turn!")
+            print("It's {}'s turn!".format(name1))
             time.sleep(2)
             hp2 -= mp1
-            print("{} did {} damage to {}. {}'s hp is now {}!".format(name1, str(mp1), name2, name2, str(hp2)))
+            print("{name1} did {mp1} damage to {name2}. {name2}'s hp is now {hp2}!".format(name1=name1, mp1=str(mp1), name2=name2, hp2=str(hp2)))
             turn = name2
         else:
             time.sleep(2)
             print("It's " + name2 + "'s turn!")
             hp1 -=mp2
-            print("{} did {} damage to {}. {}'s hp is now {}!".format(name2, str(mp2), name1, name1, str(hp1)))
+            print("{name2} did {mp2} damage to {name1}. {name1}'s hp is now {hp1}!".format(name2=name2, mp2=str(mp2), name1=name1, hp1=str(hp1)))
             time.sleep(2)
             turn = name1
     if hp1 > hp2:
