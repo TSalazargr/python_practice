@@ -16,6 +16,18 @@ Alternatively,
 for item in list:
   print(item)
 
+Alternatively,
+
+list = ["Item 1", 1, True]
+
+for i in range (len(list)):
+  print(list[i])
+
+list = ["Item 1", 1, True]
+
+for i in range (len(list)):
+  print(f"{i+1}: {list[i]}") # Adds numbers next to values
+
 ---
 
 colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Violet"]
