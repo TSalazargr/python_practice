@@ -1,4 +1,4 @@
-import random
+import random, time
 
 def character():
     name = input("What's the character's name?: ")
@@ -18,18 +18,24 @@ def battle():
         turn = name2
     while hp1 > 0 and hp2 > 0:
         if turn == name1:
+            print("It's " + name1 + "'s turn!")
+            time.sleep(2)
             hp2 -= mp1
             print(name1 + " did " + str(mp1) + " damage to " + name2 + ". " + name2 + "'s hp is now " + str(hp2) + "!")
+            time.sleep(2)
             turn = name2
-            print("It's " + name2 + "'s turn!")
         else:
+            time.sleep(2)
+            print("It's " + name2 + "'s turn!")
             hp1 -=mp2
             print(name2 + " did " + str(mp2) + " damage to " + name1 + ". "+ name1 + "'s hp is now " + str(hp1) + "!")
+            time.sleep(2)
             turn = name1
-            print("It's " + name1 + "'s turn!" )
     if hp1 > hp2:
+        time.sleep(2)
         print(name1, "wins!")
     else:
+        time.sleep(2)
         print(name2, "wins!")
 
 battle()    
