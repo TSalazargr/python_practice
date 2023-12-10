@@ -1,0 +1,20 @@
+- .lower() = all letters are lower case
+- .upper() = all letters are upper case
+- .title() = capital letter for the first letter of every word
+- .capitalize() = capital letter for the first letter of only the first word
+- .strip() = removes spaces at either side of the message
+
+message = "Hello world".lower()
+message = "hello world".upper()
+message = "hello world".title()
+message = "hello world".capitalize()
+message = " hello world ".strip()
+
+---
+
+You can chain these functions together.
+
+message = " hello world ".strip().capitalize() # Display Hello world
+messge = " hello world".capitalize().strip() # Display hello world
+
+Note: if you don't use strip() before capitalize() in this example, it won't capitalize the 'h' as the first key is a space
