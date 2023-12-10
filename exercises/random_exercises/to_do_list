@@ -1,0 +1,16 @@
+def write_to_do():
+  to_do = []
+  while True:
+    option = input("Would you like to print the list (P), add to it (A) or remove something (R)?: ").upper()
+    if option == "P" or option == "(P)":
+      print(to_do)
+    elif option == "A" or option == "(A)":
+      to_do.append(input("What would you like to add?: "))
+    elif option == "R" or option == "(R)":
+      item = input("What would you like to remove?: ")
+      if item in to_do:
+        to_do.remove(item)
+      else: 
+        print(f"{item} is not on the list.")
+
+write_to_do()
