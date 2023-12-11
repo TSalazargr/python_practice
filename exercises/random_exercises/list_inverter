@@ -15,6 +15,6 @@ print(new_list)
 ---
 list = input("Write a list of item sepparated by spaces: ")
 
-list = list.split(" ")
+list = list.split()
 
 print(list[::-1])
