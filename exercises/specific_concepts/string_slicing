@@ -1,10 +1,16 @@
 my_string = "Hello world"
 
+print(my_string[:]) # Displays Hello world
 print(my_string[0]) # Displays H
 print(my_string[0:5]) # Displays Hello
 print(my_string[:5]) # Displays Hello
 print(my_string[-1]) # Displays d
 print(my_string[-5:]) # Displays world
 
-------
+# string_name[index of starting position : index just after ending position : number of characters to leave as a gap]
+
+print(my_string[0:5:2]) # Displays Hlo
+print(my_string[::2]) # Prints every other letter to display Hlowrd
+print(my_string[::-1]) # Displays dlrow olleH
+
 
