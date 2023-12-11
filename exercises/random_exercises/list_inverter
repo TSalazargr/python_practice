@@ -11,3 +11,10 @@ while length_list >= 0:
     length_list -= 1
 
 print(new_list)
+
+---
+list = input("Write a list of item sepparated by spaces: ")
+
+list = list.split(" ")
+
+print(list[::-1])
