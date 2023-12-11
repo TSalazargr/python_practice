@@ -1,0 +1,10 @@
+my_string = "Hello world"
+
+print(my_string[0]) # Displays H
+print(my_string[0:5]) # Displays Hello
+print(my_string[:5]) # Displays Hello
+print(my_string[-1]) # Displays d
+print(my_string[-5:]) # Displays world
+
+------
+
