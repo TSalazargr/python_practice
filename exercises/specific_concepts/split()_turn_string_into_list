@@ -1,0 +1,6 @@
+string = "Hello world"
+
+# string.split(separator, maxsplit)
+# Default separator is any whitespace.
+
+print(string.split()) 
