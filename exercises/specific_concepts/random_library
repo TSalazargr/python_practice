@@ -26,3 +26,12 @@ def roll_d20():
 
 roll_d20()
 
+---
+
+import random
+
+list_of_words = ["english", "stranger", "sublime", "water"]
+
+word = random.choice(list_of_words) # Chooses a word at random from the list
+
+print(word)
