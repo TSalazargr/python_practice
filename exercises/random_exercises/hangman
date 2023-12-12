@@ -1,4 +1,4 @@
-import random
+import random, re
 
 list_of_words = ["english", "stranger", "sublime", "water", "table", "phone," "sofa", "backpack", "television", "book", "paper", "mouse"]
 
@@ -6,24 +6,34 @@ word = random.choice(list_of_words)
 
 blank_word = ""
 
-for i in range len(word):
+for i in range (len(word)):
   blank_word = blank_word + "_" 
 
-def hangman():
-  letters_tried = []
-  lives = 6
-  while lives > 0 and win == False:
-    print(blank_word)
-    choice = input("Pick a letter: ").lower()
-    if choice in letters_tried:
-      print(f"You already tried {choice}")
-    else:
-      letters_tried.append(choice) 
-        if choice in word:
-          print(f"{That's correct, {choice} is in the word!")
-          
-        else:
-          print(f"I'm sorry, {choice} is not in the word.")
-          lives -= 1
-          print(lives + "lives left.")
+letters_tried = []
+
+numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+lives = 6
+
+win = False
+
+def letter_finder():
+  
+
+while lives > 0 and win == False:
+  print(blank_word)
+  choice = input("Pick a letter: ").lower() 
+  while len(choice) != 1:
+    choice = input("You must pick only one letter at a time. Try again: ").lower()
+  if choice in letters_tried:
+    print(f"You already tried {choice}")
+  else:
+    letters_tried.append(choice) 
+  if choice in word:
+    print(f"That's correct, {choice} is in the word!")
+    
+  else:
+    print(f"I'm sorry, {choice} is not in the word.")
+    lives -= 1
+  print(str(lives), "lives left.")
   
