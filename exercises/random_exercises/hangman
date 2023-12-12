@@ -16,7 +16,7 @@ numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 lives = 6
 
 def letter_finder():
-    index = [i for i in range(len(word)) if word.startswith(choice, i)]
+    index = [i for i in range(len(word)) if word.startswith(choice, i)] # Finds if letter "choice" is in "word" and returns a list with every position of that letter
     counter_index = 0
     while counter_index < len(index):
         blank_word.pop(index[counter_index])
@@ -26,8 +26,12 @@ def letter_finder():
     return blank_word
   
 
+print("Find the hidden word. You have 6 attempts!")
+
+print(blank_word)
+
 while lives > 0 and "_" in blank_word:
-  print(blank_word)
+
   choice = input("Pick a letter: ").lower() 
   while len(choice) != 1:
     choice = input("You must pick only one letter at a time. Try again: ").lower()
