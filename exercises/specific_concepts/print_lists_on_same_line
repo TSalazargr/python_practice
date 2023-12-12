@@ -1,9 +1,0 @@
-my_list = ["abc", 12, True]
-
-for i in my_list:
-    print(i, end=" ") # separated by spaces
-
-my_list = ["abc", 12, True]
-
-for i in my_list:
-    print(i, end="") # items in the list one after another

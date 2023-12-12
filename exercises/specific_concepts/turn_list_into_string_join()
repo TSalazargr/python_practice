@@ -1,0 +1,29 @@
+my_list = ["abc", 12, True]
+
+for i in my_list:
+    print(i, end=" ") # separated by spaces
+
+---
+
+for i in my_list:
+    print(i, end="") # items in the list one after another
+
+---
+
+my_string = ""
+
+my_list = ["abc", 12, True]
+
+for i in my_list:
+    my_string = my_string + str(i)
+
+print(my_string)
+
+# Alternatively
+
+my_list = ["abc", 12, True]
+
+# Convert each element to a string and then join them, with "" as separator
+my_string = "".join(str(i) for i in my_list)
+
+print(my_string)
