@@ -18,6 +18,13 @@ lives = 6
 win = False
 
 def letter_finder():
+    index = [i for i in range(len(word)) if word.startswith(choice, i)]
+    counter_index = 0
+    while counter_index < len(index):
+        blank_word.pop(index[counter_index])
+        blank_word.insert(index[counter_index], choice)
+        counter_index += 1
+    print(blank_word)
   
 
 while lives > 0 and win == False:
