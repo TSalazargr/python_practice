@@ -22,7 +22,8 @@ def letter_finder():
         blank_word.pop(index[counter_index])
         blank_word.insert(index[counter_index], choice)
         counter_index += 1
-    print(blank_word)
+    for i in blank_word:
+    print(i, end="")
     return blank_word
   
 
