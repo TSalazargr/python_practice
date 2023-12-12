@@ -43,9 +43,9 @@ while lives > 0 and "_" in blank_word:
     lives -= 1
     print(str(lives), "lives left.")
 
-if lives = 0:
+if lives == 0:
   print("Game over")
 
 if "_" not in blank_word:
-  print("Congratulations! You discovered the hidden word!)
+  print("Congratulations! You discovered the hidden word!")
   
