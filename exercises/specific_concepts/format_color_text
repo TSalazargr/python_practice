@@ -19,3 +19,11 @@ Note: this doesn't work in some compilers
 
 ---
 
+string = "Hello world"
+vowels = ["a", "e", "i", "o", "u"]
+
+for letter in string:
+  if letter.lower() in vowels:
+    print('\033[33m', end='') # Turn letters yellow
+  print(letter) # Print letter either in black or yellow
+  print('\033[0m', end='') # Turn text back to black
