@@ -1,0 +1,29 @@
+import random
+
+list_of_words = ["english", "stranger", "sublime", "water", "table", "phone," "sofa", "backpack", "television", "book", "paper", "mouse"]
+
+word = random.choice(list_of_words)
+
+blank_word = ""
+
+for i in range len(word):
+  blank_word = blank_word + "_" 
+
+def hangman():
+  letters_tried = []
+  lives = 6
+  while lives > 0 and win == False:
+    print(blank_word)
+    choice = input("Pick a letter: ").lower()
+    if choice in letters_tried:
+      print(f"You already tried {choice}")
+    else:
+      letters_tried.append(choice) 
+        if choice in word:
+          print(f"{That's correct, {choice} is in the word!")
+          
+        else:
+          print(f"I'm sorry, {choice} is not in the word.")
+          lives -= 1
+          print(lives + "lives left.")
+  
