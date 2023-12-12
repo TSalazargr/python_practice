@@ -4,10 +4,10 @@ list_of_words = ["english", "stranger", "sublime", "water", "table", "phone," "s
 
 word = random.choice(list_of_words)
 
-blank_word = ""
+blank_word = []
 
 for i in range (len(word)):
-  blank_word = blank_word + "_" 
+  blank_word.append("_")
 
 letters_tried = []
 
