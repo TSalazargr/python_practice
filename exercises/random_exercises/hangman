@@ -15,8 +15,6 @@ numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 lives = 6
 
-win = False
-
 def letter_finder():
     index = [i for i in range(len(word)) if word.startswith(choice, i)]
     counter_index = 0
@@ -28,7 +26,7 @@ def letter_finder():
     return blank_word
   
 
-while lives > 0 and win == False:
+while lives > 0 and "_" in blank_word:
   print(blank_word)
   choice = input("Pick a letter: ").lower() 
   while len(choice) != 1:
@@ -43,5 +41,11 @@ while lives > 0 and win == False:
   else:
     print(f"I'm sorry, {choice} is not in the word.")
     lives -= 1
-  print(str(lives), "lives left.")
+    print(str(lives), "lives left.")
+
+if lives = 0:
+  print("Game over")
+
+if "_" not in blank_word:
+  print("Congratulations! You discovered the hidden word!)
   
