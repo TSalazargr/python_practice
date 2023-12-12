@@ -25,6 +25,7 @@ def letter_finder():
         blank_word.insert(index[counter_index], choice)
         counter_index += 1
     print(blank_word)
+    return blank_word
   
 
 while lives > 0 and win == False:
@@ -38,7 +39,7 @@ while lives > 0 and win == False:
     letters_tried.append(choice) 
   if choice in word:
     print(f"That's correct, {choice} is in the word!")
-    
+    blank_word = letter_finder()
   else:
     print(f"I'm sorry, {choice} is not in the word.")
     lives -= 1
