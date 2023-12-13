@@ -81,6 +81,8 @@ _____
 _____|
         """)
 
+hangman_picture(lives)
+
 print("Find the hidden word. You have 6 attempts!")
 
 for i in blank_word:
@@ -102,11 +104,20 @@ while lives > 0 and "_" in blank_word:
   else:
     print(f"\nI'm sorry, {choice} is not in the word.")
     lives -= 1
+    hangman_picture(lives)
     print(str(lives), "lives left.")
 
 print("\n")
 
 if lives == 0:
+  print("""
+_____
+  |  |
+  o  |
+ /|\ |
+ / \ |
+_____|
+  """)
   print("Game over")
 
 if "_" not in blank_word:
