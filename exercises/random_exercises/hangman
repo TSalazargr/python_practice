@@ -23,7 +23,63 @@ def letter_finder():
     for i in blank_word:
       print(i, end=" ")
     return blank_word
-  
+
+def hangman_picture(lives):
+    if lives == 6:
+        print("""
+_____
+     |
+     |
+     |
+     |
+_____|
+ 
+    """)
+    elif lives == 5:
+        print("""
+_____
+  |  |
+     |
+     |
+     |
+_____|
+""")
+    elif lives == 4:
+        print("""
+_____
+  |  |
+  o  |
+  |  |
+     |
+_____|
+    """)
+    elif lives == 3:
+        print("""
+_____
+  |  |
+  o  |
+ /|  |
+     |
+_____|
+        """)
+    elif lives == 2:
+        print("""
+_____
+  |  |
+  o  |
+ /|\ |
+     |
+_____|
+        """)   
+    elif lives == 1:
+        print("""
+_____
+  |  |
+  o  |
+ /|\ |
+ /   |
+_____|
+        """)
 
 print("Find the hidden word. You have 6 attempts!")
 
