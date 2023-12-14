@@ -25,9 +25,24 @@ car = {
     'mileage': 15000
 }
 
-question = input()
+question = input("What key would you like to look up?: ")
 
 print(car.get(question, "Not found"))
+
+# Alternatively:
+
+question = input("What key would you like to look up?: ")
+
+print(car[question])
+
+# Adding exception handling:
+
+question = input("What key would you like to look up?: ")
+
+try:
+    print(car[question])
+except:
+    print("Key not in dictionary")
 
 ---
 
