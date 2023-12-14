@@ -1,0 +1,10 @@
+contact_user = { "name" : "placeholder", "age" : "placeholder", "email": "placeholder"}
+
+contact_user["name"] = input("What's your name?: ")
+
+contact_user["age"] = input("What's your age?: ")
+
+contact_user["email"] = input("What's your email address?: ")
+
+print(contact_user)
+  
