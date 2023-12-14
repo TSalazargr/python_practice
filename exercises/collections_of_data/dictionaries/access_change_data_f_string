@@ -1,0 +1,22 @@
+# Benefit of lists: allows you access data using keys instead of indexes
+
+# dictionary = { key name: key value , key name : key value}
+
+ACCESSING DATA USING KEYS
+
+user = { "name":"Jon", "age":23, "pronouns": "he/him"}
+
+print(user["name"])
+
+CHANGE DATA INSIDE KEYS WITH INDEXING
+
+user = { "name":"Scott", "age":23, "pronouns": "he/him"}
+
+user["name"] = "Ramona"
+
+COMBINING F-STRINGS WITH DICTIONARIES
+
+myUser = {"name": "David", "age": 28}
+print(f"Your name is {myUser['name']} and your age is {myUser['age']}")
+
+# Note: you have to use single quotes (') for this technique because the double quotes (") are already being used to start and end the string
