@@ -13,28 +13,29 @@ while True:
   if letter in letterPicked:
     print("You've tried that before")
     continue
-  letterPicked.append(letter)
+  letterPicked.append(letter) # Adds the letter the user picked to the list of letters picked
   if letter in word:
     print("You found a letter")
+    print()
   else:
-    print("Nope, not in there")
+    print("Nope, not in there.")
     lives -= 1
-  
-  allLetters = True
-  print()
-  for i in word:
-    if i in letterPicked:
-      print(i, end="")
-    else:
-      print("_", end="")
-      allLetters = False
-  print()
 
+  allLetters = True
+  for i in word: # For each character in word
+    if i in letterPicked: # If it's already been picked...
+      print(i, end="") # ...print the letter, keep in the same line
+    else:
+      print("_ ", end="") # Otherwise, print as a "_ "
+      allLetters = False # Because some letters haven't been picked yet, allLetters is False
   if allLetters:
+    print()
     print(f"You won with {lives} left!")
     break
   if lives<=0:
+    print()
     print(f"You ran out of lives! The answer was {word}")
     break
   else:
-    print(f"Only {lives} left")
+    print()
+    print(f"Only {lives} lives left")
