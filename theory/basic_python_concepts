@@ -1496,9 +1496,15 @@ Python provides a number of built-in collection types, to store multiple values.
 Lists are one of these collection types, and they allow you to store indexed values.
 
 Dictionaries are another collection type and allow you to map arbitrary keys to values.
+
+Instead of using the index to access a value, you can use the key.
+
 Dictionaries can be indexed in the same way as lists, using square brackets containing aka KEYS and their VALUES.
 
 Each element in a dictionary is represented by a key:value pair.
+
+A dictionary can't have two keys with the same name. 
+If a key has more than one value, the key that was added closest to the end always overrides the previous one.
 
 Examples:
 
