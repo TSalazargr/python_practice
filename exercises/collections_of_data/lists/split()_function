@@ -1,0 +1,6 @@
+data = input("Input the following information sepparated by commas: Website name, url, description, star rating out of 5: ")
+
+website = data.split(",")
+
+print("🌟Website Rating🌟")
+print(website)
