@@ -23,14 +23,54 @@ ITEMS() METHOD
 myDictionary = {"name" : "Ian", "health": 219, "strength": 199, "equipped": "Axe"}
 
 for name,value in myDictionary.items():
-  print(f"{name}:{value}")
+  print(f"{name}:{value}") # The colon will appear between "name" and "value"
+
+# Displays:
+# name:Ian
+# health:219
+# strength:199
+# equipped:Axe
 
 # Note: "name" and "value" and conventions. They can be replaced for other variable names (e.g. i and j) so long as you also replace them on the 'for' loop declaration
 
 myDictionary = {"name" : "Ian", "health": 219, "strength": 199, "equipped": "Axe"}
+for name, value in myDictionary.items():
+  print(f"{name, value}")
 
-for i,j in myDictionary.items():
-  print(f"{i}:{j}")
+# # Displays
+# ('name', 'Ian')
+# ('health', 219)
+# ('strength', 199)
+# ('equipped', 'Axe')
+
+
+---
+
+# If you give items() only one variable in the for statement, it will extract everything
+
+myDictionary = {"name" : "Ian", "health": 219, "strength": 199, "equipped": "Axe"}
+
+for name in myDictionary.items():
+  print(f"{name}")
+
+# Displays
+# ('name', 'Ian')
+# ('health', 219)
+# ('strength', 199)
+# ('equipped', 'Axe')
+
+# However if you add both variables in the for statement, you can choose to pick only the key or only the value
+
+myDictionary = {"name" : "Ian", "health": 219, "strength": 199, "equipped": "Axe"}
+
+for name, value in myDictionary.items():
+  print(f"{name}")
+
+# Displays
+# name
+# health
+# strength
+# equipped
 
 ITEM() METHOD + IF STATEMENT
 
@@ -51,6 +91,5 @@ for name,value in myDictionary.items():
       print("Whoa, SO STRONG")
     else:
       print("Looks like you skipped leg day, arm day, chest day and, well, gym day entirely bro!")
-
 
 
