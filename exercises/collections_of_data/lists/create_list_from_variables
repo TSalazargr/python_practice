@@ -1,0 +1,4 @@
+name = "Sarah"
+age = 34
+country = "Germany"
+info = [name, age, country]
