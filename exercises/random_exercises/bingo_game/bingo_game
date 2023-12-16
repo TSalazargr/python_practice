@@ -28,8 +28,8 @@ bingo_card_1 = generate_bingo_card()
 
 def play_bingo():
     picked_numbers = []
-    win = False
-    while win == False:
+    x = 0
+    while x != 8:
         number = random.randint(1, 10)
         if number not in picked_numbers:
             picked_numbers.append(number)
@@ -41,6 +41,8 @@ def play_bingo():
                     print("x", end="")
                 else:
                     print(i, end="")
+    else:
+        print("You won!")
                     
 
 play_bingo()
