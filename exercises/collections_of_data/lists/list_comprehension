@@ -1,0 +1,12 @@
+# List comprehension
+
+#List comprehensions are a way to create lists based on a specific rule or pattern. 
+
+nums = [i*2 for i in range(10)] # A list of even numbers between 0 and 18
+
+cubed_evens=[i**2 for i in range(10) if i**2 % 2 == 0]  # A list of squares that are even
+
+word = str(input())
+# Removes vowels from word
+not_vowels = [i for i in word if i != "a" and i != "e" and i != "i" and i != "o" and i != "u"]
+print(not_vowels)
