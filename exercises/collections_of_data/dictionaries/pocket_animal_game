@@ -1,0 +1,5 @@
+rat = {"name":"rat", "hp": 12, "strength":4}
+
+cat = {"name":"cat", "hp": 20, "strength":10}
+
+dog = {"name":"dog", "hp": 24, "strength":8}
