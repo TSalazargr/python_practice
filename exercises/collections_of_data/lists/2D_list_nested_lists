@@ -17,3 +17,24 @@ print(user_specs[0] [0]) # Displays Alice
 # Edit nested lists
 
 user_specs [0] [0] = "Ana" # Replaces Alice with Ana
+
+---
+
+user_specs = [] 
+
+while True: 
+  name = input("What is your name? ")
+  age = input("What is your age? ")
+  pref = input("What is your computer platform? ")
+  
+  row = [name, age, pref] 
+
+  user_specs.append(row) 
+  # Adds the contents of the row variable at the end of the list
+  exit = input("Exit? y/n: ") 
+  # Get user choice to quit, yes or no?
+  if (exit.strip().lower()[0] == "y"): 
+    # strip removes unwanted spaces from the input
+    break # break ends a loop and jumps to the next line of code that is not part of the loop.
+    
+print(user_specs)
