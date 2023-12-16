@@ -40,4 +40,12 @@ def play_bingo():
                     correct_numbers.append(number)
                     print()
                     print(f"{number} is in your bingo card.")
+        for i in bingo_card_1:
+            if i in picked_numbers:
+                print("x")
+            else:
+                print(i)
     print("You won!")
+                    
+
+play_bingo()
