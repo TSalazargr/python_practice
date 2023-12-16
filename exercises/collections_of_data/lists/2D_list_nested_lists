@@ -1,0 +1,19 @@
+# To do this, nest list inside a list
+
+user_specs = [ ["Alice", 21, "Mac"],
+             ["Bob", 19, "PC"],
+             ["Charlie", 17, "PC"] ]
+
+print(user_specs)
+
+# print only one row
+
+print(user_specs[0])
+
+# print only one piece of data
+
+print(user_specs[0] [0]) # Displays Alice
+
+# Edit nested lists
+
+user_specs [0] [0] = "Ana" # Replaces Alice with Ana
