@@ -1,0 +1,8 @@
+import random
+
+bingo_values = []
+
+for i in range (7):
+  bingo_values.append(random.randint(1, 100))
+
+print(bingo_values)
