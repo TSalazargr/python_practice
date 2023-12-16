@@ -1,0 +1,31 @@
+import random
+
+def generate_bingo_card():
+    def generate_ran():
+        number = random.randint(1,100)
+        return number
+
+    numbers = []
+
+    for i in range(8):
+        value = generate_ran()
+        while value in numbers:
+            value = generate_ran()
+        numbers.append(value)
+  
+    numbers.sort()
+
+    bingo_card = [ [ numbers[0], numbers[1], numbers[2]],
+          [ numbers[3], "BINGO", numbers[4] ],
+          [ numbers [5], numbers[6], numbers[7]]
+            ]
+            
+      for row in bingo_card:
+          print(row)
+    return bingo_card
+
+bingo_card_1 = generate_bingo_card()
+
+print(bingo_card_1)
+
+generate_bingo_card()
