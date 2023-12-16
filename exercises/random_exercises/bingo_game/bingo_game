@@ -27,9 +27,8 @@ def generate_bingo_card():
 bingo_card_1 = generate_bingo_card()
 
 def play_bingo():
-    picked_numbers = []
-    x = 0
-    while x != 8:
+    picked_numbers = []    
+    while len(picked_numbers) < 8:
         number = random.randint(1, 10)
         if number not in picked_numbers:
             picked_numbers.append(number)
