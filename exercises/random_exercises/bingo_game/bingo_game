@@ -2,7 +2,7 @@ import random
 
 def generate_bingo_card():
     def generate_ran():
-        number = random.randint(1,10)
+        number = random.randint(1,20)
         return number
 
     numbers = []
@@ -30,7 +30,7 @@ def play_bingo():
     picked_numbers = []
     correct_numbers = []
     while len(correct_numbers) < 8:
-        number = random.randint(1, 10)
+        number = random.randint(1, 20)
         if number not in picked_numbers:
             picked_numbers.append(number)
             print()
