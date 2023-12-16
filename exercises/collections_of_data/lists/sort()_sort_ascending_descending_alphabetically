@@ -1,0 +1,31 @@
+# Ascending with numbers
+
+random_numbers = [6, 1, 4, 12, 2]
+
+random_numbers.sort() # Sort in ascending order
+
+print(random_numbers)
+
+# Descending with numbers
+
+random_numbers = [6, 1, 4, 12, 2]
+
+random_numbers.sort(reverse=True)
+
+print(random_numbers)
+
+# Ascending with letters
+
+vowels = ['e', 'a', 'u', 'o', 'i']
+
+vowels.sort() # Sort alphabetically
+
+print(vowels)
+
+# Descending with words
+
+colors = [ "yellow", "blue", "green", "white", "purple"]
+
+colors.sort(reverse=True)
+
+print(colors)
