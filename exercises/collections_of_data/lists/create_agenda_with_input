@@ -1,0 +1,16 @@
+agenda = []
+
+while True:
+  menu = input("Add or remove?: ").lower()
+  if menu == "add":
+    item = input("What's next on the agenda?: ")
+    agenda.append(item) 
+  elif menu == "remove":
+    item = input("What would you like to remove?: ")
+    if item in agenda:
+        agenda.remove(item)
+    else:
+        print(f"{item} was not in the list")
+  else:
+    print("Invalid value. Try again.")
+  print(agenda)
