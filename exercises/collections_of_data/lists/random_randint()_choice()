@@ -1,0 +1,10 @@
+import random
+
+greeting = ["Hola", "Hello", "Konichiwa", "Salut", "Nihao"]
+print(f"{greeting[random.randint(0, 4)]}!")
+
+import random
+
+greeting = ["Hola", "Hello", "Konichiwa", "Salut", "Nihao"]
+
+print(f"{random.choice(greeting)}!")
