@@ -1,0 +1,7 @@
+list = ["Item 1", 1, True]
+
+list[0] # Indexing
+
+print(list[2])
+
+list[0] = "Item 2" # Changes value with the index 0 for "Item 2"
