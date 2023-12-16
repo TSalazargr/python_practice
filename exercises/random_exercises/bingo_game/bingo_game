@@ -35,18 +35,11 @@ def play_bingo():
             picked_numbers.append(number)
             print()
             print(f"The number is {number}.")
-            if number in bingo_card_1:
-                correct_numbers.append(number)
-                print()
-                print(f"{number} is in your bingo card.")
-        for row in bingo_card_1:
-            for i in row:
-                if i in picked_numbers:
-                    print("x", end="")
-                else:
-                    print(i, end="")
-    else:
-        print("You won!")
+        if number in bingo_card_1 and number not in picked_numbers:
+            correct_numbers.append(number)
+            print()
+            print(f"{number} is in your bingo card.")
+    print("You won!")
                     
 
 play_bingo()
