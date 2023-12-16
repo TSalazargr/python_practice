@@ -26,4 +26,15 @@ def generate_bingo_card():
 
 bingo_card_1 = generate_bingo_card()
 
+def play_bingo():
+    picked_numbers = []
+    win = False
+    while win == False:
+        number = random.randint(1, 100)
+        if number not in picked_numbers:
+            picked_numbers.append(number)
+            print()
+            print(f"The number is {number}.")
 
+
+play_bingo()
