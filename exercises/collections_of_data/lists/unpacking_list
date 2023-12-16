@@ -1,0 +1,6 @@
+# Unpacking list
+
+numbers = [1, 2, 3]
+a, b, c = numbers 
+# Declares three variables, each with a value equal to one of the items of the list. 
+# The number of variables must be equal to the number or values or we'll get a ValueError error
