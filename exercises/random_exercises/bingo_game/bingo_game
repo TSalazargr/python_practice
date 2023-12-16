@@ -37,6 +37,8 @@ def play_bingo():
             print(f"The number is {number}.")
             if number in bingo_card_1:
                 correct_numbers.append(number)
+                print()
+                print(f"{number} is in your bingo card.")
         for row in bingo_card_1:
             for i in row:
                 if i in picked_numbers:
