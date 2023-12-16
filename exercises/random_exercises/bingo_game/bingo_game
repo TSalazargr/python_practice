@@ -20,12 +20,10 @@ def generate_bingo_card():
           [ numbers [5], numbers[6], numbers[7]]
             ]
             
-      for row in bingo_card:
+    for row in bingo_card:
           print(row)
     return bingo_card
 
 bingo_card_1 = generate_bingo_card()
 
-print(bingo_card_1)
 
-generate_bingo_card()
