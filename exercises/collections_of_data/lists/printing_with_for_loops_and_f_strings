@@ -1,0 +1,21 @@
+for i in range (0, 3):
+  print(list[i])
+
+# Alternatively,
+
+for item in list:
+  print(item)
+
+# Alternatively,
+
+list = ["Item 1", 1, True]
+
+for i in range (len(list)):
+  print(list[i])
+
+# Using f-string
+
+list = ["Item 1", 1, True]
+
+for i in range (len(list)):
+  print(f"{i+1}: {list[i]}") # Adds numbers next to values
