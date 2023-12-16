@@ -1,8 +1,41 @@
 import random
 
+# Generate 8 random values between 1 and 100
 bingo_values = []
 
-for i in range (7):
-  bingo_values.append(random.randint(1, 100))
+for i in range (8):
+    value = random.randint(1, 100)
+    while value in bingo_values: # Check for duplicates
+        value = random.randint(1, 100)
+    bingo_values.append(value) 
 
-print(bingo_values)
+bingo_values.sort() # Sort in ascending order
+
+# Create row1
+row1 = []
+
+for i in range(3):
+  row1.append(bingo_values[i])
+
+# Create row2
+
+row2 = []
+
+for i in range(2):
+  row2.append(bingo_values[i+3])
+
+row2.insert(1, "BINGO")
+
+# Create row3
+
+row3 = []
+
+for i in range(3):
+  row3.append(bingo_values[i+5])
+
+# Generate bingo_card
+bingo_card = [row1, row2, row3]
+
+# Display each row in a different line
+for i in bingo_card:
+  print(i, end="\n")
