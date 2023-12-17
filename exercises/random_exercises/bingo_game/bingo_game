@@ -19,14 +19,22 @@ def generate_bingo_card():
           [ numbers[3], "BINGO", numbers[4] ],
           [ numbers [5], numbers[6], numbers[7]]
             ]
+    
+    print("This is your bingo card:")
+    print()
             
     for row in bingo_card:
-          print(row)
+        for i in row:
+            print(f"| {i:^7} |", end="")
+        print()
+    print()
     return bingo_card
 
 bingo_card_1 = generate_bingo_card()
 
 def play_bingo():
+    print("The game begins!")
+    print()
     picked_numbers = []
     correct_numbers = []
     while len(correct_numbers) < 8:
@@ -43,9 +51,9 @@ def play_bingo():
             for row in bingo_card_1:
                 for i in row:
                     if i in picked_numbers:
-                        print("|   x   |", end=" ")
+                        print("|{: ^9}|".format("x"), end ="")
                     else:
-                        print(f"| {i:^6} |", end=" ")
+                        print(f"| {i:^7} |", end="")
                 print()
     print("You won!")
     
