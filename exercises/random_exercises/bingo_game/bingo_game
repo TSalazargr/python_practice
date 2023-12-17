@@ -1,4 +1,4 @@
-import random
+import random, os, time
 
 def generate_bingo_card():
     def generate_ran():
@@ -27,13 +27,16 @@ def generate_bingo_card():
         for i in row:
             print(f"| {i:^7} |", end="")
         print()
-    print()
+    time.sleep(2)
+    os.system("clear")
     return bingo_card
 
 bingo_card_1 = generate_bingo_card()
 
 def play_bingo():
     print("The game begins!")
+    time.sleep(2)
+    os.system("clear")
     print()
     picked_numbers = []
     correct_numbers = []
@@ -48,6 +51,8 @@ def play_bingo():
                     correct_numbers.append(number)
                     print()
                     print(f"{number} is in your bingo card.")
+                else:
+                    print(f"{number} is not in your bingo card.")
             for row in bingo_card_1:
                 for i in row:
                     if i in picked_numbers:
@@ -55,6 +60,9 @@ def play_bingo():
                     else:
                         print(f"| {i:^7} |", end="")
                 print()
+            time.sleep(2)
+            os.system("clear")
+                
     print("You won!")
     
 play_bingo()
