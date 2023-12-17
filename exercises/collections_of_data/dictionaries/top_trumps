@@ -14,15 +14,17 @@ Characters:
 - Vimes
 - Granny Weatherwax""")
 
-player_character = input("Which character would you like to pick?: ").Capitalize().strip()
+print()
+
+player_character = input("Which character would you like to pick?: ").title().strip()
 
 while player_character not in characters:
-  player_character = input("That character is not on the list. Try again. Which character would you like to pick?: ").Capitalize().strip()
+  player_character = input("That character is not on the list. Try again. Which character would you like to pick?: ").title().strip()
 
-pc_character = random.choice(characters)
+pc_character = random.choice(list(characters.keys()))
 
 while pc_character == player_character:
-  pc_character = random.choice(characters)
+  pc_character = random.choice(list(characters.keys()))
 
 print(f"Computer has chosen {pc_character}.")
 
@@ -32,15 +34,12 @@ print("""Stats:
 - Charisma
 - Wisdom""")
 
-stat = input("Pick a stat: ").Capitalize().strip()
+stat = input("Pick a stat: ").title().strip()
 
 while stat not in characters[player_character]:
-  stat = input("That stat is not on the list. Try again. Pick a stat: ").Capitalize().strip()
+  stat = input(" hat stat is not on the list. Try again. Pick a stat: ").title().strip()
 
 print(f"{player_character}'s {stat} is {characters[player_character][stat]}. {pc_character}'s {stat} is {characters[pc_character][stat]}")
 
 if characters[player_character][stat] > characters[pc_character][stat]:
   print(f"{player_character} wins!")
-else:
-  print(f"{pc_character} wins!")
-  
