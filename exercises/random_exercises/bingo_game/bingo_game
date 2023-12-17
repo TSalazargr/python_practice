@@ -12,17 +12,17 @@ def generate_bingo_card():
         while value in numbers:
             value = generate_ran()
         numbers.append(value)
-  
+
     numbers.sort()
 
     bingo_card = [ [ numbers[0], numbers[1], numbers[2]],
           [ numbers[3], "BINGO", numbers[4] ],
           [ numbers [5], numbers[6], numbers[7]]
             ]
-    
+
     print("This is your bingo card:")
     print()
-            
+
     for row in bingo_card:
         for i in row:
             print(f"| {i:^7} |", end="")
@@ -44,7 +44,6 @@ def play_bingo():
         number = random.randint(1, 20)
         if number not in picked_numbers:
             picked_numbers.append(number)
-            print()
             print(f"The number is {number}.")
             for row in bingo_card_1:
                 if number in row:
@@ -60,7 +59,7 @@ def play_bingo():
                 print()
             time.sleep(2)
             os.system("clear")
-                
+
     print("You won!")
-    
+
 play_bingo()
