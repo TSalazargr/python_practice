@@ -1,0 +1,15 @@
+f = open("saved_file.txt", "a")
+
+add_more = "y"
+
+while add_more == "y":
+  text = input("Text you want to add: ")
+  f.write(f"{text}\n")
+  add_more = input("Would you like to add more?: y/n ")
+  
+f.close()
+
+f = open("saved_file.txt", "r")
+
+cont = f.read()
+print(cont)
