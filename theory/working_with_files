@@ -1,3 +1,16 @@
+TEMPORARY MEMORY
+
+When we use variables, lists, dictionaries and other data structures in our code, the data inside them 
+are stored in the computer's RAM.
+
+RAM is temporary storage (usually called memory). 
+
+It's used to hold data and instructions for programs that your computer currently has open.
+
+The problem is, that when a program finishes, or is closed, its data and instructions are removed from the RAM to free up space.
+
+To keep that data in permanent storage, it must be saved to a file.
+
 OPENING FILES
 
 You can use Python to read and write the contents of files.
@@ -12,6 +25,16 @@ myfile = open("filename.txt")
 The argument of the open function is the path to the file. 
 If the file is in the current working directory of the program, you can specify only its name.
 
+Note: if "filename.txt" doesn't already exist, the code will crash.
+
+However, if you use one of the opening files modes arguments (see below), python will create a new file (if it doesn't exist already)
+instead of crashing.
+
+e.g.
+
+open("file.txt", "a") or open("file.txt", "w") or open("file.txt", "r") or open("file.txt", "a+")  
+
+
 OPENING FILES / MODE
 
 You can specify the mode used to open a file by applying a second argument to the open function.
@@ -19,12 +42,13 @@ You can specify the mode used to open a file by applying a second argument to th
 - Sending "r" means open in read mode, which is the default.
 - Sending "w" means write mode, for rewriting the contents of a file.
 - Sending "a" means append mode, for adding new content to the end of the file.
+- Sending "a+" means 'add to the end of the file, or create a new one if it doesn't exist'.
 - Adding "b" to a mode opens it in binary mode, which is used for non-text files (such as image and sound files).
+-- Note that this one can't be used on its own, it must be used alongside another argument e.g. "wb"
 - "w+" write and read
 
 # read mode
 open("filename.txt", "r")
-open("filename.txt")
 
 # write mode
 open("filename.txt", "w")
@@ -40,6 +64,11 @@ You can combine modes, for example, wb from the code above opens the file in bin
 CLOSING FILES
 
 Once a file has been opened and used, you should close it.
+
+Nothing gets saved until we close the file using the .close() command. 
+
+Until then, the information is stored in the RAM.
+
 This is done with the close method of the file object.
 
 file = open("filename.txt", "w")
