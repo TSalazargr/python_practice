@@ -1,0 +1,19 @@
+f = open("high_score.txt", "a")
+
+while True:
+  score = input("Input your initials and score separated by spaces: ")
+  score_list = score.split()
+  f.write(f"{score_list[0]}'s score is {score_list[1]}\n")
+  cont = input("Would you like to continue adding scores?: y/n ").lower().strip() # strip() removes spaces
+  if cont != "y":
+    break
+
+f.close()
+
+f = open("high_score.txt", "r")
+
+cont = f.read()
+print(cont)
+
+f.close()
+
