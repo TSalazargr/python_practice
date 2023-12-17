@@ -43,8 +43,10 @@ def play_bingo():
             for row in bingo_card_1:
                 for i in row:
                     if i in picked_numbers:
-                        print("x", end=" ")
+                        print("|   x   |", end=" ")
                     else:
-                        print(i, end=" ")
+                        print(f"| {i:^6} |", end=" ")
                 print()
     print("You won!")
+    
+play_bingo()
