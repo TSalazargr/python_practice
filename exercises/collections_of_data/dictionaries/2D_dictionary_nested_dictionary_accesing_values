@@ -1,0 +1,23 @@
+clue = {}
+
+while True:
+  name = input("Name: ")
+  location = input("Location: ")
+  weapon = input("Weapon: ")
+  clue[name] = {"location": location, "weapon":weapon} 
+  print(clue)
+
+  # Example output:
+  # {'Alice': {'location': 'Living room', 'weapon': 'knife'}, 'Bob': {'location': 'Kitchen', 'weapon': 'Rice maker'}}
+
+  # Accessing specific values
+
+john = {"daysCompleted": 46, "streak": 22}
+janet = {"daysCompleted": 21, "streak": 21}
+erica = {"daysCompleted": 75, "streak": 6}
+
+courseProgress = {"John":john, "Janet":janet, "Erica":erica}
+
+print(courseProgress["Erica"]) # The bracket contains the key that references the sub dictionary.
+
+print(courseProgress["Erica"]["daysCompleted"])
