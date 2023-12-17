@@ -1,5 +1,24 @@
-rat = {"name":"rat", "hp": 12, "strength":4}
+pocket_animals = {}
 
-cat = {"name":"cat", "hp": 20, "strength":10}
+def pretty_print():
+  print()
+  
+  for key, value in pocket_animals.items():
+    print(key, end=": ")
+    for sub_key, sub_value in value.items():
+      print("| ", sub_key, sub_value, end=" | ")
+    print()
 
-dog = {"name":"dog", "hp": 24, "strength":8}
+cont = "y"
+
+while cont == "y":
+  name = input("What's the name of the animal?: ")
+  hp = int(input("How many health points do they have?: "))
+  strength = int(input("How many strength points do they have?: "))
+  pocket_animals[name] = {"hp": hp, "strength": strength}
+  pretty_print()
+
+  cont = input("Would you like to continue?: y/n ").lower()
+
+  while cont != "y" and cont != "n":
+    cont = input("Invalid input. Try again. Would you like to continue?: y/n ")
