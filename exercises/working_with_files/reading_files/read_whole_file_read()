@@ -1,0 +1,7 @@
+f = open("high.score","r")
+
+scores = f.read()
+
+print(scores)
+
+f.close()
