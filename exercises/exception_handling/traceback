@@ -1,0 +1,13 @@
+debugMode = True # You can manually change to False depending on whether you want to show the traceback error
+myStuff = []
+try:
+  f.open("Stuff.mine","r")
+  myStuff = eval(f.read())
+  f.close()
+# Try to find a file called 'Stuff.mine' and open it
+except Exception:
+  print("ERROR: Unable to load")
+  if debugMode:
+    print(traceback) # If debugMode = True it will print the traceback so you can find out what's the error
+for row in myStuff:
+  print(row)
