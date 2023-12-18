@@ -11,3 +11,5 @@ except Exception:
     print(traceback) # If debugMode = True it will print the traceback so you can find out what's the error
 for row in myStuff:
   print(row)
+
+# Note: 'traceback' is a convention. Any undefined variable will result in printing all tracebacks
