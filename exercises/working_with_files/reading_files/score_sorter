@@ -1,0 +1,18 @@
+f = open("high.score", "r")
+
+scores = f.read().split("\n") # Creates list with content of the file
+
+f.close() # Save file and close it
+
+highscore = 0
+
+name = None
+
+for rows in scores: # For each row in the scores list
+  data = rows.split()
+  if data != []:
+    if int(data[1]) > highscore:
+      highscore = int(data[1])
+      name = data[0]
+
+print("The winner is", name, "with", highscore)
