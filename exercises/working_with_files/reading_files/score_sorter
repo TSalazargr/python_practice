@@ -1,18 +1,17 @@
-f = open("high.score", "r")
+f = open("high.score","r")
 
-scores = f.read().split("\n") # Creates list with content of the file
+scores = f.read().split("\n") # Creates list using new lines as divider
 
-f.close() # Save file and close it
+f.close()
 
-highscore = 0
+best_score = 0
+winner = ""
 
-name = None
-
-for rows in scores: # For each row in the scores list
-  data = rows.split()
+for row in scores: # # For each row in the scores list
+  data = row.split()
   if data != []:
-    if int(data[1]) > highscore:
-      highscore = int(data[1])
-      name = data[0]
+    if int(data[1]) > best_score:
+      winner = data[0]
+      best_score = int(data[1]) # Must be turned into int as the variable is originally an int
 
-print("The winner is", name, "with", highscore)
+print(f"The winner is {winner} with a score of {best_score}")
