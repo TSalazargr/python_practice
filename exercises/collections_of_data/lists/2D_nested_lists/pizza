@@ -36,6 +36,11 @@ def add_to_order():
   print(price)
   row = [name, price]
   pizza_orders.append(row)
+  f = open("pizza_orders.txt","w")
+  for item in pizza_orders:
+        # write each item on the list a new line
+        f.write("%s\n" % item)
+  f.close()
 
 def read_order():
   f = open("pizza_orders.txt","r")
