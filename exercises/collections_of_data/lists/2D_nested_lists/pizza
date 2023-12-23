@@ -1,3 +1,15 @@
+f.open("pizza_orders.txt","a")
+f.close()
+
+while True:
+  choice = input("Do you want to add (a) an order or read (r) past orders? a/r: ").lower()
+  while choice != "a" and choice != "r"
+    choice = input("Invalid command. Choose a to add an order or r to read past orders. What's your choice? a/r: ").lower()
+  if choice == "a":
+    add()
+  else:
+    read()
+
 name = ""
 num_pizzas = ""
 price = ""
