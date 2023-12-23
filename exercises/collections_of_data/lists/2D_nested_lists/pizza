@@ -5,8 +5,13 @@ pizza_orders = [ ]
 
 while True:
   name = input("What's your name?: ")
-  num_pizzas = int(input("How many pizzas do you want?: "))
-  size = input("What size of pizza do you want? s/m/l/xl: ").lower()
+
+  try:
+    num_pizzas = int(input("How many pizzas do you want?: "))
+  except:
+    num_pizzas = int(input("You must input a numerical character, try again: "))
+  
+size = input("What size of pizza do you want? s/m/l/xl: ").lower()
   while size != "s" and size != "m" and size != "l" and size != "xl":
     size = input("I didn't understand you. Try again. What size of pizza do you want? s/m/l/xl: ").lower()
   if size == "s":
@@ -17,8 +22,10 @@ while True:
     price = 15
   else:
     price = 18
+
   price = (num_pizzas * price)
   print(price)
+
   row = [name, price]
   pizza_orders.append(row)
   
