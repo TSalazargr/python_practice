@@ -9,7 +9,7 @@ num1 = 7
 num2 = 0
 print(num1/num2) # ZeroDivisionError: division by zero
 
-An exception is an event, which occurs during the execution of a program that disrupts the normal flow of the program.
+An exception is an event that occurs during the execution of a program that disrupts the normal flow of the program.
 
 Different exceptions are raised for different reasons.
 
@@ -22,7 +22,10 @@ COMMON EXCEPTION CODES
 - TypeError: a function is called on a value of an inappropriate type; Eg. print("7"+4)
 - ValueError: a function is called on a value of the correct type, but with an inappropriate value.
 
-Python has several other built-in exceptions, such as ZeroDivisionError and OSError. Third-party libraries also often define their own exceptions.
+The full list of built-in exceptions can be found here: https://www.w3schools.com/python/python_ref_exceptions.asp
+
+Python has several other built-in exceptions, such as ZeroDivisionError and OSError. 
+Third-party libraries also often define their own exceptions.
 
 EXCEPTION HANDLING
 
@@ -68,13 +71,35 @@ except:
 
 Exception handling is particularly useful when dealing with user input.
 
+EXCEPTION
+
+If you want your 'except' statement to catch all possible exceptions, you can either:
+
+a) use nor arguments 
+b) use 'Exception' (capitalized) as your argument
+
+Exception (capital 'E') means 'every type'. 
+
+myStuff = []
+try:
+  f.open("Stuff.mine","r") # Try to find a file called 'Stuff.mine' and open it
+  myStuff = eval(f.read())
+  f.close()
+
+except Exception as err: # err is the variable name for the error message
+  print("ERROR: Unable to load")
+  print(err) # Prints the message that explains the error you got
+
+
+
+
 FINALLY
 
 After a try/except statement, a FINALLY BLOCK can follow. 
-It will execute after the try/except block, no matter wheter an exception occurred or not.
+It will execute after the try/except block, no matter whether an exception occurred or not.
 
-The finally block is useful, for example, when working with files and resources: 
-it can be used to make sure files or resources are closed or released regardless of whether an exception occurs.
+The "finally" block is useful, for example, when working with files and resources: 
+it can be used to ensure files or resources are closed or released regardless of whether an exception occurs.
 
 try:
    print("Hello")
