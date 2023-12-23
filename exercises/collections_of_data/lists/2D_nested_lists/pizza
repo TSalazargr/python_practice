@@ -2,7 +2,6 @@ name = ""
 num_pizzas = ""
 price = ""
 pizza_orders = [ ]
-row = []
 
 while True:
   name = input("What's your name?: ")
@@ -20,4 +19,7 @@ while True:
     price = 18
   price = (num_pizzas * price)
   print(price)
+  row = [name, price]
+  pizza_orders.append(row)
+  
     
