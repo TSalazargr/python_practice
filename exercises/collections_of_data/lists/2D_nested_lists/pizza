@@ -1,4 +1,9 @@
-f.open("pizza_orders.txt","a")
+name = ""
+num_pizzas = ""
+price = ""
+pizza_orders = []
+
+f = open("pizza_orders.txt","a")
 f.close()
 
 while True:
@@ -6,24 +11,17 @@ while True:
   while choice != "a" and choice != "r"
     choice = input("Invalid command. Choose a to add an order or r to read past orders. What's your choice? a/r: ").lower()
   if choice == "a":
-    add()
+    add_to_order()
   else:
-    read()
+    read_order()
 
-name = ""
-num_pizzas = ""
-price = ""
-pizza_orders = [ ]
-
-while True:
+def add_to_order():
   name = input("What's your name?: ")
-
   try:
     num_pizzas = int(input("How many pizzas do you want?: "))
   except:
-    num_pizzas = int(input("You must input a numerical character, try again: "))
-  
-size = input("What size of pizza do you want? s/m/l/xl: ").lower()
+    num_pizzas = int(input("You must input a numerical character, try again: "))  
+  size = input("What size of pizza do you want? s/m/l/xl: ").lower()
   while size != "s" and size != "m" and size != "l" and size != "xl":
     size = input("I didn't understand you. Try again. What size of pizza do you want? s/m/l/xl: ").lower()
   if size == "s":
@@ -34,11 +32,16 @@ size = input("What size of pizza do you want? s/m/l/xl: ").lower()
     price = 15
   else:
     price = 18
-
   price = (num_pizzas * price)
   print(price)
-
   row = [name, price]
   pizza_orders.append(row)
+
+def read_order():
+  f = open("pizza_orders.txt","r")
+  cont = f.read()
+  print(cont)
+  f.close()
+
   
     
