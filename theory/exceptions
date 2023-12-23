@@ -90,6 +90,26 @@ except Exception as err: # err is the variable name for the error message
   print("ERROR: Unable to load")
   print(err) # Prints the message that explains the error you got
 
+TRACEBACK
+
+We could even get rid of the 'err' variable entirely and print a traceback, 
+which will show you the red error tracing you see when python crashes.
+
+I've created a 'debugMode' variable at the top of my code and put the traceback in an if inside the except.
+
+This lets me show/hide the tracebacks easily by setting debugMode to True/False:
+
+debugMode = True
+myStuff = []
+try:
+  f.open("Stuff.mine","r")
+  myStuff = eval(f.read())
+  f.close()
+# Try to find a file called 'Stuff.mine' and open it
+except Exception:
+  print("ERROR: Unable to load")
+  if debugMode:
+    print(traceback) # Prints the error message to be able to debug easily
 
 
 
