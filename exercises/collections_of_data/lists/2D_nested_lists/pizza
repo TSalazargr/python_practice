@@ -1,0 +1,25 @@
+name = ""
+num_pizzas = ""
+price = ""
+pizza_orders = [ ]
+row = []
+
+while True:
+  name = input("What's your name?: ")
+  num_pizzas = int(input("How many pizzas do you want?: ")
+  size = input("What size of pizza do you want? s/m/l/xl: ").lower()
+  while size != "s" and size != "m" and size != "l" and size != "xl":
+    size = input("I didn't understand you. Try again. What size of pizza do you want? s/m/l/xl: ").lower()
+  if size = "s":
+    price = 8
+  elif size = "m":
+    price = 10
+  elif size = "l":
+    price = 15
+  else:
+    price = 18
+  price = (num_pizzas * price)
+  row[0] = name
+  row[1] = price
+  print(price)
+    
