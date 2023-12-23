@@ -8,10 +8,12 @@ f.close()
 
 def add_to_order():
   name = input("What's your name?: ")
-  try:
-    num_pizzas = int(input("How many pizzas do you want?: "))
-  except:
-    num_pizzas = int(input("You must input a numerical character, try again: "))  
+  while True: 
+    try:
+      num_pizzas = int(input("How many pizzas do you want?: "))
+      break # Exits while loop
+    except:
+      print("You must input a numerical character, try again.")
   size = input("What size of pizza do you want? s/m/l/xl: ").lower()
   while size != "s" and size != "m" and size != "l" and size != "xl":
     size = input("I didn't understand you. Try again. What size of pizza do you want? s/m/l/xl: ").lower()
