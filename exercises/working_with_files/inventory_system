@@ -41,7 +41,10 @@ def remove_item():
 
 def view_items():
   inventory = read_inventory()
-
+  
+  if len(inventory) == 0:
+      print("Empty inventory")
+  
   counted_items = []
   
   for item in inventory:
