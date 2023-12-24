@@ -28,9 +28,8 @@ def remove_item():
   item = input("What item would you like to remove?: ").capitalize()
 
   if item in inventory:
-    item_index = inventory.index(item)
-    inventory.pop(item_index)
-    print(item.capitalize(), "removed.")
+    inventory.remove(item)
+    print(f"{item} removed.")
   else:
     print("Item not found in the inventory")
 
