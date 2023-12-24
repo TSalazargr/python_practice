@@ -26,7 +26,15 @@ def remove_item():
   f.close()
 
 def view_items():
-
+  f = open("inventory.txt", "r")
+  inventory = f.read()
+  counted_items = []
+  for item in inventory:
+    if item not in counted_items:
+      counted_item = inventory.count(item)
+      row = [item, counted_item]
+      append.counted_items(row)
+  print(counted_items)
 
 
 while True:
