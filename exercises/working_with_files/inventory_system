@@ -1,4 +1,5 @@
 f = open("inventory.txt", "w")
+f.write("Empty inventory")
 f.close()
 
 def add_item():
@@ -42,11 +43,14 @@ def view_items():
   f.close()
 
   counted_items = []
-  for item in inventory:
-    if item not in counted_items:
-      number = inventory.count(item)
-      print(item, ":", number)
-      counted_items.append(item)
+  if "Empty inventory" in inventory:
+    print("Empty inventory")
+  else:
+    for item in inventory:
+      if item not in counted_items:
+        number = inventory.count(item)
+        print(item, ":", number)
+        counted_items.append(item)
 
 while True:
   while True:
