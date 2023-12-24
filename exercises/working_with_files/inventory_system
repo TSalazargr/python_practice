@@ -1,12 +1,16 @@
 f = open("inventory.txt", "w")
-f.write("Empty inventory")
 f.close()
 
+def read_inventory(): # Function to read the inventory and remove empty lines
+    f = open("inventory.txt", "r")
+    inventory = f.read().split("\n")
+    f.close()
+    # Remove empty strings from the inventory list
+    inventory = list(filter(None, inventory))
+    return inventory
+
 def add_item():
-  f = open("inventory.txt", "r")
-  inventory = f.read()
-  inventory = inventory.split("\n")
-  f.close()
+  inventory = read_inventory()
   
   item = input("What item would you like to add?: ").capitalize()
   inventory.append(item)
@@ -18,12 +22,10 @@ def add_item():
   print(item, "added.")
 
 def remove_item():
-  f = open("inventory.txt", "r")
-  inventory = f.read()
-  inventory = inventory.split("\n")
-  f.close()
+  inventory = read_inventory()
 
   item = input("What item would you like to remove?: ").capitalize()
+
   if item in inventory:
     item_index = inventory.index(item)
     inventory.pop(item_index)
@@ -37,14 +39,10 @@ def remove_item():
   f.close()
 
 def view_items():
-  f = open("inventory.txt", "r")
-  inventory = f.read()
-  inventory = inventory.split("\n")
-  f.close()
+  inventory = read_inventory()
 
   counted_items = []
-  if "Empty inventory" in inventory:
-    print("Empty inventory")
+
   else:
     for item in inventory:
       if item not in counted_items:
