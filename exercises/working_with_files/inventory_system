@@ -22,7 +22,7 @@ def remove_item():
   inventory = inventory.split("\n")
   f.close()
 
-  item = input("What item would you like to remove?: ")
+  item = input("What item would you like to remove?: ").capitalize()
   if item in inventory:
     item_index = inventory.index(item)
     inventory.pop(item_index)
@@ -47,8 +47,6 @@ def view_items():
       number = inventory.count(item)
       print(item, ":", number)
       counted_items.append(item)
-  print(counted_items)
-
 
 while True:
   while True:
