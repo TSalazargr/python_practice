@@ -4,7 +4,7 @@ f.close()
 def add_item():
   f = open("inventory.txt", "wr")
   inventory = f.read()
-  inventory = inventory.split()
+  inventory = inventory.split(",")
   item = input("What item would you like to add?: ")
   inventory.append(item)
   f.write(inventory)
@@ -14,7 +14,7 @@ def add_item():
 def remove_item():
   f = open("inventory.txt", "wr")
   inventory = f.read()
-  inventory = inventory.split()
+  inventory = inventory.split(",")
   item = input("What item would you like to remove?: ")
   if item in inventory:
     item_index = inventory.index(item)
@@ -28,13 +28,13 @@ def remove_item():
 def view_items():
   f = open("inventory.txt", "r")
   inventory = f.read()
-  inventory = inventory.split()
-  counted_items = []
+  inventory = inventory.split(",")
+  counted_item = []
   for item in inventory:
     if item not in counted_items:
-      counted_item = inventory.count(item)
-      row = [item, counted_item]
-      counted_items.append(row)
+      number = inventory.count(item)
+      print(item.capitalize(), ":", number)
+      counted_item.append(item)
   print(counted_items)
 
 
