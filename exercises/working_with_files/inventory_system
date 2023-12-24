@@ -43,12 +43,15 @@ def view_items():
 
   counted_items = []
   
-  if item not in counted_items:
-    for item in inventory:
-      if item not in counted_items:
-        number = inventory.count(item)
-        print(item, ":", number)
-        counted_items.append(item)
+  try:
+    if item not in counted_items:
+        for item in inventory:
+        if item not in counted_items:
+            number = inventory.count(item)
+            print(item, ":", number)
+            counted_items.append(item)
+  except:
+    print("Empty inventory")
 
 while True:
   while True:
