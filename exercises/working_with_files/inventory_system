@@ -41,7 +41,7 @@ def view_items():
   inventory = inventory.split("\n")
   f.close()
 
-  counted_item = []
+  counted_items = []
   for item in inventory:
     if item not in counted_items:
       number = inventory.count(item)
