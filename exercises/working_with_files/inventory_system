@@ -1,3 +1,6 @@
+f = open("inventory.txt", "w")
+f.close()
+
 def add_item():
   f = open("inventory.txt", "a")
     item = input("What item would you like to add?")
