@@ -55,7 +55,7 @@ while True:
     try:
         choice = int(input("Would you like to \n 1 Add item \n 2 Remove item \n 3 View items? \n 1/2/3: "))
         break
-    else:
+    except:
         print("Invalid value. Try again.")
 
   while choice != 1 and choice != 2 and choice != 3:
