@@ -1742,7 +1742,7 @@ else:
 
 --
 
-SETS / AD() AND REMOVE()
+SETS / ADD() AND REMOVE()
 
 You can use the add() function to add new items to the set, and remove() to delete a specific element.
 
