@@ -4,16 +4,17 @@ f.close()
 def add_item():
   f = open("inventory.txt", "r")
   inventory = f.read()
-  inventory = inventory.split(",")
+  inventory = inventory.split("\n")
   f.close()
   
-  item = input("What item would you like to add?: ")
+  item = input("What item would you like to add?: ").capitalize()
   inventory.append(item)
   
   f = open("inventory.txt", "w")
-  f.write(inventory)
+  for i in inventory:
+    f.write(i + "\n")
   f.close()
-  print(item.capitalize(), "added.")
+  print(item, "added.")
 
 def remove_item():
   f = open("inventory.txt", "wr")
