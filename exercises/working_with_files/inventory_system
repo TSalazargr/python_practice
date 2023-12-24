@@ -1,13 +1,25 @@
 f = open("inventory.txt", "w")
+inventory = []
+f.write(inventory)
 f.close()
 
 def add_item():
-  f = open("inventory.txt", "a")
-    item = input("What item would you like to add?")
-    f.write(f"\n {item}" )
+  f = open("inventory.txt", "w")
+  inventory = f.read()
+  item = input("What item would you like to add?: ")
+  inventory.append(item)
+  f.write(inventory)
   f.close()
 
 def remove_item():
+  f = open("inventory.txt", "w")
+  inventory = f.read().split("\n")
+  item = input("What item would you like to remove?: ")
+  if item in inventory:
+    item_index = inventory.index(item)
+    inventory.pop(item_index)
+  else:
+    print("Item not found in the inventory")
 
 def view_items():
 
