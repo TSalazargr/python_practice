@@ -3,9 +3,10 @@ f.close()
 
 def read_inventory(): # Function to read the inventory and remove empty lines
     f = open("inventory.txt", "r")
-    inventory = f.read().split("\n")
+    inventory = f.read()
     f.close()
     # Remove empty strings from the inventory list
+    inventory = inventory.split("\n")
     inventory = list(filter(None, inventory))
     return inventory
 
