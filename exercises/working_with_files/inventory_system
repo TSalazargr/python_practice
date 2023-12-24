@@ -1,7 +1,19 @@
+def add_item():
+  f = open("inventory.txt", "a")
+    item = input("What item would you like to add?")
+    f.write(f"\n {item}" )
+  f.close()
+
+def remove_item():
+
+def view_items():
+
+
+
 while True:
-  choice = int(input("Would you like to \n 1 Add item \n 2 Remove item \n 3 View items?: \n 1/2/3"))
+  choice = int(input("Would you like to \n 1 Add item \n 2 Remove item \n 3 View items? \n 1/2/3: "))
   while choice != 1 and choice != 2 and choice != 3:
-    choice = int(input("Invalid value. Would you like to \n 1 Add item \n 2 Remove item \n 3 View items?: \n 1/2/3"))
+    choice = int(input("Invalid value. Would you like to \n 1 Add item \n 2 Remove item \n 3 View items? \n 1/2/3:"))
 
   if choice == 1:
     add_item()
