@@ -208,3 +208,64 @@ A function or class that supports the with statement is known as a aka CONTEXT M
 A context manager allows you to open and close resources right when you want to. 
 For example, the open() function is a context manager. When you call the open() function using the with statement, 
 the file closes automatically after you’ve processed the file.
+
+CSVs
+
+CSV files are a way of storing a spreadsheet as a text file. Every value in the file is separated by a comma.
+
+Fortunately, CSV files are so common that Python already has built-in libraries for working with them.
+
+import csv # Imports the csv library
+
+with open("January.csv") as file: # Opens the csv file
+  reader = csv.reader(file) # reads the contents of the csv file into the 'reader' variable
+  line = 0
+  for row in reader: # loop to output each row in the 'reader' variable one at a time.
+    print (row)
+
+CSV / JOIN()
+
+The join() method takes all items in an iterable and joins them into one string.
+
+A string must be specified as the separator.
+
+separator_string.join(iterable)
+
+You can use join() to combine lists and to display csv files in a more readable way.
+
+import csv 
+with open("January.csv") as file: 
+  reader = csv.reader(file) 
+  line = 0
+
+  for row in reader: 
+    print (", ".join(row)) # adds a comma and space and then joins data, you could try joining with tabs too with `\t`
+
+CSV.DICTREADER()
+
+csv.DictReader() allows you to treat the CSV like a dictionary. 
+
+This allows you to filter specific rows.
+
+import csv # Imports the csv library
+with open("January.csv") as file: 
+  reader = csv.DictReader(file) # Treats the file as a dictionary 
+  line = 0
+  for row in reader: 
+    print (row["Net Total"]) # Where "Net Total" is the name of a row
+
+You can then add the values of a row to have a total:
+
+import csv # Imports the csv library
+with open("January.csv") as file: 
+  reader = csv.DictReader(file) # Treats the file as a dictionary 
+  total = 0
+  for row in reader: 
+    print (row["Net Total"]) # Where "Net Total" is the name of a row
+    total += float(row["Net Total"]) # Keeps a running total
+print(f"Total: {total}") #Outputs
+
+
+
+
+
