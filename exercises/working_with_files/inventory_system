@@ -1,5 +1,6 @@
-f = open("inventory.txt", "w")
-f.close()
+file = open("inventory.txt", "a")
+file.close()
+
 
 def read_inventory(): # Function to read the inventory and remove empty lines
     f = open("inventory.txt", "r")
