@@ -1,0 +1,7 @@
+import csv 
+with open("January.csv") as file: 
+  reader = csv.reader(file) 
+  line = 0
+
+  for row in reader: 
+    print (", ".join(row)) # adds a comma and space and then joins data, you could try joining with tabs too with `\t`
