@@ -1,0 +1,8 @@
+import csv # Imports the csv library
+with open("January.csv") as file: 
+  reader = csv.DictReader(file) # Treats the file as a dictionary 
+  total = 0
+  for row in reader: 
+    print (row["Net Total"])
+    total += float(row["Net Total"]) # Keeps a running total
+print(f"Total: {total}") #Outputs
