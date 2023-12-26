@@ -1,7 +1,13 @@
 import os, random
 
-f = open("inventory.txt", "w")
-f.close()
+file_exists = True
+
+try:
+  f = open("inventory.txt", "r")
+  inventory = eval(f.read())
+  f.close()
+except:
+  pass # Placeover code to prevent error, as except statement must be followed by indented code
 
 def read_inventory(): # Function to read the inventory and remove empty lines
     f = open("inventory.txt", "r")
@@ -71,12 +77,12 @@ while True:
   else:
     view_items()
 
-  if fileExists:
+  if file_exists:
     try:
       os.mkdir("backups")
     except:
       pass
-    name = f"backup{random.randint(1,1000000000)}.txt"
+    name = f"backup{random.randint(1,1000000000)}.txt" # Generates a name called 'backup' and a random number
     os.popen(f"cp to.do backups/{name}")
     
   
