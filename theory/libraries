@@ -74,14 +74,18 @@ This means that you can merge multiple parts of a path into one, instead of hard
 
 Sometimes trying to access a file path in other ways can fail because of things like difference between operating systems.
 
-os.path.joing() is a more reliable way to access a file path. 
+os.path.join() is a more reliable way to access a file path. 
 It simplifies the task of creating file paths by handling the differences between operating systems and ensuring the correct formatting.
+
+The correct syntax of os.path.join() is:
+
+os.path.join("Path of folder", "Name of file")
 
 import os
 
-filename = os.path.join("Folder/", "file.txt")
+filename = os.path.join("Invoices/2023/", "December.csv")
 
-f = open(filename, "w"
+f = open(filename, "w")
 
 f.write("Hi")
 
