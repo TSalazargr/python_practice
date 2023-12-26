@@ -4,3 +4,5 @@ So far, I've used the following resources to learn Python:
 
 - https://www.sololearn.com/
 - https://replit.com/
+- https://www.w3schools.com/
+- 
