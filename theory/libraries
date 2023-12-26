@@ -18,9 +18,75 @@ OS LIBRARY / MISCELLANIOUS OPERATING SYSTEM INTERFACES
 
 The os library allows you to "talk" to your console.
 
+OS LIBRARY / OS.SYSTEM("CLEAR")
+
+You can use this function to clear the screen.
+
 import os
 
 os.system("clear") # Clears away everything that is on the console right after it appears
+
+OS LIBRARY / LISTDIR()
+
+The listdir() function can be used to list all files and directories (folder) in the current directory.
+
+import os
+print(os.listdir()) # Lists all the files in the current directory as a list. Useful for checking that a file is in the folder we think it is.
+
+files = os.listdir()
+
+if "quickSave.txt" not in files:
+  print("Error: Quick Save not found.")
+#Checks if a file is in a directory and outputs an error if not.
+
+OS LIBRARY / OS.MKDIR()
+
+You can use the os.mkdir() method to create a folder or directory and name it.
+
+import os
+
+os.mkdir("Hello") # Creates a folder called 'Hello'
+
+OS LIBRARY / OS.RENAME()
+
+You can use the os.rename() method to rename a file or directory (folder).
+
+os.rename() takes 2 arguments: the file to rename and the new name.
+
+import os
+
+os.rename("myname.txt", "NEW.o")
+
+OS / OS.PATH() AND OS.PATH.JOIN()
+
+A file path is a sequence of file and folder names. This sequence of names takes you to a certain place on your computer’s operating system (OS).
+
+E.g.:
+
+/Users/Teresa/tutorials/README.md
+
+The os.path module in Python is used for common pathname manipulations. 
+It provides a set of functions that can be used to manipulate file and directory paths in a way that is independent of the underlying operating system.
+
+os.path.join() combines path names into one complete path. 
+It helps build a path to a file or a directory by joining different parts together.
+This means that you can merge multiple parts of a path into one, instead of hard-coding every path name manually.
+
+Sometimes trying to access a file path in other ways can fail because of things like difference between operating systems.
+
+os.path.joing() is a more reliable way to access a file path. 
+It simplifies the task of creating file paths by handling the differences between operating systems and ensuring the correct formatting.
+
+import os
+
+filename = os.path.join("Folder/", "file.txt")
+
+f = open(filename, "w"
+
+f.write("Hi")
+
+f.close()
+
 
 TIME LIBRARY
 
