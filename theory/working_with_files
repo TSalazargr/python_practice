@@ -209,7 +209,7 @@ A context manager allows you to open and close resources right when you want to.
 For example, the open() function is a context manager. When you call the open() function using the with statement, 
 the file closes automatically after you’ve processed the file.
 
-CSVs
+CSV AND CSV.READER()
 
 CSV files are a way of storing a spreadsheet as a text file. Every value in the file is separated by a comma.
 
