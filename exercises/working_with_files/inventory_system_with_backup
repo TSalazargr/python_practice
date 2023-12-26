@@ -1,0 +1,85 @@
+import os, random
+
+f = open("inventory.txt", "w")
+f.close()
+
+def read_inventory(): # Function to read the inventory and remove empty lines
+    f = open("inventory.txt", "r")
+    inventory = f.read()
+    f.close()
+    # Remove empty strings from the inventory list
+    inventory = inventory.split("\n")
+    inventory = list(filter(None, inventory))
+    return inventory
+
+def add_item():
+  inventory = read_inventory()
+  
+  item = input("What item would you like to add?: ").capitalize()
+  inventory.append(item)
+  
+  f = open("inventory.txt", "w")
+  for i in inventory:
+    f.write(i + "\n")
+  f.close()
+  print(item, "added.")
+
+def remove_item():
+  inventory = read_inventory()
+
+  item = input("What item would you like to remove?: ").capitalize()
+
+  if item in inventory:
+    inventory.remove(item)
+    print(f"{item} removed.")
+  else:
+    print("Item not found in the inventory")
+
+  f = open("inventory.txt", "w")
+  for i in inventory:
+    f.write(i + "\n")
+  f.close()
+
+def view_items():
+  inventory = read_inventory()
+  
+  if len(inventory) == 0:
+      print("Empty inventory")
+  
+  counted_items = []
+  
+  for item in inventory:
+    if item not in counted_items:
+        print(item, ":", inventory.count(item))
+        counted_items.append(item)
+
+while True:
+  while True:
+    try:
+        choice = int(input("Would you like to \n 1 Add item \n 2 Remove item \n 3 View items? \n 1/2/3: "))
+        break
+    except:
+        print("Invalid value. Try again.")
+
+  while choice != 1 and choice != 2 and choice != 3:
+    choice = int(input("Invalid value. Would you like to \n 1 Add item \n 2 Remove item \n 3 View items? \n 1/2/3:"))
+
+  if choice == 1:
+    add_item()
+  elif choice == 2:
+    remove_item()
+  else:
+    view_items()
+
+  if fileExists:
+    try:
+      os.mkdir("backups")
+    except:
+      pass
+    name = f"backup{random.randint(1,1000000000)}.txt"
+    os.popen(f"cp to.do backups/{name}")
+    
+  
+  f = open("to.do", "w")
+  f.write(str(todo))
+  f.close()
