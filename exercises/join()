@@ -1,0 +1,24 @@
+myDict = {"name": "John", "country": "Norway"}
+mySeparator = ", "
+
+x = mySeparator.join(myDict)
+
+print(x) # Displays name, country
+
+---
+
+my_list = ["potato", "eggs", "banana", "tomatoes", "grape"]
+mySeparator = ", "
+
+x = mySeparator.join(my_list)
+
+print(x)
+
+---
+
+import csv 
+with open("January.csv") as file: 
+  reader = csv.reader(file) 
+  line = 0
+  for row in reader: 
+    print (", ".join(row)) # adds a comma and space and then joins data, you could try joining with tabs too with `\t`
