@@ -16,7 +16,8 @@ myDate = datetime.date(year=2022, month=12, day= 7) # Values here must be intege
   
 print(myDate) # This code outputs '2022-12-07'
 
-For the datetime.date() method to work you must use the year -> month -> day format (in that order) for your arguments. 
+For the datetime.date() method to work you must use the year -> month -> day format for your arguments. 
+The order in which you input your arguments doesn't matter so long as you name then 'year', 'month' and 'day' are
 
 Using this format makes sorting much easier.
 
@@ -29,3 +30,49 @@ import datetime
 today = datetime.date.today()
   
 print(today) # This code outputs the current date from your computer's clock.
+
+DATETIME.TIMEDELTA()
+
+Delta is a computer science term that means the difference between two things.
+
+A time delta is a difference in time.
+
+You can use the timedelta() method to add certain amount of time to a date.
+
+Syntax : datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0) 
+Returns : Date
+
+An example of this in use:
+
+import datetime
+
+today = datetime.date.today() # Today's date
+
+print(today)
+
+difference = datetime.timedelta(days=14) # The difference I want
+new_date = today + difference # Add today to the delta difference to see the date in 14 days time.
+
+print(new_date) 
+
+one_week_later = datetime.timedelta(weeks=1)
+new_date = new_date + one_week_later
+
+print(new_date)
+
+---
+
+You can use ==, <, >, != comparators with dates.
+
+import datetime
+
+birthday = datetime.date(year=2023, month=12, day=30)
+
+today = datetime.date.today()
+
+if birthday == today:
+  print("Happy 2023 birthday!")
+elif birthday > today:
+  print("It's not your birthday yet")
+elif birthday < today:
+  print("Your 2023 birthday passed.")
