@@ -39,3 +39,34 @@ number_guesser()
 #Check if the user used all attempts and did not win
 if attempt == 5 and win == False:
   print("Game over")
+
+---
+
+import random
+
+totalAttempts = 0
+
+def game():
+  attempts = 0
+  number = random.randint(1,100)
+  print(number)
+  while True:
+    guess = int(input("Pick a number between 1 and 100: "))
+    attempts+=1
+    if guess > number:
+      print("Too high")
+    elif guess < number:
+      print("Too low")
+    else:
+      print("Just right!")
+      print(f"{attempts} attempts this round")
+      return attempts
+      
+while True:
+  menu = int(input("1: Guess the random number game\n2: Total Score\n3: Exit\n> "))
+  if menu == 1:
+    totalAttempts+= game()
+  elif menu == 2:
+    print(f"You've had {totalAttempts} attempts")
+  else:
+    break
