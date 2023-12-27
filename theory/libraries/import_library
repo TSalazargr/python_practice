@@ -1,0 +1,9 @@
+Collections of code written by others. 
+To import a library, we use the keyword 'import' followed by the name of the library. 
+You should do this at the beginning of your file.
+
+To access a method inside a library, we put the name of the library and the dot before the function.
+
+To import more than one library at once, sepparate them by commas
+
+import os, time
