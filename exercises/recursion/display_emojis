@@ -1,0 +1,12 @@
+def reverse(value):
+  if value <= 0:
+    print("Done!")
+    return
+  # This `if` provides the 'stop' condition for the program. Otherwise it would run forever.
+  else: # if we're not at the stop condition.
+    for i in range(value):
+      print("💯", end="") # Outputs 'value' emojis
+    print() # New line
+    reverse(value - 1) # takes 1 off the value and calls the subroutine again with this new number.
+
+reverse(5) # Calls reverse function
