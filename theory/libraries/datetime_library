@@ -1,0 +1,31 @@
+Your computer, like all others, uses the Unix epoch to track time. 
+It starts counting seconds from Jan 1st, 1970, even when turned off, thanks to a small motherboard battery. 
+It then translates this into a format humans can understand.
+
+To use the Unix epoch, we first need to import the datetime library
+
+import datetime
+
+DATETIME.DATE()
+
+The datetime.date() method returns a date object in the year-month-day format.
+
+import datetime
+  
+myDate = datetime.date(year=2022, month=12, day= 7) # Values here must be integers
+  
+print(myDate) # This code outputs '2022-12-07'
+
+For the datetime.date() method to work you must use the year -> month -> day format (in that order) for your arguments. 
+
+Using this format makes sorting much easier.
+
+DATETIME.DATE.TODAY()
+
+This method tells you what day it is today.
+
+import datetime
+  
+today = datetime.date.today()
+  
+print(today) # This code outputs the current date from your computer's clock.
