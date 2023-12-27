@@ -1,0 +1,15 @@
+while True:
+  try:
+    value = int(input("What number's factorial would you like to calculate?: "))
+    break
+  except:
+    pass
+
+def factorial(value):
+  if value == 1:
+    return 1
+  else:
+    total = value * factorial(value - 1)
+    return total
+
+print(factorial(value))
