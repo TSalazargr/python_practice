@@ -1,0 +1,21 @@
+n = 1
+
+while True:
+  try:
+    value = int(input("What number should we count up to?: "))
+    break
+  except:
+    pass
+
+def count_up(value):
+  global n
+
+  if n <= value:
+    print(n, "\n")
+    n += 1
+    count_up(value)
+  else:
+    print("Done!")
+    return
+
+count_up(value)
