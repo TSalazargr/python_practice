@@ -1,0 +1,13 @@
+import csv, os
+
+with open("100MostStreamedSongs.csv") as file: 
+  reader = csv.DictReader(file) # Treats the file as a dictionary 
+
+  for row in reader: 
+    files = os.listdir() # Checks files and folder in the directory
+    if row["Artist(s)"] not in files: # If a folder with the artists name is not in the directory
+      os.mkdir(row["Artist(s)"]) # Create a folder with the name of the artist
+
+    filename = os.path.join(row["Artist(s)"], row["Song"]) # Creates a filename by joining the Artist(s) and Song columns from the row
+    f = open(filename, "w")
+    f.close()
