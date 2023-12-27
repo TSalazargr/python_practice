@@ -1,3 +1,23 @@
+n = 1
+
+while True:
+  try:
+    value = int(input("What's the maximum amount of hearts you'd like to display?: "))
+    break
+  except:
+    pass
+
+def increase(value):
+  global n  # Declare that 'n' should refer to the global variable 'n'
+  if n == value:
+      return
+
+  for i in range(n):
+      print("❤️", end="")
+  print()
+  n += 1  # Increment the global 'n'
+  increase(value)
+
 def reverse(value):
   if value <= 0:
     print("Done!")
@@ -5,8 +25,9 @@ def reverse(value):
   # This `if` provides the 'stop' condition for the program. Otherwise it would run forever.
   else: # if we're not at the stop condition.
     for i in range(value):
-      print("💯", end="") # Outputs 'value' emojis
+      print("❤️", end="") # Outputs 'value' emojis
     print() # New line
     reverse(value - 1) # takes 1 off the value and calls the subroutine again with this new number.
 
-reverse(5) # Calls reverse function
+increase(value)
+reverse(value) # Calls reverse function
