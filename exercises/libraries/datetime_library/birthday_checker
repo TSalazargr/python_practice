@@ -1,0 +1,12 @@
+import datetime
+
+birthday = datetime.date(year=2023, month=12, day=30)
+
+today = datetime.date.today()
+
+if birthday == today:
+  print("Happy 2023 birthday!")
+elif birthday > today:
+  print("It's not your birthday yet")
+elif birthday < today:
+  print("Your 2023 birthday passed.")
