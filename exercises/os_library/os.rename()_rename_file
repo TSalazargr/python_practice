@@ -1,3 +1,0 @@
-import os
-
-os.rename("myname.txt", "NEW.o")
