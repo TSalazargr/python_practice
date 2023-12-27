@@ -1,0 +1,9 @@
+import os
+
+filename = os.path.join("Invoices/2023/", "December.csv")
+
+f = open(filename, "w")
+
+f.write("Hi")
+
+f.close()
