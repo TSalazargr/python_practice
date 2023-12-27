@@ -1,0 +1,7 @@
+TIME LIBRARY
+
+The time library allows you to pause the script of a determined amount of time.
+
+import time
+
+time.sleep(n) # where n is the number of seconds you want to pause the program for
