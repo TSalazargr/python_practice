@@ -76,3 +76,29 @@ elif birthday > today:
   print("It's not your birthday yet")
 elif birthday < today:
   print("Your 2023 birthday passed.")
+
+DATETIME.DATETIME.NOW()
+
+The datetime.datetime.now() method returns the current time and date. It's syntax is:
+
+import datetime
+
+datetime.datetime.now()
+
+The datetime.now() method also allows you to extract individual data. You can extract the following data:
+
+- year
+- month
+- day
+- hour
+- minute
+- second
+- microsecond
+
+The syntax to do so is the following:
+
+import datetime
+
+datetime.datetime.now().year
+
+print(current_dateTime.year)
