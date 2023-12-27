@@ -1,0 +1,9 @@
+RANDOM LIBRARY
+
+import random
+
+number = random.randint(1, 100)
+
+shopping_list = ["potatoes", "eggs", "bananas", "tomatoes"]
+
+choice = random.choice(shopping_list)
