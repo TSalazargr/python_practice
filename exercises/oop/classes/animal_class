@@ -9,15 +9,26 @@ class animal:
     self.sound = sound
     self.color = color
 
-class bird(animal):
+  def talk(self):
+    print(f"{self.name} says {self.sound.lower()}.")
+
+cow = animal("Ermintrude", "Bo Taurus", "Moo", "black")
+
+dog = animal("Rufus", "Dalmata", "Woof", "Black and white")
+
+print(cow.sound)
+
+dog.talk()
+
+class bird(animal): # Add a subclass under the class animal
 
  def __init__(self):
     self.name = "Bird"
     self.species = "Avian"
     self.sound = "Tweet"
-    self.color = "green"
+    self.color = "Green"
+    self.location = location
 
-
-cow = animal("Ermintrude", "Bo Taurus", "Moo", "black")
-
-print(cow.sound)
+polly = bird("Cage") #Sets polly's location as "cage"
+polly.talk()
+print(polly.color)
