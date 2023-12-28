@@ -1,7 +1,7 @@
 def color_changer(color, word):
 	if color == "red":
 		print("\033[31m", word, sep="", end="")
-  elif color == "green":
+  	elif color == "green":
 		print("\033[32m", word, sep="", end="")
 	elif color == "yellow":
 		print("\033[33m", word, sep="", end="")
@@ -9,9 +9,9 @@ def color_changer(color, word):
 		print("\033[34m", word, sep="", end="")
 	elif color == "purple":
 		print("\033[35m", word, sep="", end="")
-  elif color == "cyan":
+  	elif color == "cyan":
 		print("\033[36m", word, sep="", end="")
-  elif color == "white":
+  	elif color == "white":
 		print("\033[37m", word, sep="", end="")
 	else:
 		print("\033[0m", word, sep="", end="")	
