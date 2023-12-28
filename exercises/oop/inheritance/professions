@@ -1,0 +1,24 @@
+class profession:
+  name = None
+  field = None
+  salary = None
+
+  def __init__(self, name, field, salary):
+    self.name = name
+    self.field = field
+    self.salary = salary
+
+class doctor(profession):
+  def __init__(self, name, salary, speciality, seniority):
+    self.name = name
+    self.field = "Healthcare"
+    self.salary = salary
+    self.speciality = speciality
+    self.seniority = seniority
+
+  def description(self):
+    print(f"{self.name} specializes in {self.speciality} and is a {self.seniority} doctor.")
+
+doctor_house = doctor("House", "$80.000", "diagnosis", "senior")
+
+doctor_house.description()
