@@ -36,13 +36,14 @@ stumpy = Cat("brown", 3)
 This code defines a class named Cat, which has two attributes: color and legs.
 Then the class is used to create 3 separate objects of that class.
 
-
 __INIT__
 
-__INIT__ is short for initialisation.
+__init__ is short for instatiation.
 
 The __init__ method is the most important method in a class.
 This is called when an instance (object) of the class is created, using the class name as a function.
+
+Inside __innit__ go all the methods (or subroutines) stored in the class.
 
 INSTATIATION
 
@@ -88,6 +89,8 @@ class func:
 func().method() # Displays 1
 
 METHODS
+
+Subroutines inside an object are called aka methods.
 
 Classes can have other methods defined to add functionality to them.
 Remember that all methods must have "self" as their first parameter.
@@ -160,6 +163,8 @@ arigato.purr()
 A class that inherits from another class is called aka SUBCLASS.
 
 A class that is inherited from is called a aka SUPERCLASS.
+
+Subclasses get all the methods and attributes in the superclass, plus anything defined in itself.
 
 If a class inherits from another with the same attributes or methods, 
 the subclass' attributes or methods overrides the superclass' i.e. subclass has preference over superclass.
