@@ -1,0 +1,69 @@
+class character:
+
+  def __init__(self, name, hp, mp):
+    self.name = name
+    self.hp = hp
+    self.mp = mp
+
+  def description(self):
+    print(f"{self.name} has {self.hp} HPs and {self.mp} MPs.")
+
+class player_character(character):
+
+  def __init__(self, name, hp, mp, lives):
+    self.name = name
+    self.hp = hp
+    self.mp = mp
+    self.lives = lives
+
+  def is_alive(self):
+    if self.lives != 0:
+      print(f"{self.name} is dead :(")
+    else:
+      print(f"{self.name} has {self.lives} left.")
+
+class enemy(character):
+
+  def __init__(self, type, strength):
+    self.name = name
+    self.hp = hp
+    self.mp = mp
+    self.type = type
+    self.strength = strength
+
+class orc(enemy):
+  
+  def __init__(self, name, hp, mp, sword):
+    self.name = name
+    self.hp = hp
+    self.mp = mp
+    self.sword = sword
+
+  def has_sword(self):
+        if self.sword == True:
+            print(f"{self.name} has a sword!")
+        else:
+            print(f"{self.name} doesn't have a sword!")
+
+class vampire(enemy):
+
+  def __init__(self, name, hp, mp, night_tracker):
+    self.name = name
+    self.hp = hp
+    self.mp = mp
+    self.night_tracker = night_tracker
+
+cloud = player_character("Cloud", "100", "80", "3")
+
+dracula = vampire("Dracula", "140", "90", "night")
+
+uruk_hai = orc("Uruk-hai", "70", "10", True)
+
+character.description(cloud)
+
+character.description(dracula)
+
+character.description(uruk_hai)
+
+uruk_hai.has_sword()
+    
