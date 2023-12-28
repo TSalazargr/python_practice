@@ -53,9 +53,15 @@ class vampire(enemy):
     self.mp = mp
     self.night_tracker = night_tracker
 
+  def night_checker(self):
+    if night_tracker == True:
+      print(f"{self.name} has the upper hand because it's nighttime!"")
+    else:
+      print(f"The sun is out. {self.name} is weak!")
+
 cloud = player_character("Cloud", "100", "80", "3")
 
-dracula = vampire("Dracula", "140", "90", "night")
+dracula = vampire("Dracula", "140", "90", False)
 
 uruk_hai = orc("Uruk-hai", "70", "10", True)
 
