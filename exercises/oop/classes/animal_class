@@ -22,7 +22,7 @@ dog.talk()
 
 class bird(animal): # Add a subclass under the class animal
 
- def __init__(self):
+ def __init__(self, location): # You only have to include as arguments 'self' and any attributes not in the superclass
     self.name = "Bird"
     self.species = "Avian"
     self.sound = "Tweet"
