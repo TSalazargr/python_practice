@@ -96,6 +96,8 @@ Classes can have other methods defined to add functionality to them.
 Remember that all methods must have "self" as their first parameter.
 These methods are accessed using the same dot syntax as attributes.
 
+When creating methods, it's important to include 'self' as an argument, as 'self' will automatically be added as an argument when you call this method.
+
 class Dog:
   def __init__(self, name, color):
     self.name = name
