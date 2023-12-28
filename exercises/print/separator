@@ -1,0 +1,6 @@
+print("cat", "dog", sep=" ") # Puts a " " string between concatenated values
+
+print("If you put", "\033[33m", " nothing as the", "\033[35m", " end character", "\033[32m", " then you don't", "\033[0m", " get odd gaps", sep="")
+
+for i in range(1, 10):
+  print(i, sep=" ") # Puts a space after every value, but each new value is still printed in a different line
