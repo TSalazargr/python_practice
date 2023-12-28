@@ -1,0 +1,34 @@
+You can split your code into multiple files.
+
+The main file will always run first, but you can put parts of your code into other files and bring them in to main.py by importing, as you do with libraries.
+
+New files must have the .py extension.
+
+The code in this new file will run the moment you import it. 
+
+To get around this, you can write functions in those files and call them in your main file. That way you control when each method will run.
+
+So for example, if we have a file called 'test.py' with the following contents:
+
+def countdown():
+  for i in range(10):
+    print(i+1)
+
+To run it in main.py you'd have to write:
+
+import test # No .py necessary
+
+test.countdown() # Calls the countdown() function in the test file
+
+NICKNAMES
+
+You can also give nicknames to files. The correct syntax to do so is this:
+
+import test as tt 
+
+After you give a nickname to a file or library, you must call the functions using that nickname in the call. E.g.:
+
+import random as lolrandom
+
+print(lolrandom.randint(1,10))
+
