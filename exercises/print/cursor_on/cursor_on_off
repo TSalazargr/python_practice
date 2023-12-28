@@ -1,0 +1,16 @@
+TURN CURSOR ON/OFF
+
+import os, time
+print('\033[?25l', end="") # Cursor won't appear as values are displayer
+for i in range(1, 101):
+  print(i)
+  time.sleep(0.2)
+  os.system("clear")
+
+
+import os, time
+print('\033[?25h', end="") # Cursor appears one again after printing all the values
+for i in range(1, 101):
+  print(i)
+  time.sleep(0.2)
+  os.system("clear")
