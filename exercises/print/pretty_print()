@@ -1,0 +1,11 @@
+import os, time
+
+def pretty_print():
+  os.system("clear")
+  print("List of items")
+  print()
+  counter = 1
+  for item in list:
+    print(f"{counter}: {item}")
+    counter += 1
+  time.sleep(1)
