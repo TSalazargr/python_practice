@@ -1,10 +1,25 @@
 CLASES
 
+Object Oriented Programming (OOP) is a programming paradigm (a way of thinking about how to solve a problem) that is based on classes and objects, 
+which store all of their data and behaviors inside them.
+
+You can think of a class like a cookie cutter, or template. It has pre-defined characteristics (shape, size etc).
+
+Objects are like the cookies created using the cutter. They all get the same size and shape, but then we can personalize each one (sprinkles, icing, etc).
+
+Some programming languages, like Java, are entirely based on OOP. So all you Java coders will be used to this way of thinking.
+
+If you're a Python programmer, then this may take some getting used to, but stay with it.
+
 The focal point of Object Oriented Programming (OOP) are OBJECTS, which are created using CLASSES.
 The class describes what the object will be, but is separate from the object itself. In other words, a class can be 
 described as an object's blueprint, description, or definition.
 
 You can use the same class as a blueprint for creating multiple different objects.
+
+CLASSES
+
+Classes contain all the characteristics (think variables) that all objects in that class have in common.
 
 Classes are created using the keyword class and an indented block, which contains class methods (which are functions).
 Below is an example of a simple class and its objects.
@@ -24,8 +39,14 @@ Then the class is used to create 3 separate objects of that class.
 
 __INIT__
 
+__INIT__ is short for initialisation.
+
 The __init__ method is the most important method in a class.
 This is called when an instance (object) of the class is created, using the class name as a function.
+
+INSTATIATION
+
+Using a class to create an object is aka "Instantiation". Instatation means 'using a template to create an object'. 
 
 That is to say, the class name is the one that's called for __init__methods.
 
