@@ -1,0 +1,15 @@
+print(f"variable:alignment symbol n"), where n is the size of the gap by number of characters 
+
+Alignment symbols:
+- < left
+- > right
+- ^ center
+
+for i in range (1, 11):
+  print(f"Number {i: <2} of 10") # There will be two spaces between i and "of 10"
+
+for i in range (1, 11):
+  print(f"Number {i: >2} of 10") # There will be two spaces between "Number" and i
+
+for i in range (1, 11):
+  print(f"Number {i: ^2} of 10") # There will be one space between "Number" and i and one space between i and "of 10"
