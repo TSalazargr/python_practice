@@ -31,4 +31,4 @@ class bird(animal): # Add a subclass under the class animal
 
 polly = bird("Cage") #Sets polly's location as "cage"
 polly.talk()
-print(polly.color)
+print(polly.location)
