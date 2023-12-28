@@ -1,0 +1,15 @@
+print("\033[ m")
+
+- Default: 0
+- Black: 30
+- Red: 31
+- Green: 32
+- Yellow: 33
+- Blue: 34
+- Purple: 35
+- Cyan: 36
+- White: 37
+
+print("This text is", "\033[31m", "red", "\033[0m", ". This text is", "\033[35m", "purple", "\033[0m", ".")   
+
+Note: this doesn't work in some compilers
