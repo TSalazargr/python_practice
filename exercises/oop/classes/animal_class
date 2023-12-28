@@ -1,7 +1,4 @@
 class animal:
-  species = None
-  name = None
-  sound = None
  
   def __init__(self, name, species, sound, color): # Include the 'self' in the 'init'
     self.name = name
