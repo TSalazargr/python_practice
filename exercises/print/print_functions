@@ -12,106 +12,10 @@ print(4 < 5) # Displays True
 
 print() # Displays a blank line
 
----
-Change print color
----
-
-print("\033[ m")
-
-- Default: 0
-- Black: 30
-- Red: 31
-- Green: 32
-- Yellow: 33
-- Blue: 34
-- Purple: 35
-- Cyan: 36
-- White: 37
-
-print("This text is", "\033[31m", "red", "\033[0m", ". This text is", "\033[35m", "purple", "\033[0m", ".")   
-
-Note: this doesn't work in some compilers
-
-END
-
-for i in range(0, 100):
-  print(i, end=" ") # Each next value is sepparated by a space rather than by a new line
-
-for i in range(0, 100):
-  print(i, end=", ") # Puts a ", " string between values rather than a new line
-
-for i in range(0, 100):
-  print(i, end="") # No separation between values
-
-for i in range(0, 100):
-  print(i, end="\n") # Puts a new line between values
-
-for i in range(0, 100):
-  print(i, end="\n - ") # Puts a new line between values, and starts each value after zero with a "- " string
-
-for i in range(0, 100):
-  print(i, end="\t") # Tab indent between values
-
-for i in range(0, 100):
-  print(i, end="\v") # Vertical tab between values (New line + tab)
-
-print("cat", "dog", end="\t") # Puts a tab indentation after the last value
-
-SEP
-
-print("cat", "dog", sep=" ") # Puts a " " string between concatenated values
-
-print("If you put", "\033[33m", " nothing as the", "\033[35m", " end character", "\033[32m", " then you don't", "\033[0m", " get odd gaps", sep="")
-
-for i in range(1, 10):
-  print(i, sep=" ") # Puts a space after every value, but each new value is still printed in a different line
-
-TURN CURSOR ON/OFF
-
-import os, time
-print('\033[?25l', end="") # Cursor won't appear as values are displayer
-for i in range(1, 101):
-  print(i)
-  time.sleep(0.2)
-  os.system("clear")
 
 
-import os, time
-print('\033[?25h', end="") # Cursor appears one again after printing all the values
-for i in range(1, 101):
-  print(i)
-  time.sleep(0.2)
-  os.system("clear")
 
-TEXT ALIGNMENT
 
-print(f"variable:alignment symbol n"), where n is the size of the gap by number of characters 
 
-Alignment symbols:
-- < left
-- > right
-- ^ center
 
-for i in range (1, 11):
-  print(f"Number {i: <2} of 10") # There will be two spaces between i and "of 10"
-
-for i in range (1, 11):
-  print(f"Number {i: >2} of 10") # There will be two spaces between "Number" and i
-
-for i in range (1, 11):
-  print(f"Number {i: ^2} of 10") # There will be one space between "Number" and i and one space between i and "of 10"
-
----
-
-import os, time
-
-def pretty_print():
-  os.system("clear")
-  print("List of items")
-  print()
-  counter = 1
-  for item in list:
-    print(f"{counter}: {item}")
-    counter += 1
-  time.sleep(1)
 
