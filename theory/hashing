@@ -1,0 +1,86 @@
+Organizations typically don't retain your precise password. 
+Instead, they store a hashed version—a numerical sequence derived from your password using a complex mathematical process. 
+A string will always produce the same hashed value.A
+
+You can do hash a password using the built-in hash function to create a numerical hash of the password.
+
+password = "swordfish"
+password = hash(password)
+
+Or alternatively,
+
+password = hash("swordfish")
+
+SALT
+
+Hashing is effective, 
+  but crafty hackers have compiled databases with hashes for tons of common passwords and words. 
+  If you use something common, there's likely a matching hash floating out there, waiting to be decoded.
+
+To up the security game, we can add a random value to your password before hashing—it's called a "salt." 
+  This extra step makes things much tougher for potential attackers.
+
+
+import random
+
+user = "user1"
+password = "swordfish"
+salt = random.randint(1, 99999)
+newPassword = f"{password}{salt}" # append the salt
+newPassword = hash(newPassword) # hash the lot
+
+You should create a different salt for each user.
+
+You can store the salts of all the different users in a dictionary.
+
+import random
+
+password_list = {}
+  
+user = "user1"
+password = "swordfish"
+salt = random.randint(1, 99999)
+
+password_list[user] = {"password":password, "salt":salt}
+
+Now let's update the login system to pull the salt from the database, append it to the password entered and then hash the lot. 
+  After that, we can compare it to the stored hash of password and salt from the previous example.
+
+import random
+
+password_list = {}
+  
+user = "user1"
+password = "swordfish"
+salt = random.randint(1, 99999)
+password = f"{password}{salt}" # Add salt to password
+password = hash(password) # Hash the password
+
+password_list[user] = {"password":password, "salt":salt}
+
+attempts = 0
+
+while True:
+  while True:
+    user_inputed = input("Input the username: ")
+    if user_inputed not in password_list:
+        print("User not found. Try again.")
+    else: 
+        break
+
+  while True:
+    password_inputed = input("Input the password: ")
+    password_inputed = f"{password_inputed}{password_list[user_inputed]['salt']}" # Adds salt to the password inputed
+    if hash(password_inputed) == password_list[user_inputed]["password"]:
+        print("Access granted!")
+        break
+    else:
+        if attempts == 3:
+            print("Too many failed attempts. Access denied.")
+            break
+        else:
+            print("Wrong username/password combination. Try again.")
+            attempts += 1
+            continue
+  if hash(password_inputed) == password_list[user_inputed]["password"]: # Condition to break the first while True loo`p
+    break
