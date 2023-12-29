@@ -1,0 +1,20 @@
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))")
+  # Create table with three rows named id, name and adress
+  # id row is an integer that starts at 1 and increments by one and it's a primary key
+  # VARCHAR(255) means that they are a VARCHAR type with a maximum length of 255 characters
+
+mycursor.execute("SHOW TABLES")
+
+for x in mycursor: # Displays all tables in the database
+  print(x)
