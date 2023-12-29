@@ -1,0 +1,13 @@
+# Download and install python
+
+1. Download python here: https://www.python.org/downloads/windows/
+2. Pay attention to optional features you install
+3. From the terminal, type "python --version"
+4. If it outputs the version you installed, you did it properly
+
+# Download pycharm
+1. Download pycharm community here: https://www.jetbrains.com/edu-products/download/other-PCE.html
+
+# Download and install mysql
+1. Download mysql.connector here https://pypi.org/project/mysql-connector-python/
+2. Install mysql.connector using this method https://stackoverflow.com/a/73249539
