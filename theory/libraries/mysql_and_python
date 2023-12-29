@@ -1,3 +1,5 @@
+https://www.w3schools.com/python/python_mysql_getstarted.asp
+
 CONNECTOR.CONNECT()
 
 Once you've installed mysql.connector to your IDE, you can import it and connect it to your database like this:
