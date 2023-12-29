@@ -60,27 +60,23 @@ password_list[user] = {"password":password, "salt":salt}
 
 attempts = 0
 
-while True:
-  while True:
-    user_inputed = input("Input the username: ")
-    if user_inputed not in password_list:
-        print("User not found. Try again.")
-    else: 
-        break
-
-  while True:
-    password_inputed = input("Input the password: ")
-    password_inputed = f"{password_inputed}{password_list[user_inputed]['salt']}" # Adds salt to the password inputed
-    if hash(password_inputed) == password_list[user_inputed]["password"]:
-        print("Access granted!")
-        break
-    else:
-        if attempts == 3:
-            print("Too many failed attempts. Access denied.")
-            break
-        else:
-            print("Wrong username/password combination. Try again.")
-            attempts += 1
-            continue
-  if hash(password_inputed) == password_list[user_inputed]["password"]: # Condition to break the first while True loo`p
+while True: # Checks if the username is in the dictionary
+  user_inputed = input("Input the username: ")
+  if user_inputed not in password_list:
+    print("User not found. Try again.")
+  else: 
     break
+
+while True:
+  password_inputed = input("Input the password: ")
+  password_inputed = f"{password_inputed}{password_list[user_inputed]['salt']}" # Adds salt to the password inputed
+  if hash(password_inputed) == password_list[user_inputed]["password"]: # Compares hashed password+salt with value in dictionary
+   print("Access granted!")
+   break
+  else:
+   if attempts == 3:
+    print("Too many failed attempts. Access denied.")
+    break
+   else:
+    print("Wrong username/password combination. Try again.")
+    attempts += 1
