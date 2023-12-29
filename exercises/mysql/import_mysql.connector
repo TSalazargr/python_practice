@@ -1,0 +1,6 @@
+import mysql.connector
+
+connection = mysql.connector.connect(host='xxx', database='xxx', user='xxx', password='xxx')
+
+if connection.is_connected():
+    print("Connection Successfully")
