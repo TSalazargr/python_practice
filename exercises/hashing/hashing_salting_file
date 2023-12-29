@@ -1,19 +1,19 @@
 import random
 
-password_list = {}
-  
-
-
-
-
-password_list[user] = {"password":password, "salt":salt} # Adds password and salt to dictionary with user key
+user_inputed = ""
 
 def file_reader():
   with open("login_information", "r") as file:
     password_list = file.read()
+  return password_list
+
+def file_writer():
+  with open("login_information", "w") as file:
+    file.write(password_list)
 
 def username_exists():
-  file_reader()
+  global user
+  password_list = file_reader()
   while True:
     if user in password_list:
       user = input("This username is already taken. Choose another username: ")
@@ -22,12 +22,21 @@ def username_exists():
 
 def sign_up():
   user = input("Choose an username: ")
-  password = input("Choose an username: ")
+  username_exists()
+
+  password = input("Choose an password: ")
   salt = random.randint(1, 99999) # Generates random salt
   password = f"{password}{salt}" # Add salt to password
   password = hash(password) # Hash the password
 
+  password_list = file_reader()
+  password_list[user] = {"password":password, "salt":salt} # Adds password and salt to dictionary with user key
+
+  file_writer() # Rewrites file with update password_list
+
 def username_checker():
+
+  password_list = file_reader()
 
   while True: # Checks if the username is in the dictionary
     user_inputed = input("Input the username: ")
@@ -51,7 +60,7 @@ def password_checker():
       print("Too many failed attempts. Access denied.")
       break
      else:
-      print("Wrong username/password combination. Try again.")
+      print("Wrong password. Try again.")
       attempts += 1
 
 def menu():
