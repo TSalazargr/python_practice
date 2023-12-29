@@ -1,0 +1,129 @@
+CONNECTOR.CONNECT()
+
+Once you've installed mysql.connector to your IDE, you can import it and connect it to your database like this:
+
+import mysql.connector
+
+my_db = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+if my_db.is_connected():
+    print("Connection Successfully")
+
+CURSOR()
+
+The my_db.cursor() function is used to create a cursor object.
+
+A cursor is a control structure that enables traversal over the records in a database. 
+It allows you to execute SQL queries, fetch data from the result sets, and perform various operations on the database.
+
+You can create a cursor object like this:
+
+import mysql.connector
+
+my_db = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = my_db.cursor()
+
+CREATE TABLE
+
+To create a table in MySQL, use the "CREATE TABLE" statement.
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))")
+
+Breaking down the SQL command:
+
+- CREATE TABLE customers: This part of the command specifies that a new table named customers will be created.
+- (name VARCHAR(255), address VARCHAR(255)): 
+  Within the customers table, this part defines the structure of the table. 
+  It specifies two columns: name and address, both of which are of the VARCHAR type with a maximum length of 255 characters.
+
+  SHOW TABLE
+
+  You can check if a table exist by listing all tables in your database with the "SHOW TABLES" statement:
+
+  import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("SHOW TABLES")
+
+for x in mycursor:
+  print(x)
+
+PRIMARY KEY
+
+When creating a table, you should also create a column with a unique key for each record.
+
+This can be done by defining a PRIMARY KEY.
+
+We use the statement "INT AUTO_INCREMENT PRIMARY KEY" which will insert a unique number for each record. 
+Starting at 1, and increased by one for each record.
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))")
+
+id: This represents the name of the column.
+INT: This specifies the data type of the column as an integer.
+AUTO_INCREMENT: This attribute indicates that the values for this column will 
+  automatically increment by 1 for each new record inserted into the table.
+PRIMARY KEY: This designates the id column as the primary key for the table. 
+  A primary key uniquely identifies each record in the table and ensures that each value in the id column is 
+  unique and not null. It also facilitates efficient indexing and searching within the table.
+
+ALTER TABLE
+
+If the table already exists, you can use the ALTER TABLE keyword:
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("ALTER TABLE customers ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY")
+
+
+
