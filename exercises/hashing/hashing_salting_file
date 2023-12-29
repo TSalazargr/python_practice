@@ -2,13 +2,30 @@ import random
 
 password_list = {}
   
-user = "user1"
-password = "swordfish"
-salt = random.randint(1, 99999) # Generates random salt
-password = f"{password}{salt}" # Add salt to password
-password = hash(password) # Hash the password
+
+
+
 
 password_list[user] = {"password":password, "salt":salt} # Adds password and salt to dictionary with user key
+
+def file_reader():
+  with open("login_information", "r") as file:
+    password_list = file.read()
+
+def username_exists():
+  file_reader()
+  while True:
+    if user in password_list:
+      user = input("This username is already taken. Choose another username: ")
+    else:
+      break
+
+def sign_up():
+  user = input("Choose an username: ")
+  password = input("Choose an username: ")
+  salt = random.randint(1, 99999) # Generates random salt
+  password = f"{password}{salt}" # Add salt to password
+  password = hash(password) # Hash the password
 
 def username_checker():
 
