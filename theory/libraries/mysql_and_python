@@ -36,6 +36,52 @@ my_db = mysql.connector.connect(
 
 mycursor = my_db.cursor()
 
+CREATE DATABASE
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE DATABASE mydatabase")
+
+SHOW DATABASE AND ACCESS DATABASE
+
+To check if a database exists, you can use a SHOW DATABASE STATEMENT
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("SHOW DATABASES")
+
+for x in mycursor:
+  print(x)
+
+You can also try to access a database when you make a connection:
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+If the database does not exist, you will get an error.
+
 CREATE TABLE
 
 To create a table in MySQL, use the "CREATE TABLE" statement.
@@ -60,11 +106,11 @@ Breaking down the SQL command:
   Within the customers table, this part defines the structure of the table. 
   It specifies two columns: name and address, both of which are of the VARCHAR type with a maximum length of 255 characters.
 
-  SHOW TABLE
+SHOW TABLE
 
-  You can check if a table exist by listing all tables in your database with the "SHOW TABLES" statement:
+You can check if a table exist by listing all tables in your database with the "SHOW TABLES" statement:
 
-  import mysql.connector
+import mysql.connector
 
 mydb = mysql.connector.connect(
   host="localhost",
