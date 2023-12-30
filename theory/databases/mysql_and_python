@@ -173,5 +173,105 @@ mycursor = mydb.cursor()
 
 mycursor.execute("ALTER TABLE customers ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY")
 
+INSERT INTO
 
+To fill a table in MySQL, use the "INSERT INTO" statement.
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
+val = ["John", "Highway 21"]
+mycursor.execute(sql, val)
+
+mydb.commit()
+
+print(mycursor.rowcount, "record inserted.")
+
+sql = "INSERT INTO customers (name, address) VALUES (%s, %s)": 
+  This line constructs an SQL query to insert data into a table named customers. 
+  It specifies that two values will be inserted into the name and address columns, 
+  using placeholders %s to indicate where the actual values will be provided later.
+
+val = ["John", "Highway 21"]: Here, a list named val is created containing the actual values 
+  that will replace the placeholders in the SQL query. 
+  In this case, "John" will be inserted into the name column and "Highway 21" into the address column.
+  You can also use a tuple instead of a list.
+
+mycursor.execute(sql, val): This line executes the SQL query constructed earlier (sql) using the execute() 
+  method of the cursor (mycursor). It replaces the %s placeholders in the SQL query with the values provided in the val tuple.
+
+The mydb.commit() function in the context of database connections and transactions is used to 
+  save changes made through SQL commands issued to the database.
+
+EXECUTE MANY()
+
+To insert multiple rows into a table, use the executemany() method.
+
+The second parameter of the executemany() method is a list of tuples, containing the data you want to insert:
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
+val = [
+  ('Peter', 'Lowstreet 4'),
+  ('Amy', 'Apple st 652'),
+  ('Hannah', 'Mountain 21'),
+  ('Michael', 'Valley 345'),
+  ('Sandy', 'Ocean blvd 2'),
+  ('Betty', 'Green Grass 1'),
+  ('Richard', 'Sky st 331'),
+  ('Susan', 'One way 98'),
+  ('Vicky', 'Yellow Garden 2'),
+  ('Ben', 'Park Lane 38'),
+  ('William', 'Central st 954'),
+  ('Chuck', 'Main Road 989'),
+  ('Viola', 'Sideway 1633')
+]
+
+mycursor.executemany(sql, val)
+
+mydb.commit()
+
+print(mycursor.rowcount, "were inserted.") # mycursor.rowcount provides the count of how many rows were affected by that operation.
+
+LASTROWID
+
+You can get the id of the last row you just inserted by asking the cursor object.
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
+val = ("Michelle", "Blue Village")
+mycursor.execute(sql, val)
+
+mydb.commit()
+
+print("1 record inserted, ID:", mycursor.lastrowid)
 
