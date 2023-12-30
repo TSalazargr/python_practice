@@ -275,3 +275,105 @@ mydb.commit()
 
 print("1 record inserted, ID:", mycursor.lastrowid)
 
+SELECT AND FETCHALL()
+
+To select from a table in MySQL, use the "SELECT" statement.
+
+The following script selects the entire table:
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT * FROM customers") # Executes an SQL query on the database. It selects all (*) columns from the "customers" table.
+
+myresult = mycursor.fetchall()
+
+for row in myresult: # Iterates through each row of myresults and displays it
+  print(row)
+
+myresult = mycursor.fetchall() - This line fetches all the rows resulting from the execution of the SQL query 
+  performed in the previous line. 
+  fetchall() retrieves all the rows returned by the SQL query and stores them in the myresult variable as a list of tuples.
+
+SELECTING SPECIFIC COLUMNS
+
+To select specific columns, the syntax is:
+
+SELECT name_of_column_1, name_of_column_2 FROM table_name
+
+E.g.:
+
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT name, address FROM customers")
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+
+FETCHONE()
+
+If you are only interested in one row, you can use the fetchone() method.
+
+The fetchone() method will return the first row of the result:
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT * FROM customers")
+
+myresult = mycursor.fetchone()
+
+print(myresult)
+
+WHERE AND SELECTING WITH FILTER
+
+When selecting records from a table, you can filter the selection by using the "WHERE" statement:
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+sql = "SELECT * FROM customers WHERE address ='Park Lane 38'"
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+
