@@ -1,0 +1,46 @@
+When query values are provided by the user, you should escape the values.
+
+This is to prevent SQL injections, which is a common web hacking technique to destroy or misuse your database.
+
+The mysql.connector module has methods to escape query values:
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+sql = "SELECT * FROM customers WHERE address = %s"
+adr = ("Yellow Garden 2", )
+
+mycursor.execute(sql, adr)
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+
+- sql = "SELECT * FROM customers WHERE address = %s": 
+  This line defines an SQL query where %s is a placeholder for a parameterized value.
+  A parameterized value is a placeholder used in a database query to represent data that will be inserted later. 
+  By using placeholders, the actual data is separated from the query itself, 
+  making it safer and preventing potential security risks like SQL injection.
+
+- adr = ("Yellow Garden 2", ): 
+  This creates a tuple adr containing the parameterized value. 
+  The trailing comma is important to ensure it's recognized as a tuple even with a single value.
+
+- mycursor.execute(sql, adr): 
+  The execute() method of the cursor is used to execute the SQL query 
+  while passing the parameters separately from the query string. 
+  The %s placeholder is replaced with the actual value from the adr tuple. 
+  By using this method, the parameter value is treated as data rather than executable SQL code, reducing the risk of SQL injection.
+
+This approach helps prevent SQL injection because the parameter values are treated as data and 
+not as part of the SQL query itself. 
+The database system handles the parameters separately, making it much more challenging for attackers to inject malicious code.
