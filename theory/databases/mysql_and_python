@@ -377,3 +377,259 @@ myresult = mycursor.fetchall()
 for x in myresult:
   print(x)
 
+WILDCARD CHARACTER AND %
+
+You can also select the records that starts, includes, or ends with a given letter or phrase.
+
+Use the %  to represent wildcard characters:
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+sql = "SELECT * FROM customers WHERE address LIKE '%way%'"
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+
+SORT BY RESULT AND ORDER BY
+
+Use the ORDER BY statement to sort the result in ascending or descending order.
+
+The ORDER BY keyword sorts the result ascending by default. To sort the result in descending order, use the DESC keyword.
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+sql = "SELECT * FROM customers ORDER BY name DESC"
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+
+DELETE RECORD AND DELETE FROM
+
+You can delete records from an existing table by using the "DELETE FROM" statement:
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+sql = "DELETE FROM customers WHERE address = 'Mountain 21'"
+
+# The WHERE clause specifies which record(s) that should be deleted. If you omit the WHERE clause, all records will be deleted!
+
+mycursor.execute(sql)
+
+mydb.commit() # Required to make the changes, otherwise no changes are made to the table.
+
+print(mycursor.rowcount, "record(s) deleted")
+
+DELETE A TABLE AND DROP TABLE
+
+You can delete an existing table by using the "DROP TABLE" statement:
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+sql = "DROP TABLE customers"
+
+mycursor.execute(sql)
+
+If the table you want to delete is already deleted, or for any other reason does not exist, 
+  you can use the IF EXISTS keyword to avoid getting an error.
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+sql = "DROP TABLE IF EXISTS customers"
+
+mycursor.execute(sql)
+
+UPDATE TABLE
+
+You can update existing records in a table by using the "UPDATE" statement:
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+sql = "UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'" 
+# Overwrite the address column from "Valley 345" to "Canyon 123"
+# If you omit the WHERE clause, all records will be updated!
+
+mycursor.execute(sql)
+
+mydb.commit()
+
+LIMIT THE RESULT
+
+You can limit the number of records returned from the query, by using the "LIMIT" statement:
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT * FROM customers LIMIT 5")
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+
+START FROM ANOTHER POSITION AND OFFSET
+
+If you want to return five records, starting from the third record, you can use the "OFFSET" keyword:
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT * FROM customers LIMIT 5 OFFSET 2")
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+
+JOIN TWO OR MORE TABLES
+
+You can combine rows from two or more tables, based on a related column between them, by using a JOIN statement.
+
+Consider you have a "users" table and a "products" table:
+
+For example, if you have this 'users' table:
+
+{ id: 1, name: 'John', fav: 154},
+{ id: 2, name: 'Peter', fav: 154},
+{ id: 3, name: 'Amy', fav: 155},
+{ id: 4, name: 'Hannah', fav:},
+{ id: 5, name: 'Michael', fav:}
+
+And this 'products' table:
+
+{ id: 154, name: 'Chocolate Heaven' },
+{ id: 155, name: 'Tasty Lemons' },
+{ id: 156, name: 'Vanilla Dreams' }
+
+These two tables can be combined by using users' fav field and products' id field.
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="mydatabase"
+)
+
+mycursor = mydb.cursor()
+
+sql = "SELECT \
+  users.name AS user, \
+  products.name AS favorite \
+  FROM users \
+  INNER JOIN products ON users.fav = products.id"
+
+# You can use JOIN instead of INNER JOIN. They will both give you the same result.
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+
+# Hannah, and Michael were excluded from the result, that is because INNER JOIN only shows the records where there is a match.
+
+LEFT JOIN
+
+In the example above, Hannah, and Michael were excluded from the result. 
+That is because INNER JOIN only shows the records where there is a match.
+
+If you want to show all users, even if they do not have a favorite product, use the LEFT JOIN statement:
+
+sql = "SELECT \
+  users.name AS user, \
+  products.name AS favorite \
+  FROM users \
+  LEFT JOIN products ON users.fav = products.id"
+
+RIGHT JOIN
+
+If you want to return all products, and the users who have them as their favorite, 
+even if no user have them as their favorite, use the RIGHT JOIN statement:
+
+sql = "SELECT \
+  users.name AS user, \
+  products.name AS favorite \
+  FROM users \
+  RIGHT JOIN products ON users.fav = products.id"
+
+# Hannah and Michael, who have no favorite product, are not included in the result.
