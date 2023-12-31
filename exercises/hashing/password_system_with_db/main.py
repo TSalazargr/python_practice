@@ -8,7 +8,12 @@ mydb = mysql.connector.connect(
 
 my_cursor = mydb.cursor()
 
+if my_db.is_connected():
+    print("Connection Successfully")
 
+my_cursor.execute("CREATE TABLE IF NOT EXISTS user_password (id INT AUTO_INCREMENT PRIMARY KEY, user VARCHAR(255), hash_salted_password VARCHAR(255), salt VARCHAR(255))")
+
+print("Table 'user_password' created successfully.")
 
 def menu():
   while True:
