@@ -26,12 +26,39 @@ def menu():
         continue
 
 def sign_up():
+    print("Sign up")
     input_user()
     input_password()
     save_user_password_salt(inputed_user, hashed_password, salt)
 
 def log_in():
     print("Log in")
+    while True:
+        inputed_user = input("Input your username: ").strip()
+
+        if check_username_exists(inputed_user) = False:
+            print("Username not found. Try again.")
+            continue
+        else:
+            salt, hash_salted_password = extract_password(inputed_user)
+
+        attempt = 0
+
+        while attempt < 3:
+
+            inputed_password = input("Input your password: ")
+            inputed_password = f"{inputed_password}{salt}"
+            inputed_password = hash(inputed_password)
+
+            if inputed_password == hash_salted_password:
+                print("Access granted")
+                break
+            else:
+                attempt += 1
+                print("Wrong password. Try again.")
+
+        if attempt == 3:
+            print("Too many failed attempts. Access denied.")
 
 def input_user():
     while True:
@@ -73,6 +100,18 @@ def save_user_password_salt(inputed_user, hashed_password, salt):
     sql = "INSERT INTO user_password (user, hash_salted_password, salt) VALUES (%s, %s, %s)"
     val = [inputed_user, hashed_password, salt]
     my_cursor.execute(sql, val)
+
+def extract_password(inputed_user):
+    sql = "SELECT salt, hash_salted_password FROM user_password WHERE user = %s"
+    val = inputed_user
+    my_cursor.execute(sql, val)
+    my_result = my_cursor.fetchall()
+
+    if my_result:  # If data is found
+        salt, hash_salted_password = my_result[0]  # Extract salt and hashed password from the first row found
+        return salt, hash_salted_password
+    else:
+        return None, None  # Or handle the case where no data is found
 
 while True:
     menu()
