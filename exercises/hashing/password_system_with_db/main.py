@@ -42,7 +42,7 @@ def log_in():
     while True:
         inputed_user = input("Input your username: ").strip()
 
-        if check_username_exists(inputed_user) = False:
+        if check_username_exists(inputed_user) == False:
             print("Username not found. Try again.")
             continue
         else:
