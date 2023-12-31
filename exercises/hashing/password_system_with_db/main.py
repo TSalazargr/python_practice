@@ -1,3 +1,21 @@
+import mysql.connector
+
+my_db = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword",
+  database="my_db"
+)
+
+if my_db.is_connected():
+    print("Connection Successfully")
+
+my_cursor = my_db.cursor()
+
+my_cursor.execute("CREATE TABLE IF NOT EXISTS user_password (id INT AUTO_INCREMENT PRIMARY KEY, user VARCHAR(255), hash_salted_password VARCHAR(255), salt VARCHAR(255))")
+
+print("Table 'user_password' created successfully.")
+
 my_cursor = mydb.cursor()
 
 if mydb.is_connected():
@@ -38,21 +56,24 @@ def log_in():
             continue
         else:
             salt, hash_salted_password = extract_password(inputed_user)
+            print(f"stored salt: {salt}")
+            break
+    attempt = 0
 
-        attempt = 0
+    while attempt < 3:
 
-        while attempt < 3:
+        inputed_password = input("Input your password: ")
+        inputed_password = f"{inputed_password}{str(salt)}" # Append the salt
+        inputed_password = hashlib.sha256(inputed_password.encode()).hexdigest()
+        print(inputed_password)
+        print(hash_salted_password)
 
-            inputed_password = input("Input your password: ")
-            inputed_password = f"{inputed_password}{salt}"
-            inputed_password = hash(inputed_password)
-
-            if str(inputed_password) == str(hash_salted_password): # Make sure both variables are strings
-                print("Access granted")
-                break
-            else:
-                attempt += 1
-                print("Wrong password. Try again.")
+        if inputed_password == hash_salted_password: # Make sure both variables are strings
+            print("Access granted")
+            break
+        else:
+            attempt += 1
+            print("Wrong password. Try again.")
 
         if attempt == 3:
             print("Too many failed attempts. Access denied.")
@@ -93,7 +114,9 @@ def input_password():
             break
 
     salt = random.randint(1000, 9999999)
-    hashed_password = hash(f"{inputed_password}{salt}")
+    print(f"salt: {salt}")
+    hashed_password = hashlib.sha256(f"{inputed_password}{salt}".encode()).hexdigest()
+    print(hashed_password)
 
     return inputed_password, hashed_password, salt
 
@@ -101,6 +124,7 @@ def save_user_password_salt(inputed_user, hashed_password, salt):
     sql = "INSERT INTO user_password (user, hash_salted_password, salt) VALUES (%s, %s, %s)"
     val = [inputed_user, hashed_password, salt]
     my_cursor.execute(sql, val)
+    mydb.commit() # Save changes
 
 def extract_password(inputed_user):
     sql = "SELECT salt, hash_salted_password FROM user_password WHERE user = %s"
