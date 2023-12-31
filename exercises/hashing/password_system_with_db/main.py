@@ -1,16 +1,4 @@
-import mysql.connector, random
-
-my_db = mysql.connector.connect(
-  host="localhost",
-  user="yourusername",
-  password="yourpassword",
-  database="my_db"
-)
-
-if my_db.is_connected():
-    print("Connection Successfully")
-
-my_cursor = my_db.cursor()
+import random
 
 def menu():
   while True:
@@ -57,6 +45,21 @@ def check_username_exists(inputed_user):
         exists = False  # User doesn't exist
 
     return exists
+
+def input_password():
+    while True:
+        inputed_password = input("Input your password: ").strip()
+
+        if not (8 <= len(inputed_password) <= 20): # Checks if password is between 8 and 20 characters
+            print("Invalid length. Your password should have between 8 and 20 characters. Try again.")
+        else:
+            break
+
+    salt = random.randint(1000, 9999999)
+    hashed_password = hash(f"{inputed_password}{salt}")
+    save_hashed_password_salt(hashed_password, salt):
+
+def save_hashed_password_salt(hashed_password, salt):
 
 while True:
     menu()
