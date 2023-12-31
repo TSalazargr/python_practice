@@ -633,3 +633,5 @@ sql = "SELECT \
   RIGHT JOIN products ON users.fav = products.id"
 
 # Hannah and Michael, who have no favorite product, are not included in the result.
+
+
