@@ -1,0 +1,32 @@
+The hashlib library can be use to hash contents in a way that is consistent.
+
+It has several built-in hashing methods, such as:
+
+md5
+sha1
+sha224
+sha256
+sha384¶
+sha512
+sha3_224
+sha3_256
+sha3_384
+sha3_512
+
+The syntax to use it is:
+
+import hashlib
+
+hashed = hashlib.sha256("12345678901234567890".encode()).hexdigest()
+
+encode(): This is a method used to convert a string into its corresponding bytes representation. 
+  The encode() method converts a Unicode string into a sequence of bytes using a specified encoding (default is UTF-8). 
+  In the context of hashing, it's necessary to convert the string to bytes because hashing algorithms 
+  like SHA-256 operate on byte sequences rather than strings directly.
+
+hexdigest(): After hashing the bytes using a method like hashlib.sha256(), 
+  hexdigest() is used to get the hexadecimal representation of the resulting hash. 
+  Hash functions generate a fixed-size binary digest, but hexdigest() 
+  converts this digest into a human-readable hexadecimal format. It returns the hash value as a string of hexadecimal digits.
+
+print(hashed)
