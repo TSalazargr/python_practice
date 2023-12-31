@@ -1,15 +1,6 @@
-import random, mysql.connector
-
-mydb = mysql.connector.connect(
-  host="localhost",
-  user="yourusername",
-  password="yourpassword",
-  database="mydatabase"
-)
-
 my_cursor = mydb.cursor()
 
-if my_db.is_connected():
+if mydb.is_connected():
     print("Connection Successfully")
 
 my_cursor.execute("CREATE TABLE IF NOT EXISTS user_password (id INT AUTO_INCREMENT PRIMARY KEY, user VARCHAR(255), hash_salted_password VARCHAR(255), salt VARCHAR(255))")
@@ -33,8 +24,8 @@ def menu():
 
 def sign_up():
     print("Sign up")
-    input_user()
-    input_password()
+    inputed_user = input_user()
+    inputed_password, hashed_password, salt = input_password()
     save_user_password_salt(inputed_user, hashed_password, salt)
 
 def log_in():
@@ -56,7 +47,7 @@ def log_in():
             inputed_password = f"{inputed_password}{salt}"
             inputed_password = hash(inputed_password)
 
-            if inputed_password == hash_salted_password:
+            if str(inputed_password) == str(hash_salted_password): # Make sure both variables are strings
                 print("Access granted")
                 break
             else:
@@ -65,6 +56,7 @@ def log_in():
 
         if attempt == 3:
             print("Too many failed attempts. Access denied.")
+            exit()
 
 def input_user():
     while True:
@@ -76,6 +68,7 @@ def input_user():
             print("This username is already taken. Try again.")
             continue
         break
+    return inputed_user
 
 def check_username_exists(inputed_user):
     sql = "SELECT EXISTS(SELECT 1 FROM user_password WHERE user = %s)"  # Check if user exists
@@ -102,6 +95,8 @@ def input_password():
     salt = random.randint(1000, 9999999)
     hashed_password = hash(f"{inputed_password}{salt}")
 
+    return inputed_password, hashed_password, salt
+
 def save_user_password_salt(inputed_user, hashed_password, salt):
     sql = "INSERT INTO user_password (user, hash_salted_password, salt) VALUES (%s, %s, %s)"
     val = [inputed_user, hashed_password, salt]
@@ -109,7 +104,7 @@ def save_user_password_salt(inputed_user, hashed_password, salt):
 
 def extract_password(inputed_user):
     sql = "SELECT salt, hash_salted_password FROM user_password WHERE user = %s"
-    val = inputed_user
+    val = (inputed_user,)
     my_cursor.execute(sql, val)
     my_result = my_cursor.fetchall()
 
