@@ -1,4 +1,14 @@
-import random
+import random, mysql.connector
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="yourusername",
+  password="yourpassword"
+)
+
+my_cursor = mydb.cursor()
+
+
 
 def menu():
   while True:
@@ -16,8 +26,9 @@ def menu():
         continue
 
 def sign_up():
-    input_user():
-    input_password():
+    input_user()
+    input_password()
+    save_user_password_salt(inputed_user, hashed_password, salt)
 
 def log_in():
     print("Log in")
@@ -57,9 +68,11 @@ def input_password():
 
     salt = random.randint(1000, 9999999)
     hashed_password = hash(f"{inputed_password}{salt}")
-    save_hashed_password_salt(hashed_password, salt):
 
-def save_hashed_password_salt(hashed_password, salt):
+def save_user_password_salt(inputed_user, hashed_password, salt):
+    sql = "INSERT INTO user_password (user, hash_salted_password, salt) VALUES (%s, %s, %s)"
+    val = [inputed_user, hashed_password, salt]
+    my_cursor.execute(sql, val)
 
 while True:
     menu()
