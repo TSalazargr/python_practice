@@ -634,4 +634,21 @@ sql = "SELECT \
 
 # Hannah and Michael, who have no favorite product, are not included in the result.
 
+ADDING VARIABLES TO A QUERY
 
+An important thing to take into account is that SQL doesn't allow you to insert variables into a query the way Python does.
+
+For example, the following code would return an error:
+
+first_entry = 0 
+last_entry = 5
+
+mycursor.execute("SELECT * FROM customers LIMIT last_entry OFFSET first_entry") # This code returns an error
+
+The proper way to do this would be like this:
+
+first_entry = 0 
+last_entry = 5
+
+sql = "SELECT timestamp, entry FROM secret_diary LIMIT %s OFFSET %s" # %s is a placeholder value here
+my_cursor.execute(sql, (last_entry, first_entry))
