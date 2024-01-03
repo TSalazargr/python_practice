@@ -347,6 +347,18 @@ heart_rate = 165
 peak_rate = heart_rate > 160
 print(peak_rate)
 
+TRUE AND FALSE IN MATH OPERATIONS
+
+As True == 1 and False == 0; True and False can be used inside math operations.
+
+result = 2 - 1 - (True)
+
+print(result) # Display 0
+
+result = 2 - 1 - (False)
+
+print(result) # Display 1
+
 LOGICAL OPERATIONS 
 
 A logical operation takes several boolean inputs and produces 1 boolean output.
