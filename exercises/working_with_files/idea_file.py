@@ -12,7 +12,10 @@ def load_idea():
   ideas = f.read().split("\n")
   f.close()
   ideas.remove("")
-  print(random.choice(ideas))
+  if ideas: # Checks if there any ideas in the variable
+    print(random.choice(ideas))
+  else:
+    print("No ideas found. Add some ideas first.")
 
 while True:
   option = input("Would you like to (A)dd an idea  or (L)oad a random idea (L)?: A/L ").upper().strip()
